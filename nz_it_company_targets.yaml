@@ -1,0 +1,1275 @@
+metadata:
+  name: New Zealand IT Company Targets
+  purpose: Seed list for monitoring IT, software, data, AI, cloud, security, QA, product, and analyst roles in New Zealand.
+  country: New Zealand
+  default_check_frequency_minutes: 60
+  notes:
+    - Keep career_url empty when it should be discovered automatically.
+    - ats_type and ats_feed_url can be filled by the company source scanner.
+    - Priority 1 means strongest target, 2 means useful target, 3 means broader/optional target.
+
+companies:
+  - company_name: Xero
+    website: https://www.xero.com/
+    career_url: https://www.xero.com/about/careers/
+    industry: SaaS / accounting software
+    locations: [Wellington, Auckland, Remote]
+    priority: 1
+    target_role_groups: [software, data, ai, product, security, platform]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Major NZ-founded SaaS company.
+
+  - company_name: Datacom
+    website: https://datacom.com/
+    career_url: https://datacom.com/nz/en/careers
+    industry: IT services / consulting / managed services
+    locations: [Auckland, Wellington, Christchurch, Remote]
+    priority: 1
+    target_role_groups: [software, data, cloud, devops, security, analyst]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Large NZ technology services employer.
+
+  - company_name: Serko
+    website: https://www.serko.com/
+    career_url: https://www.serko.com/careers
+    industry: Travel technology / SaaS
+    locations: [Auckland, Remote]
+    priority: 1
+    target_role_groups: [software, data, ai, product, platform]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: NZ travel and expense technology company.
+
+  - company_name: Pushpay
+    website: https://pushpay.com/
+    career_url: https://pushpay.com/careers/
+    industry: SaaS / payments / engagement software
+    locations: [Auckland, Remote]
+    priority: 1
+    target_role_groups: [software, data, product, platform, qa]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: NZ-founded SaaS company.
+
+  - company_name: Vista Group
+    website: https://www.vistagroup.co.nz/
+    career_url: https://www.vistagroup.co.nz/careers/
+    industry: Cinema software / SaaS
+    locations: [Auckland, Remote]
+    priority: 1
+    target_role_groups: [software, data, product, qa, platform]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Technology group serving cinema and film industries.
+
+  - company_name: Orion Health
+    website: https://orionhealth.com/
+    career_url: https://orionhealth.com/careers/
+    industry: Health software / SaaS
+    locations: [Auckland, Remote]
+    priority: 1
+    target_role_groups: [software, data, cloud, product, qa, analyst]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Healthcare software company.
+
+  - company_name: Rocket Lab
+    website: https://www.rocketlabusa.com/
+    career_url: https://www.rocketlabusa.com/careers/
+    industry: Aerospace / engineering technology
+    locations: [Auckland]
+    priority: 1
+    target_role_groups: [software, data, embedded, cloud, security, qa]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Look for software, data, mission systems, and infrastructure roles.
+
+  - company_name: Fisher & Paykel Healthcare
+    website: https://www.fphcare.com/
+    career_url: https://www.fphcare.com/nz/careers/
+    industry: Healthcare technology / medical devices
+    locations: [Auckland]
+    priority: 1
+    target_role_groups: [software, data, analyst, cloud, qa]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Large NZ healthcare technology employer.
+
+  - company_name: Jade Software
+    website: https://www.jadeworld.com/
+    career_url: https://www.jadeworld.com/careers/
+    industry: Software / enterprise systems
+    locations: [Christchurch, Auckland, Remote]
+    priority: 1
+    target_role_groups: [software, data, analyst, qa, product]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: NZ software company.
+
+  - company_name: Gentrack
+    website: https://www.gentrack.com/
+    career_url: https://www.gentrack.com/careers/
+    industry: Utilities software / SaaS
+    locations: [Auckland, Remote]
+    priority: 1
+    target_role_groups: [software, data, cloud, product, analyst, qa]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Utility and airport software.
+
+  - company_name: EROAD
+    website: https://www.eroad.co.nz/
+    career_url: https://www.eroad.co.nz/careers/
+    industry: Transport technology / SaaS
+    locations: [Auckland, Remote]
+    priority: 1
+    target_role_groups: [software, data, cloud, product, qa]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Fleet and transport technology.
+
+  - company_name: Fuel50
+    website: https://fuel50.com/
+    career_url: https://fuel50.com/careers/
+    industry: HR technology / SaaS
+    locations: [Auckland, Remote]
+    priority: 2
+    target_role_groups: [software, data, ai, product]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: HR tech and talent marketplace software.
+
+  - company_name: Kami
+    website: https://www.kamiapp.com/
+    career_url: https://www.kamiapp.com/careers/
+    industry: EdTech / SaaS
+    locations: [Auckland, Remote]
+    priority: 2
+    target_role_groups: [software, data, product, qa]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Education technology company.
+
+  - company_name: Halter
+    website: https://www.halterhq.com/
+    career_url: https://www.halterhq.com/careers
+    industry: AgriTech / hardware and software
+    locations: [Auckland]
+    priority: 2
+    target_role_groups: [software, data, ai, platform, embedded]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: AgriTech with software, data, and hardware roles.
+
+  - company_name: Partly
+    website: https://www.partly.com/
+    career_url: https://www.partly.com/careers
+    industry: Automotive technology / SaaS
+    locations: [Christchurch, Remote]
+    priority: 2
+    target_role_groups: [software, data, ai, product, platform]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Automotive parts data and software platform.
+
+  - company_name: Auror
+    website: https://www.auror.co/
+    career_url: https://www.auror.co/careers
+    industry: Retail crime intelligence / SaaS
+    locations: [Auckland, Remote]
+    priority: 2
+    target_role_groups: [software, data, product, security]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: SaaS platform with data-heavy product.
+
+  - company_name: Sharesies
+    website: https://www.sharesies.nz/
+    career_url: https://www.sharesies.nz/careers
+    industry: FinTech
+    locations: [Wellington, Auckland, Remote]
+    priority: 2
+    target_role_groups: [software, data, security, product, platform]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: FinTech product company.
+
+  - company_name: Vend by Lightspeed
+    website: https://www.lightspeedhq.com/
+    career_url: https://www.lightspeedhq.com/careers/
+    industry: Retail POS / SaaS
+    locations: [Auckland, Remote]
+    priority: 2
+    target_role_groups: [software, data, product, platform, qa]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: NZ-founded Vend is now part of Lightspeed.
+
+  - company_name: Cin7
+    website: https://www.cin7.com/
+    career_url: https://www.cin7.com/careers/
+    industry: Inventory software / SaaS
+    locations: [Auckland, Remote]
+    priority: 2
+    target_role_groups: [software, data, product, qa, platform]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Inventory and order management software.
+
+  - company_name: Unleashed Software
+    website: https://www.unleashedsoftware.com/
+    career_url: https://www.unleashedsoftware.com/careers
+    industry: Inventory software / SaaS
+    locations: [Auckland, Remote]
+    priority: 2
+    target_role_groups: [software, data, product, qa]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Cloud inventory management software.
+
+  - company_name: Timely
+    website: https://www.gettimely.com/
+    career_url: https://www.gettimely.com/careers/
+    industry: Scheduling software / SaaS
+    locations: [Dunedin, Remote]
+    priority: 2
+    target_role_groups: [software, data, product, qa]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: NZ-founded scheduling software, now part of EverCommerce.
+
+  - company_name: AskNicely
+    website: https://www.asknicely.com/
+    career_url: https://www.asknicely.com/careers
+    industry: Customer experience software / SaaS
+    locations: [Auckland, Remote]
+    priority: 2
+    target_role_groups: [software, data, product]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Customer experience platform.
+
+  - company_name: FileInvite
+    website: https://www.fileinvite.com/
+    career_url: https://www.fileinvite.com/careers
+    industry: Document workflow software / SaaS
+    locations: [Auckland, Remote]
+    priority: 3
+    target_role_groups: [software, product, qa]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: SaaS workflow company.
+
+  - company_name: Re-Leased
+    website: https://www.re-leased.com/
+    career_url: https://www.re-leased.com/careers
+    industry: Property software / SaaS
+    locations: [Auckland, Napier, Remote]
+    priority: 2
+    target_role_groups: [software, data, product, qa]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Property management software.
+
+  - company_name: Plexure
+    website: https://www.plexure.com/
+    career_url: https://www.plexure.com/careers/
+    industry: Customer engagement / SaaS
+    locations: [Auckland]
+    priority: 2
+    target_role_groups: [software, data, cloud, product]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Mobile engagement and loyalty technology.
+
+  - company_name: Soul Machines
+    website: https://www.soulmachines.com/
+    career_url: https://www.soulmachines.com/careers/
+    industry: AI / digital humans
+    locations: [Auckland, Remote]
+    priority: 2
+    target_role_groups: [ai, software, data, product]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: AI-focused product company.
+
+  - company_name: Arcanum AI
+    website: https://www.arcanum.ai/
+    career_url: ""
+    industry: AI / data
+    locations: [Auckland, Remote]
+    priority: 3
+    target_role_groups: [ai, data, software]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Discover career page.
+
+  - company_name: Quantiful
+    website: https://www.quantiful.ai/
+    career_url: ""
+    industry: AI / demand forecasting
+    locations: [Auckland, Remote]
+    priority: 3
+    target_role_groups: [ai, data, software]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Discover career page.
+
+  - company_name: Qrious
+    website: https://www.qrious.co.nz/
+    career_url: https://www.qrious.co.nz/careers/
+    industry: Data / analytics / AI consulting
+    locations: [Auckland, Wellington, Remote]
+    priority: 1
+    target_role_groups: [data, ai, analyst, cloud, software]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Data and AI consultancy.
+
+  - company_name: Theta
+    website: https://www.theta.co.nz/
+    career_url: https://www.theta.co.nz/careers/
+    industry: IT consulting / software / data
+    locations: [Auckland, Wellington, Christchurch, Tauranga, Remote]
+    priority: 1
+    target_role_groups: [software, data, cloud, analyst, security]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: NZ technology consultancy.
+
+  - company_name: Sandfield
+    website: https://www.sandfield.co.nz/
+    career_url: https://www.sandfield.co.nz/careers/
+    industry: Software development / logistics systems
+    locations: [Auckland]
+    priority: 2
+    target_role_groups: [software, data, analyst, qa]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Custom software company.
+
+  - company_name: ClearPoint
+    website: https://clearpoint.digital/
+    career_url: https://clearpoint.digital/careers/
+    industry: Digital engineering consulting
+    locations: [Auckland, Wellington, Remote]
+    priority: 2
+    target_role_groups: [software, cloud, data, product, agile]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Digital engineering consultancy.
+
+  - company_name: Propellerhead
+    website: https://www.propellerhead.co.nz/
+    career_url: https://www.propellerhead.co.nz/careers
+    industry: Software engineering consulting
+    locations: [Auckland]
+    priority: 2
+    target_role_groups: [software, cloud, data, product]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Software product and engineering consultancy.
+
+  - company_name: Abletech
+    website: https://abletech.nz/
+    career_url: https://abletech.nz/careers/
+    industry: Software development consulting
+    locations: [Wellington, Remote]
+    priority: 3
+    target_role_groups: [software, product, qa]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Wellington software consultancy.
+
+  - company_name: Alphero
+    website: https://www.alphero.com/
+    career_url: https://www.alphero.com/careers
+    industry: Digital product design / engineering
+    locations: [Wellington, Auckland]
+    priority: 3
+    target_role_groups: [software, product, mobile, qa]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Digital product agency.
+
+  - company_name: Fronde
+    website: https://www.fronde.com/
+    career_url: https://www.fronde.com/careers/
+    industry: IT consulting / cloud
+    locations: [Wellington, Auckland, Remote]
+    priority: 2
+    target_role_groups: [software, cloud, data, analyst, salesforce]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Cloud and digital transformation consultancy.
+
+  - company_name: Inde Technology
+    website: https://www.inde.nz/
+    career_url: https://www.inde.nz/careers/
+    industry: Cloud / infrastructure / managed services
+    locations: [Christchurch, Auckland, Wellington, Remote]
+    priority: 2
+    target_role_groups: [cloud, devops, security, data, analyst]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Cloud and infrastructure consultancy.
+
+  - company_name: Umbrellar
+    website: https://www.umbrellar.co.nz/
+    career_url: https://www.umbrellar.co.nz/careers/
+    industry: Cloud / managed services
+    locations: [Auckland, Christchurch, Remote]
+    priority: 2
+    target_role_groups: [cloud, devops, data, ai, security]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: NZ cloud services company.
+
+  - company_name: Lancom Technology
+    website: https://www.lancom.tech/
+    career_url: https://www.lancom.tech/careers/
+    industry: Cloud / software / managed services
+    locations: [Auckland, Remote]
+    priority: 2
+    target_role_groups: [software, cloud, devops, data, security]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Microsoft partner and software/cloud company.
+
+  - company_name: Intergen
+    website: https://www.intergen.co.nz/
+    career_url: https://www.intergen.co.nz/careers/
+    industry: IT consulting / Microsoft / digital
+    locations: [Auckland, Wellington, Christchurch, Dunedin, Remote]
+    priority: 2
+    target_role_groups: [software, cloud, data, analyst, dynamics]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Now part of Capgemini in many markets; verify current NZ hiring page.
+
+  - company_name: Capgemini New Zealand
+    website: https://www.capgemini.com/nz-en/
+    career_url: https://www.capgemini.com/careers/
+    industry: Consulting / technology services
+    locations: [Auckland, Wellington, Remote]
+    priority: 2
+    target_role_groups: [software, data, cloud, analyst, security]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Global consulting firm with NZ roles.
+
+  - company_name: Accenture New Zealand
+    website: https://www.accenture.com/nz-en
+    career_url: https://www.accenture.com/nz-en/careers
+    industry: Consulting / technology services
+    locations: [Auckland, Wellington, Remote]
+    priority: 1
+    target_role_groups: [software, data, cloud, ai, analyst, security]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Global technology consulting firm.
+
+  - company_name: Deloitte New Zealand
+    website: https://www.deloitte.com/nz/
+    career_url: https://www.deloitte.com/nz/en/careers.html
+    industry: Consulting / technology / risk
+    locations: [Auckland, Wellington, Christchurch, Dunedin, Hamilton]
+    priority: 2
+    target_role_groups: [data, cloud, cyber, analyst, software]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Monitor consulting and cyber/data roles.
+
+  - company_name: PwC New Zealand
+    website: https://www.pwc.co.nz/
+    career_url: https://www.pwc.co.nz/careers.html
+    industry: Consulting / technology / risk
+    locations: [Auckland, Wellington, Christchurch]
+    priority: 2
+    target_role_groups: [data, cyber, cloud, analyst]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Monitor tech consulting and data roles.
+
+  - company_name: EY New Zealand
+    website: https://www.ey.com/en_nz
+    career_url: https://www.ey.com/en_nz/careers
+    industry: Consulting / technology / risk
+    locations: [Auckland, Wellington, Christchurch]
+    priority: 2
+    target_role_groups: [data, cyber, cloud, analyst, software]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Monitor technology consulting roles.
+
+  - company_name: KPMG New Zealand
+    website: https://kpmg.com/nz/
+    career_url: https://kpmg.com/nz/en/home/careers.html
+    industry: Consulting / technology / risk
+    locations: [Auckland, Wellington, Christchurch, Hamilton, Tauranga]
+    priority: 2
+    target_role_groups: [data, cyber, cloud, analyst]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Monitor tech consulting and advisory roles.
+
+  - company_name: Slalom New Zealand
+    website: https://www.slalom.com/
+    career_url: https://www.slalom.com/careers
+    industry: Consulting / technology
+    locations: [Auckland, Remote]
+    priority: 2
+    target_role_groups: [software, data, cloud, ai, product]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Verify active NZ roles.
+
+  - company_name: Microsoft New Zealand
+    website: https://www.microsoft.com/en-nz/
+    career_url: https://jobs.careers.microsoft.com/
+    industry: Big Tech / cloud / software
+    locations: [Auckland, Wellington, Remote]
+    priority: 1
+    target_role_groups: [software, cloud, data, ai, security, customer_engineering]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Search NZ locations.
+
+  - company_name: Amazon Web Services New Zealand
+    website: https://aws.amazon.com/
+    career_url: https://www.amazon.jobs/
+    industry: Cloud / big tech
+    locations: [Auckland, Wellington, Remote]
+    priority: 1
+    target_role_groups: [cloud, data, ai, security, devops, solution_architecture]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Search Amazon jobs for New Zealand.
+
+  - company_name: Google New Zealand
+    website: https://www.google.co.nz/
+    career_url: https://www.google.com/about/careers/applications/
+    industry: Big Tech / cloud / software
+    locations: [Auckland, Remote]
+    priority: 1
+    target_role_groups: [software, cloud, data, ai, security]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Search NZ roles.
+
+  - company_name: IBM New Zealand
+    website: https://www.ibm.com/nz-en
+    career_url: https://www.ibm.com/careers/
+    industry: Technology services / cloud / AI
+    locations: [Auckland, Wellington, Remote]
+    priority: 2
+    target_role_groups: [software, data, ai, cloud, security, analyst]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Enterprise technology roles.
+
+  - company_name: Salesforce New Zealand
+    website: https://www.salesforce.com/nz/
+    career_url: https://www.salesforce.com/company/careers/
+    industry: SaaS / CRM
+    locations: [Auckland, Remote]
+    priority: 2
+    target_role_groups: [software, data, cloud, solution_engineering]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Search NZ and remote roles.
+
+  - company_name: SAP New Zealand
+    website: https://www.sap.com/newzealand/
+    career_url: https://jobs.sap.com/
+    industry: Enterprise software
+    locations: [Auckland, Wellington, Remote]
+    priority: 2
+    target_role_groups: [software, data, cloud, analyst, consulting]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Search NZ roles.
+
+  - company_name: Oracle New Zealand
+    website: https://www.oracle.com/nz/
+    career_url: https://www.oracle.com/corporate/careers/
+    industry: Enterprise software / cloud
+    locations: [Auckland, Wellington, Remote]
+    priority: 2
+    target_role_groups: [software, data, cloud, security, consulting]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Search NZ roles.
+
+  - company_name: ANZ New Zealand
+    website: https://www.anz.co.nz/
+    career_url: https://www.anz.co.nz/about-us/careers/
+    industry: Banking / financial services
+    locations: [Auckland, Wellington, Remote]
+    priority: 1
+    target_role_groups: [software, data, cloud, security, analyst, qa]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Large technology employer.
+
+  - company_name: ASB Bank
+    website: https://www.asb.co.nz/
+    career_url: https://www.asb.co.nz/about-us/careers.html
+    industry: Banking / financial services
+    locations: [Auckland, Remote]
+    priority: 1
+    target_role_groups: [software, data, cloud, security, analyst, qa]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Strong Auckland tech hiring.
+
+  - company_name: BNZ
+    website: https://www.bnz.co.nz/
+    career_url: https://www.bnz.co.nz/about-us/careers
+    industry: Banking / financial services
+    locations: [Auckland, Wellington, Remote]
+    priority: 1
+    target_role_groups: [software, data, cloud, security, analyst, qa]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Large bank tech roles.
+
+  - company_name: Westpac New Zealand
+    website: https://www.westpac.co.nz/
+    career_url: https://www.westpac.co.nz/about-us/careers/
+    industry: Banking / financial services
+    locations: [Auckland, Wellington, Remote]
+    priority: 1
+    target_role_groups: [software, data, cloud, security, analyst, qa]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Large bank tech roles.
+
+  - company_name: Kiwibank
+    website: https://www.kiwibank.co.nz/
+    career_url: https://www.kiwibank.co.nz/about-us/careers/
+    industry: Banking / financial services
+    locations: [Wellington, Auckland, Remote]
+    priority: 1
+    target_role_groups: [software, data, cloud, security, analyst, qa]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Bank with digital and data roles.
+
+  - company_name: Heartland Bank
+    website: https://www.heartland.co.nz/
+    career_url: https://www.heartland.co.nz/careers
+    industry: Banking / financial services
+    locations: [Auckland, Remote]
+    priority: 2
+    target_role_groups: [software, data, analyst, security]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Digital banking and analytics roles.
+
+  - company_name: Tower Insurance
+    website: https://www.tower.co.nz/
+    career_url: https://www.tower.co.nz/careers/
+    industry: Insurance / financial services
+    locations: [Auckland, Remote]
+    priority: 2
+    target_role_groups: [software, data, cloud, analyst, security]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Insurance technology roles.
+
+  - company_name: Southern Cross Health Society
+    website: https://www.southerncross.co.nz/
+    career_url: https://www.southerncross.co.nz/careers
+    industry: Health insurance / healthcare
+    locations: [Auckland, Remote]
+    priority: 2
+    target_role_groups: [software, data, analyst, security, product]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Health and insurance technology roles.
+
+  - company_name: Suncorp New Zealand
+    website: https://www.suncorp.co.nz/
+    career_url: https://www.suncorp.co.nz/careers.html
+    industry: Insurance / financial services
+    locations: [Auckland, Wellington, Remote]
+    priority: 2
+    target_role_groups: [software, data, cloud, analyst, security]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Insurance and digital roles.
+
+  - company_name: Spark New Zealand
+    website: https://www.spark.co.nz/
+    career_url: https://www.spark.co.nz/online/careers/
+    industry: Telecommunications / digital services
+    locations: [Auckland, Wellington, Christchurch, Remote]
+    priority: 1
+    target_role_groups: [software, data, cloud, security, devops, analyst]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Major telco and digital employer.
+
+  - company_name: One NZ
+    website: https://one.nz/
+    career_url: https://one.nz/careers/
+    industry: Telecommunications
+    locations: [Auckland, Wellington, Christchurch, Remote]
+    priority: 1
+    target_role_groups: [software, data, cloud, security, analyst]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Major telco.
+
+  - company_name: 2degrees
+    website: https://www.2degrees.nz/
+    career_url: https://www.2degrees.nz/careers
+    industry: Telecommunications
+    locations: [Auckland, Wellington, Christchurch, Remote]
+    priority: 2
+    target_role_groups: [software, data, cloud, security, analyst]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Telco and digital systems roles.
+
+  - company_name: Chorus
+    website: https://www.chorus.co.nz/
+    career_url: https://www.chorus.co.nz/careers
+    industry: Telecommunications infrastructure
+    locations: [Wellington, Auckland, Remote]
+    priority: 2
+    target_role_groups: [data, cloud, security, analyst, software]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Infrastructure and data roles.
+
+  - company_name: Mercury
+    website: https://www.mercury.co.nz/
+    career_url: https://www.mercury.co.nz/careers
+    industry: Energy / utilities
+    locations: [Auckland, Hamilton, Remote]
+    priority: 2
+    target_role_groups: [data, software, cloud, analyst, security]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Utility digital/data roles.
+
+  - company_name: Genesis Energy
+    website: https://www.genesisenergy.co.nz/
+    career_url: https://www.genesisenergy.co.nz/careers
+    industry: Energy / utilities
+    locations: [Auckland, Hamilton, Remote]
+    priority: 2
+    target_role_groups: [data, software, cloud, analyst, security]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Utility digital/data roles.
+
+  - company_name: Meridian Energy
+    website: https://www.meridianenergy.co.nz/
+    career_url: https://www.meridianenergy.co.nz/careers
+    industry: Energy / utilities
+    locations: [Wellington, Christchurch, Remote]
+    priority: 2
+    target_role_groups: [data, software, cloud, analyst, security]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Utility digital/data roles.
+
+  - company_name: Contact Energy
+    website: https://contact.co.nz/
+    career_url: https://contact.co.nz/aboutus/careers
+    industry: Energy / utilities
+    locations: [Wellington, Auckland, Remote]
+    priority: 2
+    target_role_groups: [data, software, cloud, analyst, security]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Utility digital/data roles.
+
+  - company_name: Vector
+    website: https://www.vector.co.nz/
+    career_url: https://www.vector.co.nz/careers
+    industry: Energy infrastructure / technology
+    locations: [Auckland]
+    priority: 2
+    target_role_groups: [data, software, cloud, analyst, security]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Infrastructure, digital, and data roles.
+
+  - company_name: Transpower
+    website: https://www.transpower.co.nz/
+    career_url: https://www.transpower.co.nz/careers
+    industry: Energy infrastructure
+    locations: [Wellington, Remote]
+    priority: 2
+    target_role_groups: [data, software, cloud, analyst, security]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Critical infrastructure and data roles.
+
+  - company_name: Fonterra
+    website: https://www.fonterra.com/
+    career_url: https://www.fonterra.com/nz/en/careers.html
+    industry: Dairy / food / supply chain
+    locations: [Auckland, Hamilton, Remote]
+    priority: 2
+    target_role_groups: [data, software, cloud, analyst, security]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Large enterprise with digital/data roles.
+
+  - company_name: Air New Zealand
+    website: https://www.airnewzealand.co.nz/
+    career_url: https://careers.airnewzealand.co.nz/
+    industry: Aviation / travel
+    locations: [Auckland, Christchurch, Remote]
+    priority: 2
+    target_role_groups: [software, data, cloud, analyst, security, product]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Digital and data roles.
+
+  - company_name: Auckland Airport
+    website: https://www.aucklandairport.co.nz/
+    career_url: https://corporate.aucklandairport.co.nz/careers
+    industry: Airport / infrastructure
+    locations: [Auckland]
+    priority: 2
+    target_role_groups: [data, software, cloud, analyst, security]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Digital and operational technology roles.
+
+  - company_name: The Warehouse Group
+    website: https://www.thewarehousegroup.co.nz/
+    career_url: https://www.thewarehousegroup.co.nz/careers
+    industry: Retail / ecommerce
+    locations: [Auckland, Remote]
+    priority: 2
+    target_role_groups: [software, data, product, cloud, analyst]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Ecommerce and data roles.
+
+  - company_name: Woolworths New Zealand
+    website: https://www.woolworths.co.nz/
+    career_url: https://www.wowcareers.co.nz/
+    industry: Retail / supply chain
+    locations: [Auckland, Remote]
+    priority: 2
+    target_role_groups: [software, data, cloud, analyst, product]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Former Countdown; monitor NZ technology roles.
+
+  - company_name: Foodstuffs North Island
+    website: https://www.foodstuffs.co.nz/
+    career_url: https://www.foodstuffs.co.nz/careers
+    industry: Retail / supply chain
+    locations: [Auckland, Remote]
+    priority: 2
+    target_role_groups: [data, software, cloud, analyst, product]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Retail technology and analytics roles.
+
+  - company_name: Foodstuffs South Island
+    website: https://www.foodstuffs-si.co.nz/
+    career_url: https://www.foodstuffs-si.co.nz/careers
+    industry: Retail / supply chain
+    locations: [Christchurch, Remote]
+    priority: 3
+    target_role_groups: [data, software, cloud, analyst]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Retail technology and analytics roles.
+
+  - company_name: Health New Zealand Te Whatu Ora
+    website: https://www.tewhatuora.govt.nz/
+    career_url: https://www.tewhatuora.govt.nz/careers/
+    industry: Public health / government
+    locations: [Auckland, Wellington, Christchurch, Nationwide, Remote]
+    priority: 1
+    target_role_groups: [data, software, cloud, analyst, security]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Monitor carefully; health digital roles may be competitive and restructuring-sensitive.
+
+  - company_name: Ministry of Business Innovation and Employment
+    website: https://www.mbie.govt.nz/
+    career_url: https://www.mbie.govt.nz/about/work-for-us/
+    industry: Government
+    locations: [Wellington, Auckland, Remote]
+    priority: 1
+    target_role_groups: [data, software, analyst, cloud, security]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Government digital/data roles.
+
+  - company_name: Inland Revenue
+    website: https://www.ird.govt.nz/
+    career_url: https://www.ird.govt.nz/about-us/careers
+    industry: Government / tax
+    locations: [Wellington, Auckland, Christchurch, Remote]
+    priority: 1
+    target_role_groups: [software, data, cloud, analyst, security]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Large digital systems environment.
+
+  - company_name: New Zealand Transport Agency Waka Kotahi
+    website: https://www.nzta.govt.nz/
+    career_url: https://www.nzta.govt.nz/about-us/careers/
+    industry: Government / transport
+    locations: [Wellington, Auckland, Remote]
+    priority: 1
+    target_role_groups: [data, software, analyst, cloud, security]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Transport data and digital roles.
+
+  - company_name: Stats NZ
+    website: https://www.stats.govt.nz/
+    career_url: https://www.stats.govt.nz/about-us/careers/
+    industry: Government / statistics / data
+    locations: [Wellington, Christchurch, Auckland, Remote]
+    priority: 1
+    target_role_groups: [data, analyst, software, cloud]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Strong fit for data roles.
+
+  - company_name: Department of Internal Affairs
+    website: https://www.dia.govt.nz/
+    career_url: https://www.dia.govt.nz/Careers
+    industry: Government / digital public services
+    locations: [Wellington, Auckland, Remote]
+    priority: 1
+    target_role_groups: [software, data, cloud, analyst, security]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Digital public service roles.
+
+  - company_name: Ministry of Social Development
+    website: https://www.msd.govt.nz/
+    career_url: https://www.msd.govt.nz/hr/
+    industry: Government
+    locations: [Wellington, Auckland, Remote]
+    priority: 2
+    target_role_groups: [software, data, cloud, analyst, security]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Large digital/data environment.
+
+  - company_name: Ministry of Justice
+    website: https://www.justice.govt.nz/
+    career_url: https://www.justice.govt.nz/about/jobs/
+    industry: Government
+    locations: [Wellington, Auckland, Remote]
+    priority: 2
+    target_role_groups: [software, data, cloud, analyst, security]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Government digital/data roles.
+
+  - company_name: Auckland Council
+    website: https://www.aucklandcouncil.govt.nz/
+    career_url: https://careers.aucklandcouncil.govt.nz/
+    industry: Local government
+    locations: [Auckland]
+    priority: 1
+    target_role_groups: [data, analyst, software, cloud, security]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Strong Auckland option.
+
+  - company_name: Wellington City Council
+    website: https://wellington.govt.nz/
+    career_url: https://wellington.govt.nz/your-council/careers
+    industry: Local government
+    locations: [Wellington]
+    priority: 2
+    target_role_groups: [data, analyst, software, cloud]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Council digital/data roles.
+
+  - company_name: Christchurch City Council
+    website: https://www.ccc.govt.nz/
+    career_url: https://www.ccc.govt.nz/the-council/working-at-the-council/
+    industry: Local government
+    locations: [Christchurch]
+    priority: 2
+    target_role_groups: [data, analyst, software, cloud]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Council digital/data roles.
+
+  - company_name: University of Auckland
+    website: https://www.auckland.ac.nz/
+    career_url: https://www.auckland.ac.nz/en/about-us/jobs-at-auckland.html
+    industry: Higher education
+    locations: [Auckland]
+    priority: 2
+    target_role_groups: [data, software, analyst, cloud, research_it]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: University technology and data roles.
+
+  - company_name: AUT
+    website: https://www.aut.ac.nz/
+    career_url: https://www.aut.ac.nz/about/careers-at-aut
+    industry: Higher education
+    locations: [Auckland]
+    priority: 2
+    target_role_groups: [data, software, analyst, cloud]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: University technology roles.
+
+  - company_name: Victoria University of Wellington
+    website: https://www.wgtn.ac.nz/
+    career_url: https://www.wgtn.ac.nz/about/careers
+    industry: Higher education
+    locations: [Wellington]
+    priority: 2
+    target_role_groups: [data, software, analyst, cloud, research_it]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: University technology roles.
+
+  - company_name: University of Canterbury
+    website: https://www.canterbury.ac.nz/
+    career_url: https://www.canterbury.ac.nz/about-uc/work-at-uc
+    industry: Higher education
+    locations: [Christchurch]
+    priority: 2
+    target_role_groups: [data, software, analyst, cloud, research_it]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: University technology roles.
+
+  - company_name: University of Otago
+    website: https://www.otago.ac.nz/
+    career_url: https://www.otago.ac.nz/jobs
+    industry: Higher education
+    locations: [Dunedin]
+    priority: 3
+    target_role_groups: [data, software, analyst, cloud, research_it]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: University technology roles.
+
+  - company_name: Trade Me
+    website: https://www.trademe.co.nz/
+    career_url: https://www.trademe.co.nz/careers
+    industry: Marketplace / classifieds / jobs
+    locations: [Wellington, Auckland, Remote]
+    priority: 1
+    target_role_groups: [software, data, product, cloud, security]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Also useful as job source via official API where available.
+
+  - company_name: SEEK New Zealand
+    website: https://www.seek.co.nz/
+    career_url: https://www.seek.com.au/careers/
+    industry: Employment marketplace
+    locations: [Auckland, Remote]
+    priority: 2
+    target_role_groups: [software, data, product, cloud]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Use official API/partnership routes where possible.
+
+  - company_name: Education Perfect
+    website: https://www.educationperfect.com/
+    career_url: https://www.educationperfect.com/about-us/careers/
+    industry: EdTech / SaaS
+    locations: [Dunedin, Auckland, Remote]
+    priority: 2
+    target_role_groups: [software, data, product, qa]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: NZ-founded education technology company.
+
+  - company_name: ezyVet
+    website: https://www.ezyvet.com/
+    career_url: https://www.ezyvet.com/careers
+    industry: Veterinary software / SaaS
+    locations: [Auckland, Remote]
+    priority: 2
+    target_role_groups: [software, data, product, qa]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Part of IDEXX; monitor NZ roles.
+
+  - company_name: IDEXX New Zealand
+    website: https://www.idexx.com/
+    career_url: https://careers.idexx.com/
+    industry: Veterinary diagnostics / software
+    locations: [Auckland, Hamilton, Remote]
+    priority: 2
+    target_role_groups: [software, data, cloud, product, qa]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Search NZ roles, including ezyVet-related roles.
+
+  - company_name: Seequent
+    website: https://www.seequent.com/
+    career_url: https://www.seequent.com/careers/
+    industry: Geoscience software
+    locations: [Christchurch, Remote]
+    priority: 2
+    target_role_groups: [software, data, cloud, product, qa]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Christchurch-based geoscience software company.
+
+  - company_name: Tait Communications
+    website: https://www.taitcommunications.com/
+    career_url: https://www.taitcommunications.com/careers
+    industry: Communications technology / hardware and software
+    locations: [Christchurch]
+    priority: 2
+    target_role_groups: [software, embedded, data, qa, security]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Communications technology roles.
+
+  - company_name: Trimble New Zealand
+    website: https://www.trimble.com/
+    career_url: https://www.trimble.com/en/our-company/careers
+    industry: Geospatial / construction technology
+    locations: [Christchurch, Remote]
+    priority: 2
+    target_role_groups: [software, data, cloud, product, qa]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Search NZ roles.
+
+  - company_name: Ryman Healthcare
+    website: https://www.rymanhealthcare.co.nz/
+    career_url: https://www.rymanhealthcare.co.nz/careers
+    industry: Healthcare / aged care
+    locations: [Christchurch, Auckland, Remote]
+    priority: 3
+    target_role_groups: [data, software, analyst, cloud]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Enterprise digital/data roles.
+
+  - company_name: Summerset
+    website: https://www.summerset.co.nz/
+    career_url: https://www.summerset.co.nz/careers/
+    industry: Healthcare / aged care
+    locations: [Wellington, Auckland, Remote]
+    priority: 3
+    target_role_groups: [data, software, analyst, cloud]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Enterprise digital/data roles.
+
+  - company_name: Zespri
+    website: https://www.zespri.com/
+    career_url: https://www.zespri.com/en-NZ/careers
+    industry: Agriculture / export / supply chain
+    locations: [Tauranga, Auckland, Remote]
+    priority: 3
+    target_role_groups: [data, software, analyst, cloud]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Data and supply chain technology roles.
+
+  - company_name: Silver Fern Farms
+    website: https://silverfernfarms.com/
+    career_url: https://silverfernfarms.com/nz/en/careers.html
+    industry: Food / export / supply chain
+    locations: [Dunedin, Christchurch, Remote]
+    priority: 3
+    target_role_groups: [data, software, analyst, cloud]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Enterprise data/digital roles.
+
+  - company_name: Douglas Pharmaceuticals
+    website: https://www.douglas.co.nz/
+    career_url: https://www.douglas.co.nz/careers/
+    industry: Pharmaceuticals / manufacturing
+    locations: [Auckland]
+    priority: 3
+    target_role_groups: [data, software, analyst, cloud, qa]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Enterprise data and systems roles.
+
+  - company_name: Gallagher
+    website: https://www.gallagher.com/
+    career_url: https://security.gallagher.com/en/careers
+    industry: Security technology / hardware and software
+    locations: [Hamilton, Auckland, Remote]
+    priority: 2
+    target_role_groups: [software, embedded, data, security, qa]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Monitor Gallagher Security careers.
+
+  - company_name: Weta FX
+    website: https://www.wetafx.co.nz/
+    career_url: https://www.wetafx.co.nz/careers/
+    industry: Visual effects / technology
+    locations: [Wellington]
+    priority: 3
+    target_role_groups: [software, data, pipeline, cloud]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Pipeline, rendering, and software roles.
+
+  - company_name: PikPok
+    website: https://pikpok.com/
+    career_url: https://pikpok.com/careers/
+    industry: Games
+    locations: [Wellington, Remote]
+    priority: 3
+    target_role_groups: [software, data, game, qa]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Game development roles.
+
+  - company_name: Grinding Gear Games
+    website: https://www.grindinggear.com/
+    career_url: https://www.grindinggear.com/?page=careers
+    industry: Games
+    locations: [Auckland]
+    priority: 3
+    target_role_groups: [software, game, data, qa]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Game development roles.
+
+  - company_name: Blackpearl Group
+    website: https://blackpearl.com/
+    career_url: https://blackpearl.com/careers
+    industry: Data / marketing technology
+    locations: [Wellington, Remote]
+    priority: 3
+    target_role_groups: [software, data, ai, product]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Data-driven SaaS company.
+
+  - company_name: Whip Around
+    website: https://whiparound.com/
+    career_url: https://whiparound.com/careers/
+    industry: Fleet technology / SaaS
+    locations: [Auckland, Remote]
+    priority: 3
+    target_role_groups: [software, data, product, qa]
+    ats_type: ""
+    ats_feed_url: ""
+    notes: Fleet inspection software.

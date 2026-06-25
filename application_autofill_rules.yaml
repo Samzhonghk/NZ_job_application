@@ -1,0 +1,202 @@
+profile:
+  preferred_name: Sam
+  legal_name: ""
+  current_location: Auckland
+  time_zone: ""
+  email: samzhongnz@gmail.com
+  phone: "+64 2040031375"
+  linkedin: ""
+  portfolio: https://samzhonghk.github.io/my-website/
+  website: https://samzhonghk.github.io/my-website/
+  github: https://github.com/Samzhonghk
+
+work_rights_and_availability:
+  current_country: New Zealand
+  currently_in_new_zealand: true
+  nz_work_rights_status: Permanent Resident
+  visa_expiry_if_applicable: NA
+  requires_sponsorship_now_or_future: false
+  earliest_start_date: Any time
+  notice_period: Not required
+  open_to_remote_work: true
+  open_to_relocation_or_travel: Relocation and travel are open to discussion
+
+target_roles:
+  target_job_titles:
+    - Software Engineer
+    - AI Engineer
+    - Data Engineer
+  preferred_industries: Any
+  preferred_company_types: Any
+  work_style_preferences: Any
+  roles_to_avoid: No
+
+salary_and_preferences:
+  salary_expectation_range:
+    min: 80000
+    max: 120000
+    currency: NZD
+  minimum_acceptable:
+    amount: 80000
+    currency: NZD
+  salary_expectation_answer: "NZD 80,000 - 120,000, depending on the role, responsibilities, flexibility, and overall package."
+  benefits_flexibility_expectations: "I value flexible working arrangements, a healthy work-life balance, opportunities for learning and professional development, and a supportive team environment. I am open to discussing the overall package, including salary, flexibility, leave, development opportunities, and other benefits."
+  avoid_saying_directly: ""
+
+compliance_defaults:
+  reference_checks: true
+  criminal_record_check_or_police_vet: true
+  privacy_statement_consent: true
+  declaration_of_truthful_information: true
+  health_or_wellbeing_adjustments_needed: false
+  support_required_if_yes: ""
+
+professional_summaries:
+  main: "I am a software and data engineering professional with a strong interest in building reliable, practical systems that turn complex information into usable products and workflows. My work sits at the intersection of software development, data engineering, and applied AI, with a focus on solving real problems rather than using technology for its own sake. I enjoy designing clean data pipelines, building maintainable applications, and using automation or AI to improve how people work. I bring a structured engineering mindset, curiosity, and attention to quality, with strengths in problem-solving, system design, and translating ambiguous needs into working solutions. I am especially motivated by roles where I can combine technical depth with product thinking and create tools that are genuinely useful to users or teams."
+  ai_engineer: "I am an AI and software engineering professional focused on building practical, reliable applications with machine learning, automation, and modern software systems. I am interested in applying AI to real-world problems where it can improve decision-making, reduce manual work, or create better user experiences. My strengths include breaking down ambiguous problems, designing maintainable systems, working with data, and turning prototypes into useful products. I enjoy working across the full lifecycle from understanding requirements and experimenting with models or workflows, through to implementation, evaluation, and iteration. I am especially motivated by roles where AI is used thoughtfully and where engineering quality matters as much as innovation."
+  data_engineer: "I am a data engineering professional focused on building reliable data systems that make information accessible, trustworthy, and useful for decision-making. I enjoy designing pipelines, improving data quality, working with databases, and creating structures that help analytics, reporting, and AI work more effectively. My strengths include analytical thinking, problem-solving, automation, and understanding how technical systems connect with business needs. I care about building data solutions that are maintainable, well-documented, and practical for the people who depend on them. I am motivated by roles where strong data foundations can support better products, operations, and insights."
+  software_engineer: "I am a software engineering professional focused on building maintainable, user-centred systems that solve practical problems. I enjoy turning ambiguous requirements into working products, designing clean technical solutions, and improving systems through thoughtful iteration. My strengths include structured problem-solving, attention to code quality, debugging, automation, and collaborating with both technical and non-technical stakeholders. I am interested in roles where I can combine engineering discipline with product thinking, creating software that is reliable, useful, and easy to evolve over time."
+
+motivation_themes:
+  data_or_business_analysis: "I am interested in data and business analysis because it helps turn complex information into clearer decisions, better systems, and more practical workflows. I enjoy understanding how a problem works underneath the surface, identifying patterns or bottlenecks, and using evidence to support better outcomes."
+  software_engineering: "I am motivated by software engineering because it allows me to build tools and systems that people can actually use. I enjoy turning ideas and ambiguous requirements into reliable products, improving existing workflows, and creating solutions that are maintainable, scalable, and useful in real-world settings."
+  ai_engineering: "I am interested in AI engineering because it combines software, data, and problem-solving in a way that can meaningfully reduce manual work and improve decision-making. I am especially drawn to practical AI applications where models, automation, and human workflows are designed thoughtfully rather than used as novelty."
+  data_engineering: "I am motivated by data engineering because good data foundations make everything else possible, from analytics and reporting to AI and product decisions. I enjoy building reliable pipelines, improving data quality, and creating structures that help teams trust and use their information effectively."
+  healthcare_or_community_impact: "I am drawn to healthcare and community-focused work because technical systems and data can have a direct impact on people's lives and service quality. I like the idea of using engineering and analysis to support teams who are solving meaningful, real-world problems."
+  remote_work: "I value remote work because it supports focused deep work, clear written communication, and collaboration across locations. I work well in remote environments when expectations, documentation, and communication rhythms are clear."
+  career_stage: "At this stage of my career, I am looking for roles where I can deepen my technical skills while contributing to practical, user-focused outcomes. I want to work on systems that matter, learn from strong teams, and keep growing across software, data, and applied AI."
+  energising_work: "I am energised by work that involves solving ambiguous problems, building useful systems, improving inefficient workflows, and learning new technologies with a clear purpose. I enjoy roles where I can combine technical implementation with product thinking, communication, and continuous improvement."
+
+reusable_answers:
+  work_rights: "I am currently in New Zealand and hold New Zealand Permanent Resident status. I do not require sponsorship now or in the future."
+  health_and_wellbeing: "No, there is nothing I am aware of that would affect my ability to safely perform the essential requirements of this role."
+  salary_expectations: "My expected salary range is NZD 80,000 - 120,000, depending on the role, responsibilities, flexibility, and overall package."
+  declaration: "Yes, I confirm that the information I have provided is true, complete and accurate to the best of my knowledge."
+
+autofill_policy:
+  default_mode: fill_and_pause_before_submit
+  never_click_final_submit: true
+  save_screenshot_before_submit: true
+  log_filled_fields: true
+
+  can_autofill:
+    - name
+    - email
+    - phone
+    - location
+    - portfolio
+    - website
+    - github
+    - current_country
+    - currently_in_new_zealand
+    - nz_work_rights_status
+    - sponsorship_requirement
+    - visa_expiry
+    - earliest_start_date
+    - notice_period
+    - remote_work_preference
+    - relocation_or_travel_preference
+    - privacy_statement_consent
+    - truthful_information_declaration
+
+  autofill_but_highlight_for_review:
+    - salary_expectation
+    - minimum_salary
+    - work_rights
+    - visa_status
+    - sponsorship
+    - relocation
+    - travel
+    - reference_checks
+    - criminal_record_check
+    - police_vet
+    - health_or_wellbeing_adjustments
+    - privacy_consent
+    - declaration
+
+  must_pause:
+    - passport_number
+    - driver_licence_number
+    - national_id
+    - ird_number
+    - date_of_birth
+    - full_legal_name_if_required_and_missing
+    - referee_names_or_contact_details
+    - criminal_record_details
+    - health_condition_details
+    - disability_or_accommodation_details
+    - conflict_of_interest
+    - custom_screening_questions
+    - free_text_questions_without_matching_reusable_answer
+    - captcha
+    - login_required
+    - payment_required
+    - unclear_or_unmapped_field
+
+field_mappings:
+  preferred_name:
+    value_path: profile.preferred_name
+    aliases:
+      - preferred name
+      - first name
+      - given name
+  email:
+    value_path: profile.email
+    aliases:
+      - email
+      - email address
+      - contact email
+  phone:
+    value_path: profile.phone
+    aliases:
+      - phone
+      - mobile
+      - mobile phone
+      - contact number
+  location:
+    value_path: profile.current_location
+    aliases:
+      - current location
+      - city
+      - location
+      - where are you based
+  work_rights:
+    value_path: work_rights_and_availability.nz_work_rights_status
+    aliases:
+      - work rights
+      - right to work
+      - eligibility to work
+      - visa status
+  sponsorship:
+    value_path: work_rights_and_availability.requires_sponsorship_now_or_future
+    aliases:
+      - sponsorship
+      - visa sponsorship
+      - require sponsorship
+      - need sponsorship
+  salary_expectation:
+    value_path: salary_and_preferences.salary_expectation_answer
+    aliases:
+      - salary expectation
+      - expected salary
+      - remuneration expectation
+      - compensation expectation
+  earliest_start_date:
+    value_path: work_rights_and_availability.earliest_start_date
+    aliases:
+      - earliest start date
+      - available start date
+      - when can you start
+      - availability
+  notice_period:
+    value_path: work_rights_and_availability.notice_period
+    aliases:
+      - notice period
+      - current notice period
+  health_and_wellbeing:
+    value_path: reusable_answers.health_and_wellbeing
+    aliases:
+      - health condition
+      - wellbeing
+      - medical condition
+      - ability to perform
