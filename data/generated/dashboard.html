@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NZ IT Job Application Dashboard</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fa;
+      --surface: #ffffff;
+      --text: #17202a;
+      --muted: #5f6b7a;
+      --border: #d8dee7;
+      --accent: #176b87;
+      --accent-soft: #e7f4f7;
+      --warning: #8a5a00;
+      --warning-soft: #fff4d6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 28px;
+    }
+    h1 {
+      margin: 0 0 6px;
+      font-size: 24px;
+      letter-spacing: 0;
+    }
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    section {
+      margin-bottom: 28px;
+    }
+    h2 {
+      font-size: 18px;
+      margin: 0 0 12px;
+      letter-spacing: 0;
+    }
+    .meta {
+      color: var(--muted);
+      margin: 0;
+    }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .metric {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 14px;
+    }
+    .metric strong {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    th {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      background: #fbfcfd;
+    }
+    tr:last-child td { border-bottom: 0; }
+    .score {
+      font-weight: 700;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .tag {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 2px 8px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .status {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 2px 8px;
+      background: var(--warning-soft);
+      color: var(--warning);
+      white-space: nowrap;
+    }
+    a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>NZ IT Job Application Dashboard</h1>
+    <p class="meta">Recommended jobs with match score >= 55. Final submission remains manual.</p>
+  </header>
+  <main>
+    <div class="summary">
+      <div class="metric"><strong>21</strong><span>Recommended jobs</span></div>
+      <div class="metric"><strong>1</strong><span>Applications</span></div>
+      <div class="metric"><strong>0</strong><span>Prepared</span></div>
+      <div class="metric"><strong>0</strong><span>Paused for review</span></div>
+      <div class="metric"><strong>0</strong><span>Submitted</span></div>
+      <div class="metric"><strong>0</strong><span>Follow up</span></div>
+    </div>
+    <section>
+      <h2>Recommended Queue</h2>
+      <table>
+  <thead><tr><th>ID</th><th>Score</th><th>Role</th><th>Status</th><th>Company</th><th>Title</th><th>Open</th><th>Next Action</th></tr></thead>
+  <tbody><tr>
+  <td>#32</td>
+  <td><span class="score">90</span></td>
+  <td><span class="tag">cloud</span></td>
+  <td><span class="status">discovered</span></td>
+  <td>ClearPoint</td>
+  <td><a href="https://jobs.lever.co/clearpoint/38cfdbbb-d602-4a97-a9af-381623da77d7">Principal Engineer</a></td>
+  <td><a href="https://jobs.lever.co/clearpoint/38cfdbbb-d602-4a97-a9af-381623da77d7/apply">Open</a></td>
+  <td>Open the role, review it, then run <code>python -m app.cli manual-assist --url &quot;https://jobs.lever.co/clearpoint/38cfdbbb-d602-4a97-a9af-381623da77d7/apply&quot;</code></td>
+</tr>
+<tr>
+  <td>#31</td>
+  <td><span class="score">89.5</span></td>
+  <td><span class="tag">cloud</span></td>
+  <td><span class="status">discovered</span></td>
+  <td>ClearPoint</td>
+  <td><a href="https://jobs.lever.co/clearpoint/ad4faadb-7dd8-49a4-95e8-8df83e57f963">Principal Consultant</a></td>
+  <td><a href="https://jobs.lever.co/clearpoint/ad4faadb-7dd8-49a4-95e8-8df83e57f963/apply">Open</a></td>
+  <td>Open the role, review it, then run <code>python -m app.cli manual-assist --url &quot;https://jobs.lever.co/clearpoint/ad4faadb-7dd8-49a4-95e8-8df83e57f963/apply&quot;</code></td>
+</tr>
+<tr>
+  <td>#30</td>
+  <td><span class="score">89.5</span></td>
+  <td><span class="tag">cloud</span></td>
+  <td><span class="status">discovered</span></td>
+  <td>ClearPoint</td>
+  <td><a href="https://jobs.lever.co/clearpoint/0aeda7e6-1e3c-4835-85f5-150f4611c624">AI Engineering Director</a></td>
+  <td><a href="https://jobs.lever.co/clearpoint/0aeda7e6-1e3c-4835-85f5-150f4611c624/apply">Open</a></td>
+  <td>Open the role, review it, then run <code>python -m app.cli manual-assist --url &quot;https://jobs.lever.co/clearpoint/0aeda7e6-1e3c-4835-85f5-150f4611c624/apply&quot;</code></td>
+</tr>
+<tr>
+  <td>#71</td>
+  <td><span class="score">86.5</span></td>
+  <td><span class="tag">software</span></td>
+  <td><span class="status">discovered</span></td>
+  <td>KPMG New Zealand</td>
+  <td><a href="https://jobs.lever.co/kpmgnz/38e9ea81-cbc5-4f3a-99ef-1e9334ecef61">Software Developer</a></td>
+  <td><a href="https://jobs.lever.co/kpmgnz/38e9ea81-cbc5-4f3a-99ef-1e9334ecef61/apply">Open</a></td>
+  <td>Open the role, review it, then run <code>python -m app.cli manual-assist --url &quot;https://jobs.lever.co/kpmgnz/38e9ea81-cbc5-4f3a-99ef-1e9334ecef61/apply&quot;</code></td>
+</tr>
+<tr>
+  <td>#38</td>
+  <td><span class="score">79</span></td>
+  <td><span class="tag">business_analyst</span></td>
+  <td><span class="status">discovered</span></td>
+  <td>KPMG New Zealand</td>
+  <td><a href="https://jobs.lever.co/kpmgnz/f521dadb-07e1-40d4-af95-627606386d8b">Assistant Manager - Senior Manager - Digital Consultant - General</a></td>
+  <td><a href="https://jobs.lever.co/kpmgnz/f521dadb-07e1-40d4-af95-627606386d8b/apply">Open</a></td>
+  <td>Open the role, review it, then run <code>python -m app.cli manual-assist --url &quot;https://jobs.lever.co/kpmgnz/f521dadb-07e1-40d4-af95-627606386d8b/apply&quot;</code></td>
+</tr>
+<tr>
+  <td>#44</td>
+  <td><span class="score">75.5</span></td>
+  <td><span class="tag">cloud</span></td>
+  <td><span class="status">discovered</span></td>
+  <td>KPMG New Zealand</td>
+  <td><a href="https://jobs.lever.co/kpmgnz/9183b17c-24e5-413a-a0c7-2a9a3cab66a9">Associate Director - Transformation (Financial Services)</a></td>
+  <td><a href="https://jobs.lever.co/kpmgnz/9183b17c-24e5-413a-a0c7-2a9a3cab66a9/apply">Open</a></td>
+  <td>Open the role, review it, then run <code>python -m app.cli manual-assist --url &quot;https://jobs.lever.co/kpmgnz/9183b17c-24e5-413a-a0c7-2a9a3cab66a9/apply&quot;</code></td>
+</tr>
+<tr>
+  <td>#47</td>
+  <td><span class="score">73</span></td>
+  <td><span class="tag">data_analyst</span></td>
+  <td><span class="status">discovered</span></td>
+  <td>KPMG New Zealand</td>
+  <td><a href="https://jobs.lever.co/kpmgnz/2ea9a5f1-092d-4900-bda0-e4b009c44150">Data &amp; Analytics Lead</a></td>
+  <td><a href="https://jobs.lever.co/kpmgnz/2ea9a5f1-092d-4900-bda0-e4b009c44150/apply">Open</a></td>
+  <td>Open the role, review it, then run <code>python -m app.cli manual-assist --url &quot;https://jobs.lever.co/kpmgnz/2ea9a5f1-092d-4900-bda0-e4b009c44150/apply&quot;</code></td>
+</tr>
+<tr>
+  <td>#59</td>
+  <td><span class="score">72.5</span></td>
+  <td><span class="tag">business_analyst</span></td>
+  <td><span class="status">discovered</span></td>
+  <td>KPMG New Zealand</td>
+  <td><a href="https://jobs.lever.co/kpmgnz/0b6437bd-a0c1-4f7c-b107-521bd18f1c66">Management Consultant – Public Sector Transformation</a></td>
+  <td><a href="https://jobs.lever.co/kpmgnz/0b6437bd-a0c1-4f7c-b107-521bd18f1c66/apply">Open</a></td>
+  <td>Open the role, review it, then run <code>python -m app.cli manual-assist --url &quot;https://jobs.lever.co/kpmgnz/0b6437bd-a0c1-4f7c-b107-521bd18f1c66/apply&quot;</code></td>
+</tr>
+<tr>
+  <td>#61</td>
+  <td><span class="score">72</span></td>
+  <td><span class="tag">cloud</span></td>
+  <td><span class="status">discovered</span></td>
+  <td>KPMG New Zealand</td>
+  <td><a href="https://jobs.lever.co/kpmgnz/4af3d574-2b67-4860-9cdb-921666bff3aa">Manager - Infrastructure</a></td>
+  <td><a href="https://jobs.lever.co/kpmgnz/4af3d574-2b67-4860-9cdb-921666bff3aa/apply">Open</a></td>
+  <td>Open the role, review it, then run <code>python -m app.cli manual-assist --url &quot;https://jobs.lever.co/kpmgnz/4af3d574-2b67-4860-9cdb-921666bff3aa/apply&quot;</code></td>
+</tr>
+<tr>
+  <td>#163</td>
+  <td><span class="score">67.5</span></td>
+  <td><span class="tag">ai</span></td>
+  <td><span class="status">discovered</span></td>
+  <td>Deloitte New Zealand</td>
+  <td><a href="https://jobs.smartrecruiters.com/DeloitteNZ/6000000000966261-ai-engineer">AI Engineer</a></td>
+  <td><a href="https://jobs.smartrecruiters.com/DeloitteNZ/6000000000966261-ai-engineer">Open</a></td>
+  <td>Open the role, review it, then run <code>python -m app.cli manual-assist --url &quot;https://jobs.smartrecruiters.com/DeloitteNZ/6000000000966261-ai-engineer&quot;</code></td>
+</tr>
+<tr>
+  <td>#4</td>
+  <td><span class="score">66.5</span></td>
+  <td><span class="tag">software</span></td>
+  <td><span class="status">discovered</span></td>
+  <td>Partly</td>
+  <td><a href="https://jobs.smartrecruiters.com/Partly/743999880344528-senior-software-engineer-typescript">Senior Software Engineer | Typescript</a></td>
+  <td><a href="https://jobs.smartrecruiters.com/Partly/743999880344528-senior-software-engineer-typescript">Open</a></td>
+  <td>Open the role, review it, then run <code>python -m app.cli manual-assist --url &quot;https://jobs.smartrecruiters.com/Partly/743999880344528-senior-software-engineer-typescript&quot;</code></td>
+</tr>
+<tr>
+  <td>#41</td>
+  <td><span class="score">66</span></td>
+  <td><span class="tag">security</span></td>
+  <td><span class="status">discovered</span></td>
+  <td>KPMG New Zealand</td>
+  <td><a href="https://jobs.lever.co/kpmgnz/d21d9f42-5312-4876-8592-dc760ade0f5f">Assistant Manager/Manager - Cyber Security</a></td>
+  <td><a href="https://jobs.lever.co/kpmgnz/d21d9f42-5312-4876-8592-dc760ade0f5f/apply">Open</a></td>
+  <td>Open the role, review it, then run <code>python -m app.cli manual-assist --url &quot;https://jobs.lever.co/kpmgnz/d21d9f42-5312-4876-8592-dc760ade0f5f/apply&quot;</code></td>
+</tr>
+<tr>
+  <td>#77</td>
+  <td><span class="score">65</span></td>
+  <td><span class="tag">business_analyst</span></td>
+  <td><span class="status">discovered</span></td>
+  <td>Deloitte New Zealand</td>
+  <td><a href="https://jobs.smartrecruiters.com/DeloitteNZ/6000000001184438-consultant-snr-consultant-business-analyst-forward-deployed-engineer-fde">Consultant/ Snr Consultant - Business Analyst / Forward Deployed Engineer (FDE)</a></td>
+  <td><a href="https://jobs.smartrecruiters.com/DeloitteNZ/6000000001184438-consultant-snr-consultant-business-analyst-forward-deployed-engineer-fde">Open</a></td>
+  <td>Open the role, review it, then run <code>python -m app.cli manual-assist --url &quot;https://jobs.smartrecruiters.com/DeloitteNZ/6000000001184438-consultant-snr-consultant-business-analyst-forward-deployed-engineer-fde&quot;</code></td>
+</tr>
+<tr>
+  <td>#76</td>
+  <td><span class="score">65</span></td>
+  <td><span class="tag">business_analyst</span></td>
+  <td><span class="status">discovered</span></td>
+  <td>Deloitte New Zealand</td>
+  <td><a href="https://jobs.smartrecruiters.com/DeloitteNZ/6000000001184443-copy-of-consultant-snr-consultant-business-analyst-forward-deployed-engineer-fde">Copy of Consultant/ Snr Consultant - Business Analyst / Forward Deployed Engineer (FDE)</a></td>
+  <td><a href="https://jobs.smartrecruiters.com/DeloitteNZ/6000000001184443-copy-of-consultant-snr-consultant-business-analyst-forward-deployed-engineer-fde">Open</a></td>
+  <td>Open the role, review it, then run <code>python -m app.cli manual-assist --url &quot;https://jobs.smartrecruiters.com/DeloitteNZ/6000000001184443-copy-of-consultant-snr-consultant-business-analyst-forward-deployed-engineer-fde&quot;</code></td>
+</tr>
+<tr>
+  <td>#75</td>
+  <td><span class="score">65</span></td>
+  <td><span class="tag">business_analyst</span></td>
+  <td><span class="status">discovered</span></td>
+  <td>Deloitte New Zealand</td>
+  <td><a href="https://jobs.smartrecruiters.com/DeloitteNZ/6000000001184666-manager-business-analyst-forward-deployed-engineer-fde">Manager - Business Analyst / Forward Deployed Engineer (FDE)</a></td>
+  <td><a href="https://jobs.smartrecruiters.com/DeloitteNZ/6000000001184666-manager-business-analyst-forward-deployed-engineer-fde">Open</a></td>
+  <td>Open the role, review it, then run <code>python -m app.cli manual-assist --url &quot;https://jobs.smartrecruiters.com/DeloitteNZ/6000000001184666-manager-business-analyst-forward-deployed-engineer-fde&quot;</code></td>
+</tr>
+<tr>
+  <td>#73</td>
+  <td><span class="score">65</span></td>
+  <td><span class="tag">business_analyst</span></td>
+  <td><span class="status">discovered</span></td>
+  <td>Deloitte New Zealand</td>
+  <td><a href="https://jobs.smartrecruiters.com/DeloitteNZ/6000000001184768-copy-of-manager-business-analyst-forward-deployed-engineer-fde">Copy of Manager - Business Analyst / Forward Deployed Engineer (FDE)</a></td>
+  <td><a href="https://jobs.smartrecruiters.com/DeloitteNZ/6000000001184768-copy-of-manager-business-analyst-forward-deployed-engineer-fde">Open</a></td>
+  <td>Open the role, review it, then run <code>python -m app.cli manual-assist --url &quot;https://jobs.smartrecruiters.com/DeloitteNZ/6000000001184768-copy-of-manager-business-analyst-forward-deployed-engineer-fde&quot;</code></td>
+</tr>
+<tr>
+  <td>#64</td>
+  <td><span class="score">65</span></td>
+  <td><span class="tag">business_analyst</span></td>
+  <td><span class="status">discovered</span></td>
+  <td>KPMG New Zealand</td>
+  <td><a href="https://jobs.lever.co/kpmgnz/7debb483-4ab1-454e-88ad-0844bb45ae26">Manager/ Senior Manager - Transfer Pricing</a></td>
+  <td><a href="https://jobs.lever.co/kpmgnz/7debb483-4ab1-454e-88ad-0844bb45ae26/apply">Open</a></td>
+  <td>Open the role, review it, then run <code>python -m app.cli manual-assist --url &quot;https://jobs.lever.co/kpmgnz/7debb483-4ab1-454e-88ad-0844bb45ae26/apply&quot;</code></td>
+</tr>
+<tr>
+  <td>#111</td>
+  <td><span class="score">64</span></td>
+  <td><span class="tag">software</span></td>
+  <td><span class="status">discovered</span></td>
+  <td>Deloitte New Zealand</td>
+  <td><a href="https://jobs.smartrecruiters.com/DeloitteNZ/6000000001136628-net-developer-transformation-venture-studio">.Net Developer - Transformation Venture Studio</a></td>
+  <td><a href="https://jobs.smartrecruiters.com/DeloitteNZ/6000000001136628-net-developer-transformation-venture-studio">Open</a></td>
+  <td>Open the role, review it, then run <code>python -m app.cli manual-assist --url &quot;https://jobs.smartrecruiters.com/DeloitteNZ/6000000001136628-net-developer-transformation-venture-studio&quot;</code></td>
+</tr>
+<tr>
+  <td>#107</td>
+  <td><span class="score">64</span></td>
+  <td><span class="tag">software</span></td>
+  <td><span class="status">discovered</span></td>
+  <td>Deloitte New Zealand</td>
+  <td><a href="https://jobs.smartrecruiters.com/DeloitteNZ/6000000001144823-software-developer">Software Developer</a></td>
+  <td><a href="https://jobs.smartrecruiters.com/DeloitteNZ/6000000001144823-software-developer">Open</a></td>
+  <td>Open the role, review it, then run <code>python -m app.cli manual-assist --url &quot;https://jobs.smartrecruiters.com/DeloitteNZ/6000000001144823-software-developer&quot;</code></td>
+</tr>
+<tr>
+  <td>#105</td>
+  <td><span class="score">64</span></td>
+  <td><span class="tag">software</span></td>
+  <td><span class="status">discovered</span></td>
+  <td>Deloitte New Zealand</td>
+  <td><a href="https://jobs.smartrecruiters.com/DeloitteNZ/6000000001144898-bi-developer">BI Developer</a></td>
+  <td><a href="https://jobs.smartrecruiters.com/DeloitteNZ/6000000001144898-bi-developer">Open</a></td>
+  <td>Open the role, review it, then run <code>python -m app.cli manual-assist --url &quot;https://jobs.smartrecruiters.com/DeloitteNZ/6000000001144898-bi-developer&quot;</code></td>
+</tr>
+<tr>
+  <td>#112</td>
+  <td><span class="score">60</span></td>
+  <td><span class="tag">business_analyst</span></td>
+  <td><span class="status">discovered</span></td>
+  <td>Deloitte New Zealand</td>
+  <td><a href="https://jobs.smartrecruiters.com/DeloitteNZ/6000000001136534-commercial-finance-business-analyst">Commercial Finance Business Analyst</a></td>
+  <td><a href="https://jobs.smartrecruiters.com/DeloitteNZ/6000000001136534-commercial-finance-business-analyst">Open</a></td>
+  <td>Open the role, review it, then run <code>python -m app.cli manual-assist --url &quot;https://jobs.smartrecruiters.com/DeloitteNZ/6000000001136534-commercial-finance-business-analyst&quot;</code></td>
+</tr></tbody>
+</table>
+    </section>
+    <section>
+      <h2>Applications</h2>
+      <table>
+  <thead><tr><th>ID</th><th>Status</th><th>Job</th><th>Company</th><th>Title</th><th>Submitted</th><th>Next Action</th></tr></thead>
+  <tbody><tr>
+  <td>#3</td>
+  <td><span class="status">manual_apply_in_progress</span></td>
+  <td>#4</td>
+  <td>Partly</td>
+  <td>Senior Software Engineer | Typescript</td>
+  <td></td>
+  <td>Finish the manual application, then run <code>python -m app.cli mark-application 3 submitted --note "Submitted manually"</code></td>
+</tr></tbody>
+</table>
+    </section>
+  </main>
+</body>
+</html>

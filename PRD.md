@@ -917,34 +917,467 @@ source_scans: 0
 2 passed
 ```
 
+Phase 2: Job Ingestion MVP is complete for the first local end-to-end implementation.
+
+Completed deliverables:
+
+- Added source parsing package under `app/sources/`.
+- Added generic HTML and JSON-LD `JobPosting` parser in `app/sources/generic_html.py`.
+- Added `RawJob` source DTO in `app/sources/base.py`.
+- Added job normalisation in `app/jobs/normalizer.py`.
+- Added idempotent job upsert logic in `app/db/job_repository.py`.
+- Added CLI command:
+  - `ingest-job`
+- Added tests for:
+  - JSON-LD `JobPosting` parsing
+  - generic HTML fallback parsing
+  - duplicate job ingestion handling
+- Added local sample job fixture at `tests/fixtures/sample_job.html`.
+- Verified local end-to-end ingestion into SQLite.
+
+Verification result:
+
+```text
+Job created: #1 Software Engineer
+Job updated: #1 Software Engineer
+companies: 115
+jobs: 1
+applications: 0
+autofill_logs: 0
+source_scans: 0
+5 passed
+```
+
+Phase 3: Classification And Scoring is complete for the first rule-based implementation.
+
+Completed deliverables:
+
+- Added rule-based IT role classifier in `app/jobs/classifier.py`.
+- Added match scoring engine in `app/jobs/scorer.py`.
+- Supported role groups:
+  - software
+  - data
+  - data_analyst
+  - ai
+  - cloud
+  - security
+  - qa
+  - product
+  - business_analyst
+  - analyst
+  - non_it
+  - unknown
+- Added scoring components:
+  - role title match
+  - skill/technology match
+  - location/remote match
+  - work rights compatibility
+  - salary compatibility
+  - freshness
+- Updated `ingest-job` so newly ingested jobs are classified and scored automatically.
+- Added CLI commands:
+  - `score-jobs`
+  - `list-jobs`
+- Added tests for software classification, non-IT classification, and strong data-job scoring.
+- Re-scored existing sample job in SQLite.
+
+Verification result:
+
+```text
+#1 | 79.0 | software | Xero | Software Engineer
+8 passed
+```
+
+Phase 4: ATS Adapters is complete for the first fixture-backed implementation.
+
+Completed deliverables:
+
+- Added ATS/source adapter interface in `app/sources/base.py`.
+- Added shared JSON fetch helper in `app/sources/http.py`.
+- Added Greenhouse adapter in `app/sources/greenhouse.py`.
+- Added Lever adapter in `app/sources/lever.py`.
+- Added SmartRecruiters adapter in `app/sources/smartrecruiters.py`.
+- Added adapter registry and source detection in `app/sources/registry.py`.
+- Added company scanner in `app/sources/scanner.py`.
+- Added CLI command:
+  - `scan-company`
+- Added fixture responses for:
+  - Greenhouse
+  - Lever
+  - SmartRecruiters
+- Added tests for adapter parsing and scan import/deduplication.
+- Verified scanner writes `SourceScan` records.
+- Verified scanned jobs are normalised, deduplicated, classified, scored, and stored.
+
+Verification result:
+
+```text
+Company scanned: Xero
+Jobs found: 1
+New jobs: 1
+#2 | 87.0 | data | Xero | Data Engineer
+#1 | 79.0 | software | Xero | Software Engineer
+companies: 115
+jobs: 2
+source_scans: 1
+12 passed
+```
+
+Phase 5: Application Materials is complete for the first deterministic draft implementation.
+
+Completed deliverables:
+
+- Added application materials package under `app/applications/`.
+- Added role-specific material selector in `app/applications/materials.py`.
+- Added professional summary selection by `role_group`.
+- Added motivation theme selection by `role_group`.
+- Added deterministic cover letter draft generation.
+- Added reusable screening answer draft generation.
+- Added idempotent application preparation logic.
+- Added CLI commands:
+  - `prepare-application`
+  - `list-applications`
+- Added tests for role-specific material selection and application creation.
+- Prepared a real application draft in SQLite for the stored Data Engineer sample job.
+
+Verification result:
+
+```text
+Application created: #1
+Job: #2 Data Engineer
+Company: Xero
+Status: prepared
+Cover letter characters: 1614
+#1 | prepared | job #2 | Xero | Data Engineer
+companies: 115
+jobs: 2
+applications: 1
+14 passed
+```
+
+Phase 6: Autofill MVP is complete for the first conservative local implementation.
+
+Completed deliverables:
+
+- Added browser/autofill package under `app/browser/`.
+- Added static form field parser in `app/browser/field_detector.py`.
+- Added field matching and pause/review policy in `app/browser/field_matcher.py`.
+- Added autofill planning and logging in `app/browser/autofill.py`.
+- Added Playwright runner in `app/browser/playwright_runner.py`.
+- Added local test application form at `tests/fixtures/application_form.html`.
+- Added CLI command:
+  - `autofill-application`
+- Added support for:
+  - static `file://` autofill planning
+  - Playwright browser autofill
+  - safe field filling
+  - review-required field highlighting
+  - must-pause field handling
+  - `AutofillLog` records
+  - no final submit click
+- Installed Playwright Python dependency and Chromium browser binary.
+- Verified static autofill planning against local form.
+- Verified real Playwright headless autofill against local form.
+
+Verification result:
+
+```text
+Autofill processed for application #1
+Filled: 4
+Review required: 2
+Paused: 1
+Skipped: 0
+Final submit clicked: no
+companies: 115
+jobs: 2
+applications: 1
+autofill_logs: 14
+source_scans: 1
+17 passed
+```
+
+Phase 7: Mode A End-To-End is complete for the first local implementation.
+
+Completed deliverables:
+
+- Added workflow package under `app/workflows/`.
+- Added Mode A orchestrator in `app/workflows/mode_a.py`.
+- Added CLI command:
+  - `mode-a`
+- Implemented end-to-end single-job flow:
+  - ingest job URL
+  - classify and score job
+  - prepare application draft
+  - optionally plan autofill
+  - stop before final submit
+- Added recommendation labels:
+  - `strong_match`
+  - `good_match`
+  - `possible_match`
+  - `low_priority`
+  - review labels for non-IT/unscored jobs
+- Added tests for Mode A with and without static autofill planning.
+- Verified local end-to-end Mode A workflow against sample job and sample form.
+
+Verification result:
+
+```text
+Mode A completed
+Job: #1 Software Engineer
+Company: Xero
+Role group: software
+Match score: 79.0
+Recommendation: good_match
+Application: #2
+Job record: updated
+Application record: created
+Autofill filled: 4
+Autofill review required: 2
+Autofill paused: 1
+Final submit clicked: no
+companies: 115
+jobs: 2
+applications: 2
+autofill_logs: 21
+source_scans: 1
+19 passed
+```
+
+Phase 8: Mode B End-To-End is complete for the first CLI queue implementation.
+
+Completed deliverables:
+
+- Added Mode B workflow functions in `app/workflows/mode_b.py`.
+- Added recommended queue generation ordered by match score and discovery time.
+- Added batch application preparation.
+- Added job status update helper.
+- Added batch company scan helper by priority.
+- Added CLI commands:
+  - `batch-scan`
+  - `queue`
+  - `batch-prepare`
+  - `mark-job`
+- Added tests for recommended queue ordering, ignored job filtering, batch preparation, and status transitions.
+- Verified CLI queue, status update, and batch preparation against local SQLite data.
+
+Verification result:
+
+```text
+#2 | 87.0 | data | discovered | Xero | Data Engineer
+#1 | 79.0 | software | discovered | Xero | Software Engineer
+Job #2 marked as shortlisted
+Application updated: #2 | job #1 | Xero | Software Engineer
+Application updated: #1 | job #2 | Xero | Data Engineer
+#2 | 87.0 | data | prepared | Xero | Data Engineer
+#1 | 79.0 | software | prepared | Xero | Software Engineer
+companies: 115
+jobs: 2
+applications: 2
+autofill_logs: 21
+source_scans: 1
+21 passed
+```
+
+Phase 9: Dashboard And Notifications is complete for the first local dashboard and digest implementation.
+
+Completed deliverables:
+
+- Added dashboard package under `app/dashboard/`.
+- Added local HTML dashboard renderer in `app/dashboard/render.py`.
+- Added daily digest text renderer.
+- Added CLI commands:
+  - `dashboard`
+  - `daily-digest`
+- Dashboard shows:
+  - recommended queue
+  - application status
+  - prepared count
+  - paused-for-review count
+- Daily digest shows:
+  - recommended jobs
+  - recent applications
+- Generated local dashboard at `data/generated/dashboard.html`.
+- Kept CLI workflow as fallback.
+- Added tests for dashboard and digest rendering.
+
+Verification result:
+
+```text
+Dashboard generated: E:\vscode_proj\Codex_projs\nz_it_job_application_automation\data\generated\dashboard.html
+NZ IT Job Application Daily Digest
+
+Recommended jobs, minimum score 55:
+- #2 | 87 | data | prepared | Xero | Data Engineer
+- #1 | 79 | software | prepared | Xero | Software Engineer
+
+Recent applications:
+- #1 | prepared | job #2 | Xero | Data Engineer
+- #2 | prepared | job #1 | Xero | Software Engineer
+23 passed
+```
+
+Post-MVP live smoke testing has started.
+
+Completed smoke-test deliverables:
+
+- Found and verified a real public SmartRecruiters ATS source:
+  - Company: Partly
+  - Source: `https://api.smartrecruiters.com/v1/companies/Partly/postings`
+- Ran `scan-company` against the real Partly source.
+- Ran `mode-a` against a real public Partly job page:
+  - `https://jobs.smartrecruiters.com/Partly/743999880344528-senior-software-engineer-typescript`
+- Backfilled Partly `ats_type` and `ats_feed_url` in `nz_it_company_targets.yaml`.
+- Re-imported company targets into SQLite.
+- Fixed a real-page parser bug caused by meta tags without `name`, `property`, or `itemprop`.
+- Fixed SmartRecruiters company-name fallback so URLs under `jobs.smartrecruiters.com/{company}/...` use the company slug.
+- Added regression test for SmartRecruiters company detection.
+- Improved SmartRecruiters generated posting URLs.
+- Improved job upsert deduplication so identical `source_url` records can update across source adapters.
+- Archived the duplicate Partly job created before the dedupe fix.
+- Updated dashboard/digest filtering so archived and ignored jobs are excluded from recommendations.
+- Added visible-browser review options for real ATS pages:
+  - `--keep-open`
+  - `--keep-open-seconds`
+  - `--captcha-wait-seconds`
+- Added CAPTCHA/bot-verification detection for real browser autofill.
+- Added manual verification pause handling:
+  - The system waits for the user to complete verification.
+  - The system does not bypass or solve CAPTCHA automatically.
+  - If verification is still present after the wait window, the application is marked `paused_for_review`.
+  - A pause log is written to `autofill_logs` with `pause_reason=captcha_or_bot_verification`.
+- Added access-limit handling for SmartRecruiters-style blocks:
+  - Chinese/English "access temporarily limited" pages are detected.
+  - These pages are treated as manual handoff, not as successful autofill.
+  - A pause log is written with `pause_reason=access_limited_or_bot_blocked`.
+- Added manual application assist workflow:
+  - CLI command: `manual-assist --url "<job-or-application-url>"`.
+  - Matches manually opened job/application URLs to existing jobs.
+  - Supports SmartRecruiters one-click URLs by matching URL tokens such as publication UUIDs.
+  - Prepares or refreshes application materials.
+  - Marks the application `manual_apply_in_progress`.
+  - Generates a copy/paste Markdown file under `data/generated/`.
+- Added manual application link discovery:
+  - CLI command: `manual-queue --minimum-score 55 --limit 10`.
+  - Shows the exact job/application URL the user should open manually.
+  - Prints the matching `manual-assist` command for each recommended job.
+  - Dashboard recommended queue now includes an explicit `Open` link and assist command.
+- Added company source discovery:
+  - CLI command: `discover-company-source --company "<company>"`.
+  - CLI command: `discover-company-sources --max-priority 1 --limit 10`.
+  - Batch discovery can write a Markdown report with `--output`.
+  - Detects Greenhouse, Lever, and SmartRecruiters links from career pages.
+  - Detects login/account-required pages and marks them as manual handoff candidates.
+  - Falls back to `generic_html` when a career page appears to list jobs but no supported ATS feed is found.
+  - Discovery prints suggestions only; it does not write to `nz_it_company_targets.yaml` yet.
+- Added conservative generic HTML source scanning:
+  - Registered `generic_html` as a scan adapter.
+  - `scan-company` now accepts `--source-type generic_html`.
+  - Extracts likely job links from ordinary careers pages.
+  - Parses each linked job page with the existing generic/JSON-LD job parser.
+  - Caps linked job parsing to 25 links per source to avoid over-scanning.
+- Confirmed and wrote back three supported ATS sources:
+  - ClearPoint: Lever, `https://api.lever.co/v0/postings/clearpoint?mode=json`
+  - Deloitte New Zealand: SmartRecruiters, `https://api.smartrecruiters.com/v1/companies/DeloitteNZ/postings`
+  - KPMG New Zealand: Lever, `https://api.lever.co/v0/postings/kpmgnz?mode=json`
+- Verified automatic batch scan after writing sources back:
+  - Command: `batch-scan --max-priority 2 --limit 60`
+  - Companies with jobs scanned: 3
+  - Jobs found: 142
+  - New jobs: 0 after prior smoke scans, confirming dedupe works.
+- Added manual daily scan workflow:
+  - CLI command: `run-daily-scan --max-priority 2 --limit 60 --minimum-score 55`.
+  - Imports company config.
+  - Runs batch scan.
+  - Re-scores all jobs.
+  - Regenerates dashboard.
+  - Prints daily digest.
+  - Recommended frequency before scheduler automation: twice daily, around 09:00 and 16:00 NZ time.
+- Verified real daily scan:
+  - Companies imported: 0 created, 115 updated
+  - Companies with jobs scanned: 3
+  - Jobs found: 142
+  - New jobs: 2
+  - Jobs scored: 173
+  - Recommended jobs: 33
+- Tightened recommendation filtering:
+  - Default dashboard, digest, queue, and manual queue now focus on core role groups: software, data, data_analyst, business_analyst, AI, cloud, security, QA, and product.
+  - Broad analyst roles can still be viewed explicitly with `--role-group analyst`.
+  - Added non-core title exclusions for advisory, deal advisory, M&A, management consulting, enterprise risk, transaction services, early careers, and related titles.
+  - Re-scored existing jobs and refreshed dashboard after the rule change.
+- Added application status management:
+  - CLI command: `mark-application <application-id> <status>`.
+  - Supported statuses include prepared, manual_apply_in_progress, ready_for_manual_submit, paused_for_review, submitted, rejected, withdrawn, follow_up, and archived.
+  - Marking an application `submitted` records `submitted_at`, sets `submission_confirmed_by_user`, and marks the related job as `applied`.
+  - Dashboard Applications table now shows submitted time and submitted/follow-up summary counts.
+- Added dashboard next-action guidance:
+  - Recommended Queue now includes a `Next Action` column instead of a bare assist command.
+  - Applications table now includes a `Next Action` column.
+  - Prepared/manual-in-progress applications show the exact `mark-application ... submitted` command.
+  - Paused/submitted/follow-up/rejected/withdrawn states show status-specific next steps.
+- Added focused analyst role groups:
+  - `data_analyst` covers Data Analyst, Reporting Analyst, Business Intelligence Analyst, and BI Analyst titles.
+  - `business_analyst` covers Business Analyst, Systems Analyst, Technical Analyst, Digital Analyst, and Process Analyst titles.
+  - These two focused analyst groups now appear in the default dashboard/recommended/manual queues.
+  - Generic `analyst` remains excluded from default recommendations to avoid broad/non-target analyst noise.
+  - Re-scored 173 existing jobs and refreshed `data/generated/dashboard.html`; current recommended jobs count is 21.
+
+Verification result:
+
+```text
+Company scanned: Partly
+Jobs found: 1
+New jobs: 1
+
+Mode A completed
+Job: #4 Senior Software Engineer | Typescript
+Company: Partly
+Role group: software
+Match score: 66.5
+Recommendation: possible_match
+Application: #3
+Job record: updated
+Application record: updated
+
+Recommended jobs, minimum score 55:
+- #2 | 87 | data | prepared | Xero | Data Engineer
+- #1 | 79 | software | prepared | Xero | Software Engineer
+- #4 | 66.5 | software | discovered | Partly | Senior Software Engineer | Typescript
+
+24 passed
+```
+
 ### 17.2 In Progress
 
 No phase is currently in progress.
 
 ### 17.3 Next Phase
 
-Phase 2: Job Ingestion MVP.
+Post-MVP: Live Smoke Testing And Hardening.
 
 Next deliverables:
 
-- Add manual job URL ingestion command.
-- Fetch a public job page.
-- Extract basic job fields:
-  - title
-  - company
-  - location
-  - description
-  - source URL
-  - apply URL when available
-- Normalise the extracted data into the `Job` model.
-- Store the job in SQLite.
-- Add tests for normalisation and duplicate handling.
+- Smoke-test additional real public job URLs across different ATS providers.
+- Smoke-test a real Greenhouse source.
+- Smoke-test a real Lever source.
+- Add company ATS enrichment for selected priority target companies.
+- Add optional email or Telegram delivery for the daily digest.
+- Add generated material preview/export.
+- Improve real-form field detection based on observed ATS pages.
+- Consider a local API/dashboard only after live smoke tests are stable.
 
 ### 17.4 Notes And Constraints
 
 - Runtime writes to the project SQLite database may require elevated permission in the current sandbox environment.
 - Tests pass using temporary writable test databases.
 - The workspace `.git` directory currently does not behave as a valid Git repository, so Git status is not available yet.
+- Phase 2 has been verified with a local `file://` fixture. Live external URL ingestion should be smoke-tested with a real public job URL when ready.
+- Phase 4 has been verified with local ATS JSON fixtures. Live Greenhouse/Lever/SmartRecruiters endpoints should be smoke-tested with real public company sources when ready.
+- Phase 5 uses deterministic template-based generation. LLM-assisted tailoring remains future scope.
+- Phase 6 has been verified with a local form fixture. Real ATS application pages should be smoke-tested carefully and manually reviewed before use.
+- Real ATS verification/CAPTCHA screens are treated as manual handoff points. The product must pause, wait, and log review status; bypassing verification is out of scope.
+- Phase 7 has been verified locally. Live Mode A should be smoke-tested with one public job URL before regular use.
+- Phase 8 has been verified with local stored jobs. Live batch scans depend on companies having supported public ATS URLs configured.
+- Phase 9 currently generates a local static dashboard and terminal digest. Email/Telegram delivery remains future scope.
 - Automatic final submission remains out of scope.
 
 ## 18. Development Plan

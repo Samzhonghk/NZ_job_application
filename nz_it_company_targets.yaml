@@ -170,9 +170,9 @@ companies:
     locations: [Christchurch, Remote]
     priority: 2
     target_role_groups: [software, data, ai, product, platform]
-    ats_type: ""
-    ats_feed_url: ""
-    notes: Automotive parts data and software platform.
+    ats_type: smartrecruiters
+    ats_feed_url: https://api.smartrecruiters.com/v1/companies/Partly/postings
+    notes: Automotive parts data and software platform. SmartRecruiters source smoke-tested on 2026-06-26.
 
   - company_name: Auror
     website: https://www.auror.co/
@@ -357,9 +357,9 @@ companies:
     locations: [Auckland, Wellington, Remote]
     priority: 2
     target_role_groups: [software, cloud, data, product, agile]
-    ats_type: ""
-    ats_feed_url: ""
-    notes: Digital engineering consultancy.
+    ats_type: lever
+    ats_feed_url: https://api.lever.co/v0/postings/clearpoint?mode=json
+    notes: Digital engineering consultancy. Lever source discovered and smoke-tested on 2026-06-26.
 
   - company_name: Propellerhead
     website: https://www.propellerhead.co.nz/
@@ -478,9 +478,9 @@ companies:
     locations: [Auckland, Wellington, Christchurch, Dunedin, Hamilton]
     priority: 2
     target_role_groups: [data, cloud, cyber, analyst, software]
-    ats_type: ""
-    ats_feed_url: ""
-    notes: Monitor consulting and cyber/data roles.
+    ats_type: smartrecruiters
+    ats_feed_url: https://api.smartrecruiters.com/v1/companies/DeloitteNZ/postings
+    notes: Monitor consulting and cyber/data roles. SmartRecruiters source discovered and smoke-tested on 2026-06-26.
 
   - company_name: PwC New Zealand
     website: https://www.pwc.co.nz/
@@ -511,9 +511,9 @@ companies:
     locations: [Auckland, Wellington, Christchurch, Hamilton, Tauranga]
     priority: 2
     target_role_groups: [data, cyber, cloud, analyst]
-    ats_type: ""
-    ats_feed_url: ""
-    notes: Monitor tech consulting and advisory roles.
+    ats_type: lever
+    ats_feed_url: https://api.lever.co/v0/postings/kpmgnz?mode=json
+    notes: Monitor tech consulting and advisory roles. Lever source discovered and smoke-tested on 2026-06-26.
 
   - company_name: Slalom New Zealand
     website: https://www.slalom.com/

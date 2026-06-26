@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Career URL Discovery</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fa;
+      --surface: #ffffff;
+      --text: #17202a;
+      --muted: #5f6b7a;
+      --border: #d8dee7;
+      --accent: #176b87;
+      --soft: #e7f4f7;
+      --warning: #8a5a00;
+      --warning-soft: #fff4d6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 28px;
+    }
+    h1 { margin: 0 0 6px; font-size: 24px; letter-spacing: 0; }
+    main { max-width: 1180px; margin: 0 auto; padding: 24px; }
+    .meta { color: var(--muted); margin: 0; }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .metric {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 14px;
+    }
+    .metric strong { display: block; font-size: 22px; margin-bottom: 4px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    th {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      background: #fbfcfd;
+    }
+    tr:last-child td { border-bottom: 0; }
+    .status {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 2px 8px;
+      background: var(--warning-soft);
+      color: var(--warning);
+      white-space: nowrap;
+    }
+    .confidence {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 2px 8px;
+      background: var(--soft);
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    code { white-space: normal; word-break: break-word; }
+    a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Career URL Discovery</h1>
+    <p class="meta">Candidate company career websites discovered from configured websites and common paths.</p>
+  </header>
+  <main>
+    <div class="summary"><div class="metric"><strong>20</strong><span>configured</span></div></div>
+    <table>
+      <thead>
+        <tr><th>Company</th><th>Status</th><th>Confidence</th><th>Career URL</th><th>Evidence</th></tr>
+      </thead>
+      <tbody><tr>
+  <td>ANZ New Zealand</td>
+  <td><span class="status">configured</span></td>
+  <td><span class="confidence">configured</span></td>
+  <td><a href="https://www.anz.co.nz/about-us/careers/">https://www.anz.co.nz/about-us/careers/</a></td>
+  <td>Company already has career_url configured.</td>
+</tr>
+<tr>
+  <td>ASB Bank</td>
+  <td><span class="status">configured</span></td>
+  <td><span class="confidence">configured</span></td>
+  <td><a href="https://www.asb.co.nz/about-us/careers.html">https://www.asb.co.nz/about-us/careers.html</a></td>
+  <td>Company already has career_url configured.</td>
+</tr>
+<tr>
+  <td>Accenture New Zealand</td>
+  <td><span class="status">configured</span></td>
+  <td><span class="confidence">configured</span></td>
+  <td><a href="https://www.accenture.com/nz-en/careers">https://www.accenture.com/nz-en/careers</a></td>
+  <td>Company already has career_url configured.</td>
+</tr>
+<tr>
+  <td>Amazon Web Services New Zealand</td>
+  <td><span class="status">configured</span></td>
+  <td><span class="confidence">configured</span></td>
+  <td><a href="https://www.amazon.jobs/">https://www.amazon.jobs/</a></td>
+  <td>Company already has career_url configured.</td>
+</tr>
+<tr>
+  <td>Auckland Council</td>
+  <td><span class="status">configured</span></td>
+  <td><span class="confidence">configured</span></td>
+  <td><a href="https://careers.aucklandcouncil.govt.nz/">https://careers.aucklandcouncil.govt.nz/</a></td>
+  <td>Company already has career_url configured.</td>
+</tr>
+<tr>
+  <td>BNZ</td>
+  <td><span class="status">configured</span></td>
+  <td><span class="confidence">configured</span></td>
+  <td><a href="https://www.bnz.co.nz/about-us/careers">https://www.bnz.co.nz/about-us/careers</a></td>
+  <td>Company already has career_url configured.</td>
+</tr>
+<tr>
+  <td>Datacom</td>
+  <td><span class="status">configured</span></td>
+  <td><span class="confidence">configured</span></td>
+  <td><a href="https://datacom.com/nz/en/careers">https://datacom.com/nz/en/careers</a></td>
+  <td>Company already has career_url configured.</td>
+</tr>
+<tr>
+  <td>Department of Internal Affairs</td>
+  <td><span class="status">configured</span></td>
+  <td><span class="confidence">configured</span></td>
+  <td><a href="https://www.dia.govt.nz/Careers">https://www.dia.govt.nz/Careers</a></td>
+  <td>Company already has career_url configured.</td>
+</tr>
+<tr>
+  <td>EROAD</td>
+  <td><span class="status">configured</span></td>
+  <td><span class="confidence">configured</span></td>
+  <td><a href="https://www.eroad.co.nz/careers/">https://www.eroad.co.nz/careers/</a></td>
+  <td>Company already has career_url configured.</td>
+</tr>
+<tr>
+  <td>Fisher &amp; Paykel Healthcare</td>
+  <td><span class="status">configured</span></td>
+  <td><span class="confidence">configured</span></td>
+  <td><a href="https://www.fphcare.com/nz/careers/">https://www.fphcare.com/nz/careers/</a></td>
+  <td>Company already has career_url configured.</td>
+</tr>
+<tr>
+  <td>Gentrack</td>
+  <td><span class="status">configured</span></td>
+  <td><span class="confidence">configured</span></td>
+  <td><a href="https://www.gentrack.com/careers/">https://www.gentrack.com/careers/</a></td>
+  <td>Company already has career_url configured.</td>
+</tr>
+<tr>
+  <td>Google New Zealand</td>
+  <td><span class="status">configured</span></td>
+  <td><span class="confidence">configured</span></td>
+  <td><a href="https://www.google.com/about/careers/applications/">https://www.google.com/about/careers/applications/</a></td>
+  <td>Company already has career_url configured.</td>
+</tr>
+<tr>
+  <td>Health New Zealand Te Whatu Ora</td>
+  <td><span class="status">configured</span></td>
+  <td><span class="confidence">configured</span></td>
+  <td><a href="https://www.tewhatuora.govt.nz/careers/">https://www.tewhatuora.govt.nz/careers/</a></td>
+  <td>Company already has career_url configured.</td>
+</tr>
+<tr>
+  <td>Inland Revenue</td>
+  <td><span class="status">configured</span></td>
+  <td><span class="confidence">configured</span></td>
+  <td><a href="https://www.ird.govt.nz/about-us/careers">https://www.ird.govt.nz/about-us/careers</a></td>
+  <td>Company already has career_url configured.</td>
+</tr>
+<tr>
+  <td>Jade Software</td>
+  <td><span class="status">configured</span></td>
+  <td><span class="confidence">configured</span></td>
+  <td><a href="https://www.jadeworld.com/careers/">https://www.jadeworld.com/careers/</a></td>
+  <td>Company already has career_url configured.</td>
+</tr>
+<tr>
+  <td>Kiwibank</td>
+  <td><span class="status">configured</span></td>
+  <td><span class="confidence">configured</span></td>
+  <td><a href="https://www.kiwibank.co.nz/about-us/careers/">https://www.kiwibank.co.nz/about-us/careers/</a></td>
+  <td>Company already has career_url configured.</td>
+</tr>
+<tr>
+  <td>Microsoft New Zealand</td>
+  <td><span class="status">configured</span></td>
+  <td><span class="confidence">configured</span></td>
+  <td><a href="https://jobs.careers.microsoft.com/">https://jobs.careers.microsoft.com/</a></td>
+  <td>Company already has career_url configured.</td>
+</tr>
+<tr>
+  <td>Ministry of Business Innovation and Employment</td>
+  <td><span class="status">configured</span></td>
+  <td><span class="confidence">configured</span></td>
+  <td><a href="https://www.mbie.govt.nz/about/work-for-us/">https://www.mbie.govt.nz/about/work-for-us/</a></td>
+  <td>Company already has career_url configured.</td>
+</tr>
+<tr>
+  <td>New Zealand Transport Agency Waka Kotahi</td>
+  <td><span class="status">configured</span></td>
+  <td><span class="confidence">configured</span></td>
+  <td><a href="https://www.nzta.govt.nz/about-us/careers/">https://www.nzta.govt.nz/about-us/careers/</a></td>
+  <td>Company already has career_url configured.</td>
+</tr>
+<tr>
+  <td>One NZ</td>
+  <td><span class="status">configured</span></td>
+  <td><span class="confidence">configured</span></td>
+  <td><a href="https://one.nz/careers/">https://one.nz/careers/</a></td>
+  <td>Company already has career_url configured.</td>
+</tr></tbody>
+    </table>
+  </main>
+</body>
+</html>

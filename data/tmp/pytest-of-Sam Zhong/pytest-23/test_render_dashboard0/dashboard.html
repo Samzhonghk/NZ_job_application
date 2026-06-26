@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NZ IT Job Application Dashboard</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fa;
+      --surface: #ffffff;
+      --text: #17202a;
+      --muted: #5f6b7a;
+      --border: #d8dee7;
+      --accent: #176b87;
+      --accent-soft: #e7f4f7;
+      --warning: #8a5a00;
+      --warning-soft: #fff4d6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 28px;
+    }
+    h1 {
+      margin: 0 0 6px;
+      font-size: 24px;
+      letter-spacing: 0;
+    }
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    section {
+      margin-bottom: 28px;
+    }
+    h2 {
+      font-size: 18px;
+      margin: 0 0 12px;
+      letter-spacing: 0;
+    }
+    .meta {
+      color: var(--muted);
+      margin: 0;
+    }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .metric {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 14px;
+    }
+    .metric strong {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    th {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      background: #fbfcfd;
+    }
+    tr:last-child td { border-bottom: 0; }
+    .score {
+      font-weight: 700;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .tag {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 2px 8px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .status {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 2px 8px;
+      background: var(--warning-soft);
+      color: var(--warning);
+      white-space: nowrap;
+    }
+    a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>NZ IT Job Application Dashboard</h1>
+    <p class="meta">Recommended jobs with match score >= 55. Final submission remains manual.</p>
+  </header>
+  <main>
+    <div class="summary">
+      <div class="metric"><strong>1</strong><span>Recommended jobs</span></div>
+      <div class="metric"><strong>3</strong><span>Applications</span></div>
+      <div class="metric"><strong>1</strong><span>Prepared</span></div>
+      <div class="metric"><strong>1</strong><span>Paused for review</span></div>
+      <div class="metric"><strong>1</strong><span>Submitted</span></div>
+      <div class="metric"><strong>0</strong><span>Follow up</span></div>
+    </div>
+    <section>
+      <h2>Recommended Queue</h2>
+      <table>
+  <thead><tr><th>ID</th><th>Score</th><th>Role</th><th>Status</th><th>Company</th><th>Title</th><th>Open</th><th>Next Action</th></tr></thead>
+  <tbody><tr>
+  <td>#1</td>
+  <td><span class="score">79</span></td>
+  <td><span class="tag">software</span></td>
+  <td><span class="status">prepared</span></td>
+  <td>Xero</td>
+  <td><a href="https://example.com/software">Software Engineer</a></td>
+  <td><a href="https://example.com/software">Open</a></td>
+  <td>Open the role, review it, then run <code>python -m app.cli manual-assist --url &quot;https://example.com/software&quot;</code></td>
+</tr></tbody>
+</table>
+    </section>
+    <section>
+      <h2>Applications</h2>
+      <table>
+  <thead><tr><th>ID</th><th>Status</th><th>Job</th><th>Company</th><th>Title</th><th>Submitted</th><th>Next Action</th></tr></thead>
+  <tbody><tr>
+  <td>#3</td>
+  <td><span class="status">submitted</span></td>
+  <td>#1</td>
+  <td>Xero</td>
+  <td>Software Engineer</td>
+  <td></td>
+  <td>Wait for response. Mark follow_up, rejected, or withdrawn when needed.</td>
+</tr>
+<tr>
+  <td>#2</td>
+  <td><span class="status">paused_for_review</span></td>
+  <td>#1</td>
+  <td>Xero</td>
+  <td>Software Engineer</td>
+  <td></td>
+  <td>Resolve the login, CAPTCHA, or access issue manually, then continue with manual-assist.</td>
+</tr>
+<tr>
+  <td>#1</td>
+  <td><span class="status">prepared</span></td>
+  <td>#1</td>
+  <td>Xero</td>
+  <td>Software Engineer</td>
+  <td></td>
+  <td>Open the application page, submit manually after review, then run <code>python -m app.cli mark-application 1 submitted --note "Submitted manually"</code></td>
+</tr></tbody>
+</table>
+    </section>
+  </main>
+</body>
+</html>

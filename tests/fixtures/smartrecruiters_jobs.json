@@ -1,0 +1,15 @@
+{
+  "content": [
+    {
+      "id": "sr-1",
+      "ref": "sr-1",
+      "name": "Cloud Engineer",
+      "releasedDate": "2026-06-25T00:00:00.000Z",
+      "location": {
+        "city": "Wellington",
+        "country": "New Zealand"
+      },
+      "jobAd": "Work with AWS, GCP, Terraform and Kubernetes."
+    }
+  ]
+}

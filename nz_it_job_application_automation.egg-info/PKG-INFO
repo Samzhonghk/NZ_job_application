@@ -3,6 +3,7 @@ Name: nz-it-job-application-automation
 Version: 0.1.0
 Summary: Personal assistant for monitoring and preparing New Zealand IT job applications.
 Requires-Python: >=3.11
+Requires-Dist: playwright>=1.49.0
 Requires-Dist: PyYAML>=6.0.2
 Requires-Dist: SQLAlchemy>=2.0.30
 Provides-Extra: dev

@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Company Source Discovery</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fa;
+      --surface: #ffffff;
+      --text: #17202a;
+      --muted: #5f6b7a;
+      --border: #d8dee7;
+      --accent: #176b87;
+      --soft: #e7f4f7;
+      --warning: #8a5a00;
+      --warning-soft: #fff4d6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 28px;
+    }
+    h1 { margin: 0 0 6px; font-size: 24px; letter-spacing: 0; }
+    main { max-width: 1180px; margin: 0 auto; padding: 24px; }
+    .meta { color: var(--muted); margin: 0; }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .metric {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 14px;
+    }
+    .metric strong { display: block; font-size: 22px; margin-bottom: 4px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    th {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      background: #fbfcfd;
+    }
+    tr:last-child td { border-bottom: 0; }
+    .status {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 2px 8px;
+      background: var(--warning-soft);
+      color: var(--warning);
+      white-space: nowrap;
+    }
+    .confidence {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 2px 8px;
+      background: var(--soft);
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    code { white-space: normal; word-break: break-word; }
+    a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Company Source Discovery</h1>
+    <p class="meta">Suggested ATS sources for company career pages. Suggestions require confirmation before writing to YAML.</p>
+  </header>
+  <main>
+    <div class="summary"><div class="metric"><strong>14</strong><span>generic_html</span></div>
+<div class="metric"><strong>26</strong><span>login_required</span></div>
+<div class="metric"><strong>17</strong><span>not_found</span></div>
+<div class="metric"><strong>3</strong><span>supported_ats</span></div></div>
+    <table>
+      <thead>
+        <tr>
+          <th>Company</th>
+          <th>Status</th>
+          <th>Confidence</th>
+          <th>Checked URL</th>
+          <th>ATS Type</th>
+          <th>ATS Feed URL</th>
+          <th>Evidence</th>
+        </tr>
+      </thead>
+      <tbody><tr>
+  <td>ANZ New Zealand</td>
+  <td><span class="status">login_required</span></td>
+  <td><span class="confidence">medium</span></td>
+  <td><a href="https://www.anz.co.nz/about-us/careers/">https://www.anz.co.nz/about-us/careers/</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>Page text or URL suggests login/account registration is required.</td>
+</tr>
+<tr>
+  <td>ASB Bank</td>
+  <td><span class="status">login_required</span></td>
+  <td><span class="confidence">medium</span></td>
+  <td><a href="https://www.asb.co.nz/">https://www.asb.co.nz/</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>Page text or URL suggests login/account registration is required.</td>
+</tr>
+<tr>
+  <td>Accenture New Zealand</td>
+  <td><span class="status">generic_html</span></td>
+  <td><span class="confidence">low</span></td>
+  <td><a href="https://www.accenture.com/nz-en/careers">https://www.accenture.com/nz-en/careers</a></td>
+  <td><code>generic_html</code></td>
+  <td><a href="https://www.accenture.com/nz-en/careers">https://www.accenture.com/nz-en/careers</a></td>
+  <td>Career page contains job-related text but no supported ATS feed was found.</td>
+</tr>
+<tr>
+  <td>Amazon Web Services New Zealand</td>
+  <td><span class="status">generic_html</span></td>
+  <td><span class="confidence">low</span></td>
+  <td><a href="https://amazon.jobs/content/en/teams/devices-services">https://amazon.jobs/content/en/teams/devices-services</a></td>
+  <td><code>generic_html</code></td>
+  <td><a href="https://amazon.jobs/content/en/teams/devices-services">https://amazon.jobs/content/en/teams/devices-services</a></td>
+  <td>Career page contains job-related text but no supported ATS feed was found.</td>
+</tr>
+<tr>
+  <td>Auckland Council</td>
+  <td><span class="status">login_required</span></td>
+  <td><span class="confidence">medium</span></td>
+  <td><a href="https://careers.aucklandcouncil.govt.nz/">https://careers.aucklandcouncil.govt.nz/</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>Page text or URL suggests login/account registration is required.</td>
+</tr>
+<tr>
+  <td>BNZ</td>
+  <td><span class="status">generic_html</span></td>
+  <td><span class="confidence">low</span></td>
+  <td><a href="https://www.bnz.co.nz/">https://www.bnz.co.nz/</a></td>
+  <td><code>generic_html</code></td>
+  <td><a href="https://www.bnz.co.nz/">https://www.bnz.co.nz/</a></td>
+  <td>Career page contains job-related text but no supported ATS feed was found.</td>
+</tr>
+<tr>
+  <td>Datacom</td>
+  <td><span class="status">not_found</span></td>
+  <td><span class="confidence">none</span></td>
+  <td><a href="https://datacom.com/nz/en/careers">https://datacom.com/nz/en/careers</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>No supported ATS link found in checked pages.</td>
+</tr>
+<tr>
+  <td>Department of Internal Affairs</td>
+  <td><span class="status">generic_html</span></td>
+  <td><span class="confidence">low</span></td>
+  <td><a href="https://www.dia.govt.nz/Careers">https://www.dia.govt.nz/Careers</a></td>
+  <td><code>generic_html</code></td>
+  <td><a href="https://www.dia.govt.nz/Careers">https://www.dia.govt.nz/Careers</a></td>
+  <td>Career page contains job-related text but no supported ATS feed was found.</td>
+</tr>
+<tr>
+  <td>EROAD</td>
+  <td><span class="status">not_found</span></td>
+  <td><span class="confidence">none</span></td>
+  <td><a href="https://www.eroad.co.nz/careers/">https://www.eroad.co.nz/careers/</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>No supported ATS link found in checked pages.</td>
+</tr>
+<tr>
+  <td>Fisher &amp; Paykel Healthcare</td>
+  <td><span class="status">not_found</span></td>
+  <td><span class="confidence">none</span></td>
+  <td><a href="https://www.fphcare.com/nz/careers/">https://www.fphcare.com/nz/careers/</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>No supported ATS link found in checked pages.</td>
+</tr>
+<tr>
+  <td>Gentrack</td>
+  <td><span class="status">login_required</span></td>
+  <td><span class="confidence">medium</span></td>
+  <td><a href="https://www.gentrack.com/careers/">https://www.gentrack.com/careers/</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>Page text or URL suggests login/account registration is required.</td>
+</tr>
+<tr>
+  <td>Google New Zealand</td>
+  <td><span class="status">login_required</span></td>
+  <td><span class="confidence">medium</span></td>
+  <td><a href="https://www.google.com/about/careers/applications/">https://www.google.com/about/careers/applications/</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>Page text or URL suggests login/account registration is required.</td>
+</tr>
+<tr>
+  <td>Health New Zealand Te Whatu Ora</td>
+  <td><span class="status">login_required</span></td>
+  <td><span class="confidence">medium</span></td>
+  <td><a href="https://www.tewhatuora.govt.nz/careers/">https://www.tewhatuora.govt.nz/careers/</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>Page text or URL suggests login/account registration is required.</td>
+</tr>
+<tr>
+  <td>Inland Revenue</td>
+  <td><span class="status">login_required</span></td>
+  <td><span class="confidence">medium</span></td>
+  <td><a href="https://www.ird.govt.nz/about-us/careers">https://www.ird.govt.nz/about-us/careers</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>Page text or URL suggests login/account registration is required.</td>
+</tr>
+<tr>
+  <td>Jade Software</td>
+  <td><span class="status">login_required</span></td>
+  <td><span class="confidence">medium</span></td>
+  <td><a href="https://www.jadeworld.com/careers/">https://www.jadeworld.com/careers/</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>Page text or URL suggests login/account registration is required.</td>
+</tr>
+<tr>
+  <td>Kiwibank</td>
+  <td><span class="status">login_required</span></td>
+  <td><span class="confidence">medium</span></td>
+  <td><a href="https://www.kiwibank.co.nz/about-us/careers/">https://www.kiwibank.co.nz/about-us/careers/</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>Page text or URL suggests login/account registration is required.</td>
+</tr>
+<tr>
+  <td>Microsoft New Zealand</td>
+  <td><span class="status">login_required</span></td>
+  <td><span class="confidence">medium</span></td>
+  <td><a href="https://jobs.careers.microsoft.com/">https://jobs.careers.microsoft.com/</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>Page text or URL suggests login/account registration is required.</td>
+</tr>
+<tr>
+  <td>Ministry of Business Innovation and Employment</td>
+  <td><span class="status">not_found</span></td>
+  <td><span class="confidence">none</span></td>
+  <td><a href="https://www.mbie.govt.nz/about/work-for-us/">https://www.mbie.govt.nz/about/work-for-us/</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>No supported ATS link found in checked pages.</td>
+</tr>
+<tr>
+  <td>New Zealand Transport Agency Waka Kotahi</td>
+  <td><span class="status">not_found</span></td>
+  <td><span class="confidence">none</span></td>
+  <td><a href="https://www.nzta.govt.nz/about-us/careers/">https://www.nzta.govt.nz/about-us/careers/</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>No supported ATS link found in checked pages.</td>
+</tr>
+<tr>
+  <td>One NZ</td>
+  <td><span class="status">login_required</span></td>
+  <td><span class="confidence">medium</span></td>
+  <td><a href="https://one.nz/careers/development-benefits/">https://one.nz/careers/development-benefits/</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>Page text or URL suggests login/account registration is required.</td>
+</tr>
+<tr>
+  <td>Orion Health</td>
+  <td><span class="status">generic_html</span></td>
+  <td><span class="confidence">low</span></td>
+  <td><a href="https://orionhealth.com/careers/">https://orionhealth.com/careers/</a></td>
+  <td><code>generic_html</code></td>
+  <td><a href="https://orionhealth.com/careers/">https://orionhealth.com/careers/</a></td>
+  <td>Career page contains job-related text but no supported ATS feed was found.</td>
+</tr>
+<tr>
+  <td>Pushpay</td>
+  <td><span class="status">login_required</span></td>
+  <td><span class="confidence">medium</span></td>
+  <td><a href="https://pushpay.com/">https://pushpay.com/</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>Page text or URL suggests login/account registration is required.</td>
+</tr>
+<tr>
+  <td>Qrious</td>
+  <td><span class="status">not_found</span></td>
+  <td><span class="confidence">none</span></td>
+  <td><a href="https://www.qrious.co.nz/careers/">https://www.qrious.co.nz/careers/</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>No supported ATS link found in checked pages.</td>
+</tr>
+<tr>
+  <td>Rocket Lab</td>
+  <td><span class="status">not_found</span></td>
+  <td><span class="confidence">none</span></td>
+  <td><a href="https://www.rocketlabusa.com/careers/">https://www.rocketlabusa.com/careers/</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>No supported ATS link found in checked pages.</td>
+</tr>
+<tr>
+  <td>Serko</td>
+  <td><span class="status">generic_html</span></td>
+  <td><span class="confidence">low</span></td>
+  <td><a href="https://www.serko.com/careers">https://www.serko.com/careers</a></td>
+  <td><code>generic_html</code></td>
+  <td><a href="https://www.serko.com/careers">https://www.serko.com/careers</a></td>
+  <td>Career page contains job-related text but no supported ATS feed was found.</td>
+</tr>
+<tr>
+  <td>Spark New Zealand</td>
+  <td><span class="status">not_found</span></td>
+  <td><span class="confidence">none</span></td>
+  <td><a href="https://www.spark.co.nz/online/careers/">https://www.spark.co.nz/online/careers/</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>No supported ATS link found in checked pages.</td>
+</tr>
+<tr>
+  <td>Stats NZ</td>
+  <td><span class="status">not_found</span></td>
+  <td><span class="confidence">none</span></td>
+  <td><a href="https://www.stats.govt.nz/about-us/careers/">https://www.stats.govt.nz/about-us/careers/</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>No supported ATS link found in checked pages.</td>
+</tr>
+<tr>
+  <td>Theta</td>
+  <td><span class="status">not_found</span></td>
+  <td><span class="confidence">none</span></td>
+  <td><a href="https://www.theta.co.nz/careers/">https://www.theta.co.nz/careers/</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>No supported ATS link found in checked pages.</td>
+</tr>
+<tr>
+  <td>Trade Me</td>
+  <td><span class="status">login_required</span></td>
+  <td><span class="confidence">medium</span></td>
+  <td><a href="https://www.trademe.co.nz/careers">https://www.trademe.co.nz/careers</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>Page text or URL suggests login/account registration is required.</td>
+</tr>
+<tr>
+  <td>Vista Group</td>
+  <td><span class="status">not_found</span></td>
+  <td><span class="confidence">none</span></td>
+  <td><a href="https://www.vistagroup.co.nz/careers/">https://www.vistagroup.co.nz/careers/</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>No supported ATS link found in checked pages.</td>
+</tr>
+<tr>
+  <td>Westpac New Zealand</td>
+  <td><span class="status">login_required</span></td>
+  <td><span class="confidence">medium</span></td>
+  <td><a href="https://www.westpac.co.nz/about-us/careers/">https://www.westpac.co.nz/about-us/careers/</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>Page text or URL suggests login/account registration is required.</td>
+</tr>
+<tr>
+  <td>Xero</td>
+  <td><span class="status">generic_html</span></td>
+  <td><span class="confidence">low</span></td>
+  <td><a href="https://www.xero.com/about/careers/">https://www.xero.com/about/careers/</a></td>
+  <td><code>generic_html</code></td>
+  <td><a href="https://www.xero.com/about/careers/">https://www.xero.com/about/careers/</a></td>
+  <td>Career page contains job-related text but no supported ATS feed was found.</td>
+</tr>
+<tr>
+  <td>2degrees</td>
+  <td><span class="status">login_required</span></td>
+  <td><span class="confidence">medium</span></td>
+  <td><a href="https://www.2degrees.nz/termsofuse/careers-privacy-policy">https://www.2degrees.nz/termsofuse/careers-privacy-policy</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>Page text or URL suggests login/account registration is required.</td>
+</tr>
+<tr>
+  <td>AUT</td>
+  <td><span class="status">generic_html</span></td>
+  <td><span class="confidence">low</span></td>
+  <td><a href="https://www.aut.ac.nz/about/careers-at-aut">https://www.aut.ac.nz/about/careers-at-aut</a></td>
+  <td><code>generic_html</code></td>
+  <td><a href="https://www.aut.ac.nz/about/careers-at-aut">https://www.aut.ac.nz/about/careers-at-aut</a></td>
+  <td>Career page contains job-related text but no supported ATS feed was found.</td>
+</tr>
+<tr>
+  <td>Air New Zealand</td>
+  <td><span class="status">not_found</span></td>
+  <td><span class="confidence">none</span></td>
+  <td><a href="https://careers.airnewzealand.co.nz/">https://careers.airnewzealand.co.nz/</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>No supported ATS link found in checked pages.</td>
+</tr>
+<tr>
+  <td>AskNicely</td>
+  <td><span class="status">login_required</span></td>
+  <td><span class="confidence">medium</span></td>
+  <td><a href="https://www.asknicely.com/careers">https://www.asknicely.com/careers</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>Page text or URL suggests login/account registration is required.</td>
+</tr>
+<tr>
+  <td>Auckland Airport</td>
+  <td><span class="status">not_found</span></td>
+  <td><span class="confidence">none</span></td>
+  <td><a href="https://corporate.aucklandairport.co.nz/careers">https://corporate.aucklandairport.co.nz/careers</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>No supported ATS link found in checked pages.</td>
+</tr>
+<tr>
+  <td>Auror</td>
+  <td><span class="status">login_required</span></td>
+  <td><span class="confidence">medium</span></td>
+  <td><a href="https://www.auror.co/careers">https://www.auror.co/careers</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>Page text or URL suggests login/account registration is required.</td>
+</tr>
+<tr>
+  <td>Capgemini New Zealand</td>
+  <td><span class="status">generic_html</span></td>
+  <td><span class="confidence">low</span></td>
+  <td><a href="https://www.capgemini.com/in-en/careers/">https://www.capgemini.com/in-en/careers/</a></td>
+  <td><code>generic_html</code></td>
+  <td><a href="https://www.capgemini.com/in-en/careers/">https://www.capgemini.com/in-en/careers/</a></td>
+  <td>Career page contains job-related text but no supported ATS feed was found.</td>
+</tr>
+<tr>
+  <td>Chorus</td>
+  <td><span class="status">not_found</span></td>
+  <td><span class="confidence">none</span></td>
+  <td><a href="https://www.chorus.co.nz/careers">https://www.chorus.co.nz/careers</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>No supported ATS link found in checked pages.</td>
+</tr>
+<tr>
+  <td>Christchurch City Council</td>
+  <td><span class="status">login_required</span></td>
+  <td><span class="confidence">medium</span></td>
+  <td><a href="https://www.ccc.govt.nz/">https://www.ccc.govt.nz/</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>Page text or URL suggests login/account registration is required.</td>
+</tr>
+<tr>
+  <td>Cin7</td>
+  <td><span class="status">login_required</span></td>
+  <td><span class="confidence">medium</span></td>
+  <td><a href="https://www.cin7.com/careers/">https://www.cin7.com/careers/</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>Page text or URL suggests login/account registration is required.</td>
+</tr>
+<tr>
+  <td>ClearPoint</td>
+  <td><span class="status">supported_ats</span></td>
+  <td><span class="confidence">high</span></td>
+  <td><a href="https://clearpoint.digital/careers/">https://clearpoint.digital/careers/</a></td>
+  <td><code>lever</code></td>
+  <td><a href="https://api.lever.co/v0/postings/clearpoint?mode=json">https://api.lever.co/v0/postings/clearpoint?mode=json</a></td>
+  <td>Found supported ATS link: https://jobs.lever.co/clearpoint/</td>
+</tr>
+<tr>
+  <td>Contact Energy</td>
+  <td><span class="status">generic_html</span></td>
+  <td><span class="confidence">low</span></td>
+  <td><a href="https://contact.co.nz/about-us/careers">https://contact.co.nz/about-us/careers</a></td>
+  <td><code>generic_html</code></td>
+  <td><a href="https://contact.co.nz/about-us/careers">https://contact.co.nz/about-us/careers</a></td>
+  <td>Career page contains job-related text but no supported ATS feed was found.</td>
+</tr>
+<tr>
+  <td>Deloitte New Zealand</td>
+  <td><span class="status">supported_ats</span></td>
+  <td><span class="confidence">high</span></td>
+  <td><a href="https://www.deloitte.com/nz/en/careers.html">https://www.deloitte.com/nz/en/careers.html</a></td>
+  <td><code>smartrecruiters</code></td>
+  <td><a href="https://api.smartrecruiters.com/v1/companies/DeloitteNZ/postings">https://api.smartrecruiters.com/v1/companies/DeloitteNZ/postings</a></td>
+  <td>Found supported ATS link: https://careers.smartrecruiters.com/DeloitteNZ</td>
+</tr>
+<tr>
+  <td>EY New Zealand</td>
+  <td><span class="status">login_required</span></td>
+  <td><span class="confidence">medium</span></td>
+  <td><a href="https://www.ey.com/en_nz/careers">https://www.ey.com/en_nz/careers</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>Page text or URL suggests login/account registration is required.</td>
+</tr>
+<tr>
+  <td>Education Perfect</td>
+  <td><span class="status">login_required</span></td>
+  <td><span class="confidence">medium</span></td>
+  <td><a href="https://www.educationperfect.com/about-us/careers/">https://www.educationperfect.com/about-us/careers/</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>Page text or URL suggests login/account registration is required.</td>
+</tr>
+<tr>
+  <td>Fonterra</td>
+  <td><span class="status">login_required</span></td>
+  <td><span class="confidence">medium</span></td>
+  <td><a href="https://www.fonterra.com/nz/en/careers.html">https://www.fonterra.com/nz/en/careers.html</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>Page text or URL suggests login/account registration is required.</td>
+</tr>
+<tr>
+  <td>Foodstuffs North Island</td>
+  <td><span class="status">not_found</span></td>
+  <td><span class="confidence">none</span></td>
+  <td><a href="https://www.foodstuffs.co.nz/careers">https://www.foodstuffs.co.nz/careers</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>No supported ATS link found in checked pages.</td>
+</tr>
+<tr>
+  <td>Fronde</td>
+  <td><span class="status">login_required</span></td>
+  <td><span class="confidence">medium</span></td>
+  <td><a href="https://www.fronde.com/careers/">https://www.fronde.com/careers/</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>Page text or URL suggests login/account registration is required.</td>
+</tr>
+<tr>
+  <td>Fuel50</td>
+  <td><span class="status">generic_html</span></td>
+  <td><span class="confidence">low</span></td>
+  <td><a href="https://fuel50.com/careers/">https://fuel50.com/careers/</a></td>
+  <td><code>generic_html</code></td>
+  <td><a href="https://fuel50.com/careers/">https://fuel50.com/careers/</a></td>
+  <td>Career page contains job-related text but no supported ATS feed was found.</td>
+</tr>
+<tr>
+  <td>Gallagher</td>
+  <td><span class="status">generic_html</span></td>
+  <td><span class="confidence">low</span></td>
+  <td><a href="https://security.gallagher.com/en/careers">https://security.gallagher.com/en/careers</a></td>
+  <td><code>generic_html</code></td>
+  <td><a href="https://security.gallagher.com/en/careers">https://security.gallagher.com/en/careers</a></td>
+  <td>Career page contains job-related text but no supported ATS feed was found.</td>
+</tr>
+<tr>
+  <td>Genesis Energy</td>
+  <td><span class="status">not_found</span></td>
+  <td><span class="confidence">none</span></td>
+  <td><a href="https://www.genesisenergy.co.nz/careers">https://www.genesisenergy.co.nz/careers</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>No supported ATS link found in checked pages.</td>
+</tr>
+<tr>
+  <td>Halter</td>
+  <td><span class="status">login_required</span></td>
+  <td><span class="confidence">medium</span></td>
+  <td><a href="https://www.halterhq.com/careers">https://www.halterhq.com/careers</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>Page text or URL suggests login/account registration is required.</td>
+</tr>
+<tr>
+  <td>Heartland Bank</td>
+  <td><span class="status">login_required</span></td>
+  <td><span class="confidence">medium</span></td>
+  <td><a href="https://www.heartland.co.nz/careers">https://www.heartland.co.nz/careers</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>Page text or URL suggests login/account registration is required.</td>
+</tr>
+<tr>
+  <td>IBM New Zealand</td>
+  <td><span class="status">generic_html</span></td>
+  <td><span class="confidence">low</span></td>
+  <td><a href="https://www.ibm.com/careers/">https://www.ibm.com/careers/</a></td>
+  <td><code>generic_html</code></td>
+  <td><a href="https://www.ibm.com/careers/">https://www.ibm.com/careers/</a></td>
+  <td>Career page contains job-related text but no supported ATS feed was found.</td>
+</tr>
+<tr>
+  <td>IDEXX New Zealand</td>
+  <td><span class="status">login_required</span></td>
+  <td><span class="confidence">medium</span></td>
+  <td><a href="https://www.idexx.com/">https://www.idexx.com/</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>Page text or URL suggests login/account registration is required.</td>
+</tr>
+<tr>
+  <td>Inde Technology</td>
+  <td><span class="status">generic_html</span></td>
+  <td><span class="confidence">low</span></td>
+  <td><a href="https://www.inde.nz/careers/">https://www.inde.nz/careers/</a></td>
+  <td><code>generic_html</code></td>
+  <td><a href="https://www.inde.nz/careers/">https://www.inde.nz/careers/</a></td>
+  <td>Career page contains job-related text but no supported ATS feed was found.</td>
+</tr>
+<tr>
+  <td>Intergen</td>
+  <td><span class="status">not_found</span></td>
+  <td><span class="confidence">none</span></td>
+  <td><a href="https://www.intergen.co.nz/careers/">https://www.intergen.co.nz/careers/</a></td>
+  <td><code>none</code></td>
+  <td>none</td>
+  <td>No supported ATS link found in checked pages.</td>
+</tr>
+<tr>
+  <td>KPMG New Zealand</td>
+  <td><span class="status">supported_ats</span></td>
+  <td><span class="confidence">high</span></td>
+  <td><a href="https://kpmg.com/nz/en/home/careers.html">https://kpmg.com/nz/en/home/careers.html</a></td>
+  <td><code>lever</code></td>
+  <td><a href="https://api.lever.co/v0/postings/kpmgnz?mode=json">https://api.lever.co/v0/postings/kpmgnz?mode=json</a></td>
+  <td>Found supported ATS link: https://jobs.lever.co/kpmgnz/83759813-bf72-40fb-a09d-70bcca8f4c23</td>
+</tr></tbody>
+    </table>
+  </main>
+</body>
+</html>

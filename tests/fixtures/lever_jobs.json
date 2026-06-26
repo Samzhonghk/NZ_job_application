@@ -1,0 +1,14 @@
+[
+  {
+    "id": "abc-123",
+    "text": "Data Engineer",
+    "hostedUrl": "https://jobs.lever.co/example/abc-123",
+    "applyUrl": "https://jobs.lever.co/example/abc-123/apply",
+    "descriptionPlain": "Build SQL, BigQuery, Airflow and GCP pipelines.",
+    "categories": {
+      "location": "Auckland",
+      "commitment": "Full-time"
+    },
+    "lists": []
+  }
+]
