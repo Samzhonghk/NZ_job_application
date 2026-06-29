@@ -50,6 +50,24 @@ python -m app.cli ingest-job "<job-url>"
 python -m app.cli list-jobs
 ```
 
+Import saved SEEK recommendation email files:
+
+```powershell
+python -m app.cli import-seek-email "data/seek_emails/seek-recommendations.eml"
+python -m app.cli import-seek-email-folder data/seek_emails
+```
+
+The SEEK email importer reads saved `.eml`, `.html`, and `.htm` files, extracts recommended job cards, stores them with source `seek_email`, scores them, deduplicates by URL, and refreshes `data/generated/dashboard.html` by default.
+
+Import saved Jora search/job pages:
+
+```powershell
+python -m app.cli import-jora-html "data/jora_pages/jora-ai-search.html"
+python -m app.cli import-jora-html-folder data/jora_pages
+```
+
+The Jora importer reads saved `.html` / `.htm` pages, extracts visible job cards, stores them with source `jora_html`, scores them, deduplicates by URL, and refreshes `data/generated/dashboard.html` by default.
+
 Prepare an application draft:
 
 ```powershell
@@ -128,6 +146,10 @@ Generate local dashboard and digest:
 python -m app.cli dashboard --minimum-score 55
 python -m app.cli daily-digest --minimum-score 55 --limit 10
 ```
+
+After running, open the dashboard in your browser:
+
+- [data/generated/dashboard.html](data/generated/dashboard.html)
 
 Run the daily scan workflow manually:
 

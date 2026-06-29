@@ -16,6 +16,8 @@ from app.db.models import Application, AutofillLog, Company, Job, SourceScan
 from app.db.session import create_db_engine, init_db, make_session_factory
 from app.jobs.scorer import apply_score
 from app.sources.generic_html import fetch_and_parse_job
+from app.sources.jora_html import JoraHtmlParseResult, parse_jora_html_file, parse_jora_html_folder
+from app.sources.seek_email import SeekEmailParseResult, parse_seek_email_file, parse_seek_email_folder
 from app.sources.scanner import find_company_by_name, scan_company
 from app.sources.base import CompanySource
 from app.sources.discovery import (
@@ -54,6 +56,18 @@ def main() -> None:
     subparsers.add_parser("db-summary", help="Show local database record counts.")
     ingest_parser = subparsers.add_parser("ingest-job", help="Fetch and store a single job URL.")
     ingest_parser.add_argument("url", help="Public job URL to ingest.")
+    seek_email_parser = subparsers.add_parser("import-seek-email", help="Import jobs from a saved SEEK recommendation email HTML file.")
+    seek_email_parser.add_argument("path", help="Saved .html/.htm SEEK email file.")
+    seek_email_parser.add_argument("--no-dashboard", action="store_true", help="Do not refresh the local dashboard after import.")
+    seek_email_folder_parser = subparsers.add_parser("import-seek-email-folder", help="Import jobs from saved SEEK recommendation email HTML files.")
+    seek_email_folder_parser.add_argument("path", help="Folder containing saved .html/.htm SEEK email files.")
+    seek_email_folder_parser.add_argument("--no-dashboard", action="store_true", help="Do not refresh the local dashboard after import.")
+    jora_html_parser = subparsers.add_parser("import-jora-html", help="Import jobs from a saved Jora HTML page.")
+    jora_html_parser.add_argument("path", help="Saved .html/.htm Jora search or job page.")
+    jora_html_parser.add_argument("--no-dashboard", action="store_true", help="Do not refresh the local dashboard after import.")
+    jora_html_folder_parser = subparsers.add_parser("import-jora-html-folder", help="Import jobs from saved Jora HTML pages.")
+    jora_html_folder_parser.add_argument("path", help="Folder containing saved .html/.htm Jora pages.")
+    jora_html_folder_parser.add_argument("--no-dashboard", action="store_true", help="Do not refresh the local dashboard after import.")
     subparsers.add_parser("score-jobs", help="Classify and score all jobs in the database.")
     subparsers.add_parser("list-jobs", help="List stored jobs with classification and score.")
     scan_parser = subparsers.add_parser("scan-company", help="Scan one company using a supported ATS source.")
@@ -224,6 +238,26 @@ def main() -> None:
                 print(f"Role group: {job.role_group or 'unknown'}")
                 print(f"Match score: {job.match_score if job.match_score is not None else 'unscored'}")
                 print(f"URL: {job.source_url}")
+                return
+
+            if args.command == "import-seek-email":
+                result = parse_seek_email_file(args.path)
+                _import_seek_email_results([result], session, config, refresh_dashboard=not args.no_dashboard)
+                return
+
+            if args.command == "import-seek-email-folder":
+                results = parse_seek_email_folder(args.path)
+                _import_seek_email_results(results, session, config, refresh_dashboard=not args.no_dashboard)
+                return
+
+            if args.command == "import-jora-html":
+                result = parse_jora_html_file(args.path)
+                _import_jora_html_results([result], session, config, refresh_dashboard=not args.no_dashboard)
+                return
+
+            if args.command == "import-jora-html-folder":
+                results = parse_jora_html_folder(args.path)
+                _import_jora_html_results(results, session, config, refresh_dashboard=not args.no_dashboard)
                 return
 
             if args.command == "score-jobs":
@@ -565,6 +599,86 @@ def main() -> None:
 
 def _count(session, model: type) -> int:
     return int(session.scalar(select(func.count()).select_from(model)) or 0)
+
+
+def _import_seek_email_results(
+    results: list[SeekEmailParseResult],
+    session,
+    config,
+    *,
+    refresh_dashboard: bool,
+) -> None:
+    if not results:
+        print("No SEEK email HTML files found.")
+        return
+
+    created_count = 0
+    updated_count = 0
+    parsed_count = 0
+    for result in results:
+        print(f"SEEK email: {result.path}")
+        print(f"Jobs parsed: {len(result.jobs)}")
+        parsed_count += len(result.jobs)
+        for raw_job in result.jobs:
+            job, created = upsert_job_from_raw(raw_job, session, config=config)
+            if created:
+                created_count += 1
+            else:
+                updated_count += 1
+            score = job.match_score if job.match_score is not None else "unscored"
+            print(
+                f"- #{job.id} | {'created' if created else 'updated'} | {score} | "
+                f"{job.role_group or 'unknown'} | {job.company_name or 'Unknown'} | {job.title}"
+            )
+
+    print("")
+    print(f"SEEK jobs parsed: {parsed_count}")
+    print(f"Jobs created: {created_count}")
+    print(f"Jobs updated: {updated_count}")
+    if refresh_dashboard:
+        output = config.paths.root / "data" / "generated" / "dashboard.html"
+        path = render_dashboard(session, output, minimum_score=55.0)
+        print(f"Dashboard generated: {path}")
+
+
+def _import_jora_html_results(
+    results: list[JoraHtmlParseResult],
+    session,
+    config,
+    *,
+    refresh_dashboard: bool,
+) -> None:
+    if not results:
+        print("No Jora HTML files found.")
+        return
+
+    created_count = 0
+    updated_count = 0
+    parsed_count = 0
+    for result in results:
+        print(f"Jora HTML: {result.path}")
+        print(f"Jobs parsed: {len(result.jobs)}")
+        parsed_count += len(result.jobs)
+        for raw_job in result.jobs:
+            job, created = upsert_job_from_raw(raw_job, session, config=config)
+            if created:
+                created_count += 1
+            else:
+                updated_count += 1
+            score = job.match_score if job.match_score is not None else "unscored"
+            print(
+                f"- #{job.id} | {'created' if created else 'updated'} | {score} | "
+                f"{job.role_group or 'unknown'} | {job.company_name or 'Unknown'} | {job.title}"
+            )
+
+    print("")
+    print(f"Jora jobs parsed: {parsed_count}")
+    print(f"Jobs created: {created_count}")
+    print(f"Jobs updated: {updated_count}")
+    if refresh_dashboard:
+        output = config.paths.root / "data" / "generated" / "dashboard.html"
+        path = render_dashboard(session, output, minimum_score=55.0)
+        print(f"Dashboard generated: {path}")
 
 
 def _print_discovery_result(result: SourceDiscoveryResult) -> None:

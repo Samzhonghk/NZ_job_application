@@ -1320,6 +1320,20 @@ Completed smoke-test deliverables:
   - These two focused analyst groups now appear in the default dashboard/recommended/manual queues.
   - Generic `analyst` remains excluded from default recommendations to avoid broad/non-target analyst noise.
   - Re-scored 173 existing jobs and refreshed `data/generated/dashboard.html`; current recommended jobs count is 21.
+- Added SEEK recommendation email import, option B:
+  - User saves SEEK recommendation emails as `.eml`, `.html`, or `.htm` files under `data/seek_emails/`.
+  - CLI command: `import-seek-email <path>` for one saved email.
+  - CLI command: `import-seek-email-folder <path>` for a folder of saved emails.
+  - Parser extracts job title, company, location, SEEK URL, and short card description from email HTML body.
+  - Imported jobs use source `seek_email`, are deduplicated by URL, classified, scored, and shown in the local dashboard.
+  - This avoids direct Gmail login and keeps mailbox access out of the MVP.
+- Added Jora saved-page import:
+  - User saves Jora search result or job pages as `.html` / `.htm` files under `data/jora_pages/`.
+  - CLI command: `import-jora-html <path>` for one saved page.
+  - CLI command: `import-jora-html-folder <path>` for a folder of saved pages.
+  - Parser extracts visible job cards, company, location, Jora URL, and description snippets.
+  - Imported jobs use source `jora_html`, are deduplicated by URL, classified, scored, and shown in the local dashboard.
+  - The importer remains file-based for MVP safety instead of automated account/session scraping.
 
 Verification result:
 

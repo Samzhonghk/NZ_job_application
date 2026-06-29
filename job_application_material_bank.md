@@ -14,6 +14,8 @@ Use this as the source of truth for future job application forms. Fill in what i
 - Portfolio: https://samzhonghk.github.io/my-website/
 - website: https://samzhonghk.github.io/my-website/
 - GitHub: https://github.com/Samzhonghk
+- Latest CV file: C:\Users\Sam Zhong\Downloads\Sam Zhong-resume (3).pdf
+- CV last reviewed by system: 2026-06-29
 
 ## Work Rights And Availability
 
@@ -29,7 +31,7 @@ Use this as the source of truth for future job application forms. Fill in what i
 
 ## Target Roles
 
-- Target job titles: Software Engineer / AI Engineer / Data Engineer
+- Target job titles: Software Engineer / Full Stack Developer / Data Engineer / Data Analyst / Business Analyst / AI Engineer
 - Preferred industries: Any
 - Preferred company types: Any
 - Work style preferences: Any
@@ -46,9 +48,23 @@ AI Engineer version: I am an AI and software engineering professional focused on
 Data Engineer version: I am a data engineering professional focused on building reliable data systems that make information accessible, trustworthy, and useful for decision-making. I enjoy designing pipelines, improving data quality, working with databases, and creating structures that help analytics, reporting, and AI work more effectively. My strengths include analytical thinking, problem-solving, automation, and understanding how technical systems connect with business needs. I care about building data solutions that are maintainable, well-documented, and practical for the people who depend on them. I am motivated by roles where strong data foundations can support better products, operations, and insights.
 
 Software Engineer version: I am a software engineering professional focused on building maintainable, user-centred systems that solve practical problems. I enjoy turning ambiguous requirements into working products, designing clean technical solutions, and improving systems through thoughtful iteration. My strengths include structured problem-solving, attention to code quality, debugging, automation, and collaborating with both technical and non-technical stakeholders. I am interested in roles where I can combine engineering discipline with product thinking, creating software that is reliable, useful, and easy to evolve over time.
+
+Business / Data Analyst version: I am a software and data professional with experience translating requirements into practical technical solutions, working with SQL-based data workflows, and supporting business users through reliable reporting and documentation. I bring a strong engineering foundation across data pipelines, databases, backend systems, cloud platforms, and automation, which helps me understand both business needs and implementation detail. I enjoy clarifying ambiguous problems, analysing data or process issues, documenting requirements, and helping teams make decisions based on reliable information. I am especially interested in analyst roles where technical depth, stakeholder communication, and practical delivery all matter.
 ## Experience Highlights
 
 Add quantified examples where possible.
+
+- Project / achievement: React website delivery and cloud deployment at AIIC
+  - Context: AIIC needed responsive website functionality and reliable cloud-hosted application delivery.
+  - Action: Developed and maintained React website features, deployed and managed infrastructure across Alibaba Cloud and AWS, administered Linux server environments, and managed collaborative development with Git.
+  - Result: Delivered user-facing functionality, supported scalable application hosting, and improved reliability across development and deployment workflows.
+  - Tools: React, JavaScript, Alibaba Cloud, AWS, Linux, Git
+
+- Project / achievement: CI/CD and AI-assisted development workflow at AIIC
+  - Context: The engineering workflow needed faster build, test, deployment, debugging, and review cycles.
+  - Action: Implemented CI/CD pipelines and used AI development tools including Codex, Claude, prompt engineering, AI agents, and Retrieval-Augmented Generation (RAG) techniques to support coding, debugging, code review, and AI-driven feature delivery.
+  - Result: Reduced manual release effort, accelerated development work, and improved the team's ability to prototype and deliver AI-assisted software features.
+  - Tools: CI/CD, Git, Codex, Claude, prompt engineering, AI agents, RAG
 
 - Project / achievement: SQL-based ETL pipelines and automated data workflows at HSBC
   - Context: HSBC required reliable daily data processing across Google Cloud Platform projects, with business-critical data flows supporting reporting and downstream operations.
@@ -61,6 +77,12 @@ Add quantified examples where possible.
   - Action: Maintained, rebuilt, and upgraded Airflow and Qlik Sense components; administered VM-based environments; analysed requirements and selected fit-for-purpose technical solutions.
   - Result: Supported daily operational stability and helped ensure analytics and workflow platforms remained available for business users.
   - Tools: Airflow, Qlik Sense, GCP VM instances, Linux, Confluence
+
+- Project / achievement: Requirement analysis and technical documentation at HSBC
+  - Context: Data engineering projects required clear interpretation of business and infrastructure needs, reliable technical decisions, and maintainable knowledge sharing.
+  - Action: Analysed project requirements, selected fit-for-purpose technical solutions, monitored and resolved data violations, and authored comprehensive project documentation in Confluence.
+  - Result: Improved team continuity, supported clearer delivery decisions, and helped maintain reliable daily data operations across GCP projects.
+  - Tools: Confluence, SQL, GCP, BigQuery, Airflow, Linux
 
 - Project / achievement: GDC to GCP data integration at HSBC
   - Context: Data needed to flow reliably between GDC and GCP environments through feed and batch processes.
@@ -80,6 +102,12 @@ Add quantified examples where possible.
   - Result: Enabled efficient real-time stream processing, faster content retrieval, and downstream analysis/querying.
   - Tools: Spark Streaming, Kafka, Redis, Spark Accumulators, HBase, Elasticsearch, Java
 
+- Project / achievement: Java Spring backend services at 37 Entertainment
+  - Context: Internal enterprise management systems required maintainable backend services supporting user management, data query, reporting, and business workflow modules.
+  - Action: Developed and maintained backend services using Java and Spring, designed RESTful APIs, built database schemas, optimised SQL queries, implemented business logic, validation, error handling, and logging, and supported production deployment.
+  - Result: Delivered stable backend features for internal users and improved reliability and maintainability of business application modules.
+  - Tools: Java, Spring, REST APIs, SQL, database schemas, logging, testing
+
 - Project / achievement: Distributed network crawler platform at 37 Entertainment
   - Context: The team needed a platform to crawl and process HTML content from gaming websites.
   - Action: Contributed to architecture design and development, curated gaming website seed URLs, implemented PhantomJS crawling for internal URLs, and applied MD5 hashing to verify data completeness when merging URLs and content.
@@ -91,6 +119,12 @@ Add quantified examples where possible.
   - Action: Validated data completeness during ODS ingestion, implemented MapReduce and Kettle cleaning jobs, migrated processed data to the DWD layer, aggregated data into the DWS layer with Hive, resolved data skew, and developed custom UDF functions.
   - Result: Improved downstream data reliability, supported cleaner warehouse-layer transformations, and improved query performance by addressing data skew issues.
   - Tools: Hadoop, MapReduce, Kettle, Hive, UDFs, ODS, DWD, DWS
+
+- Project / achievement: Java Spring MVC backend development at CFG Global
+  - Context: Business applications needed backend modules, RESTful APIs, database queries, and deployment support.
+  - Action: Developed backend modules and business features using Java and Spring MVC, assisted with RESTful API integration, wrote SQL queries, maintained MySQL databases, fixed bugs, performed unit testing, and supported deployment and maintenance.
+  - Result: Contributed to scheduled software feature delivery while building practical foundations in backend development, databases, testing, and production support.
+  - Tools: Java, Spring MVC, REST APIs, MySQL, SQL, unit testing
 
 ## Data / Business Analyst Evidence
 
@@ -106,13 +140,18 @@ Add quantified examples where possible.
 
 ## Tools And Skills
 
-- Analytics: Data cleaning, data analysis, reporting, Excel analysis
-- BI / visualisation: Power BI, Excel dashboards, basic dashboard design, data visualisation
-- Databases: SQL, relational databases, data modelling basics
-- Programming: Python, JavaScript/TypeScript, SQL
+- Analytics: Data cleaning, data analysis, reporting, data validation, data quality monitoring, Excel analysis
+- BI / visualisation: Qlik Sense, Power BI, Excel dashboards, basic dashboard design, data visualisation
+- Data engineering: BigQuery, Airflow DAGs, SQL-based ETL, GCP data workflows, Juniper feed and batch processing, Hive, Hadoop, MapReduce, Kettle, Spark Streaming, Kafka, Redis, HBase, Elasticsearch
+- Databases: SQL, MySQL, relational databases, database schema design, query optimisation, data modelling basics
+- Programming: Python, Java, JavaScript/TypeScript, SQL, Shell
+- Backend / web: Java Spring, Spring MVC, RESTful APIs, React, HTML, CSS, backend services, business logic, validation, logging
+- Cloud / infrastructure: Google Cloud Platform, BigQuery, GCP VM instances, AWS, Alibaba Cloud, Linux server administration
+- DevOps / delivery: CI/CD pipelines, Git, GitHub, build/test/deployment workflows, production support
+- AI tools: Codex, Claude, Claude Code, AI agents, prompt engineering, Retrieval-Augmented Generation (RAG), AI-assisted debugging and code review
 - Product / project tools: Git, GitHub, Jira, Notion, Agile basics, requirements gathering
-- Documentation: Technical documentation, business requirements, user stories, process notes, README files
-- Other: AI tools, automation, prompt engineering, problem-solving, remote collaboration
+- Documentation: Confluence, technical documentation, business requirements, user stories, process notes, README files
+- Other: Photoshop, automation, problem-solving, remote collaboration
 
 
 ## Motivation Themes

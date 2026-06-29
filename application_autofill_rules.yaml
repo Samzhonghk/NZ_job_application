@@ -9,6 +9,8 @@ profile:
   portfolio: https://samzhonghk.github.io/my-website/
   website: https://samzhonghk.github.io/my-website/
   github: https://github.com/Samzhonghk
+  latest_cv_path: "C:\\Users\\Sam Zhong\\Downloads\\Sam Zhong-resume (3).pdf"
+  latest_cv_reviewed_at: "2026-06-29"
 
 work_rights_and_availability:
   current_country: New Zealand
@@ -24,8 +26,11 @@ work_rights_and_availability:
 target_roles:
   target_job_titles:
     - Software Engineer
+    - Full Stack Developer
     - AI Engineer
     - Data Engineer
+    - Data Analyst
+    - Business Analyst
   preferred_industries: Any
   preferred_company_types: Any
   work_style_preferences: Any

@@ -1,0 +1,1784 @@
+Delivered-To: samzhongnz@gmail.com
+Received: by 2002:a05:7108:4032:b0:574:52f7:bccd with SMTP id f18csp2043379gdh;
+        Thu, 25 Jun 2026 21:23:14 -0700 (PDT)
+X-Received: by 2002:a05:6a00:6e63:b0:845:c3b1:1c83 with SMTP id d2e1a72fcca58-845c3b122a6mr1267482b3a.26.1782447794162;
+        Thu, 25 Jun 2026 21:23:14 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1782447794; cv=none;
+        d=google.com; s=arc-20260327;
+        b=kOeu/v+idcdZ7n23UZMUjOkInEdO/7a5+PBBULP8Ux+ugguG0FNxxpi18Wmfp0nW/o
+         xdXdyYY86PigmaX+lCKGKrbbRGPMdgun5yDxMam5C73dndjj6WWhaUKZ8Z2TozDsD689
+         0HHq+vN8WdNPVrxPrcP8iTGuIwsIHcLbnFWVErAT2L9kntWTTRs2vknrR/4XAQuQENLi
+         3Z1DuNkUT0hOhr0Hp6DMcnN5Td7Cibkv7hXt2CaMETH64RtTyaBGL8wE7us0w9pw/hs5
+         DgkVtcWaf7tmaRhMi1Bv6LksTuQBtYYkf78JqUCU+rWzwr1LvEP0hJNLYo/xvIJcKyaW
+         FnKA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=to:list-unsubscribe:date:subject:from:message-id:mime-version
+         :list-unsubscribe-post:feedback-id:dkim-signature:dkim-signature;
+        bh=czgEv9AOTECaVdAPbKWSuUedrraaM+UXolG1FG2FdgQ=;
+        fh=udX23aF0rmlIw829r38rv91lm4lFEODBj7Tip241/hg=;
+        b=eSsCNvhHHb9QeKduMs7NxANtsnLkmD0JeMFOzmUQxRLSlXatrp/SjZEPuXToJaGzJg
+         9mbpZ/tE3SV/t1IR+7/htkacw1qDk6o2SR9qs9+GnEtQQB+5B6YFyDIAqLUQIMbFUYa6
+         XkbmEek7w68ozjrvn5SOwxI2JmI92jGEWf6VdtFhrxzPz7G2riE3+oFamE/L8ekzwCwn
+         e0LgZAYd3WOPXJasqEpGN9k+UYm51sy+Hi0D/Ql7pnYsFlTwGk7+iA8J48Mgtfs8ENel
+         wDK/uN5Da9mfJp3ZHE297LQVTU1uLRbB8LjQIk4OGC6P0cmJJ5aVl8whFd4oJ1q/fgZa
+         D+1A==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@s.seek.co.nz header.s=cms header.b=mLstRVhj;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="sxDZ/bW4";
+       spf=pass (google.com: domain of bounces+45458158-c3cb-samzhongnz=gmail.com@cmsgrid.s.seek.co.nz designates 167.89.31.75 as permitted sender) smtp.mailfrom="bounces+45458158-c3cb-samzhongnz=gmail.com@cmsgrid.s.seek.co.nz";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=s.seek.co.nz
+Return-Path: <bounces+45458158-c3cb-samzhongnz=gmail.com@cmsgrid.s.seek.co.nz>
+Received: from o25.em.s.seek.co.nz (o25.em.s.seek.co.nz. [167.89.31.75])
+        by mx.google.com with ESMTPS id d2e1a72fcca58-845a3fd252esi16212050b3a.13.2026.06.25.21.23.13
+        for <samzhongnz@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 25 Jun 2026 21:23:14 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+45458158-c3cb-samzhongnz=gmail.com@cmsgrid.s.seek.co.nz designates 167.89.31.75 as permitted sender) client-ip=167.89.31.75;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@s.seek.co.nz header.s=cms header.b=mLstRVhj;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="sxDZ/bW4";
+       spf=pass (google.com: domain of bounces+45458158-c3cb-samzhongnz=gmail.com@cmsgrid.s.seek.co.nz designates 167.89.31.75 as permitted sender) smtp.mailfrom="bounces+45458158-c3cb-samzhongnz=gmail.com@cmsgrid.s.seek.co.nz";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=s.seek.co.nz
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=s.seek.co.nz;
+	h=feedback-id:list-unsubscribe-post:mime-version:from:subject:date:
+	list-unsubscribe:to:content-type:cc:content-type:date:feedback-id:from:subject:to;
+	s=cms; t=1782447792;
+	bh=czgEv9AOTECaVdAPbKWSuUedrraaM+UXolG1FG2FdgQ=;
+	b=mLstRVhjw2jo8CVH1/sGb4tdDF15s/T42FQiPB7jyQDCojGFLsR0zkJhcEiocIkNQ3Ro
+	biHVkg3Fb+jryPgiNFFkFTVX4xXWdMKFrPsutPHh4KsL0tO4TMYShz0VzRWoLN/iAYnLaU
+	dh+jzqrgiraKjok8/WYsa90Ca+gx3hhOdm1iVhoPlUPfsVE89a189+q8gAmQbm6hd87YUQ
+	H29PiDzwGB8WR3VJWUjpSzWPi5k8IBeY15f/lbiyvLEozZ0Ssmnpw5vrnPgMSAjKR/3jEF
+	FgYIurEYHYgfBw7rY5ZYc9s3kvLGxS/Axdyp0+uKVOZDCexCjwIKIuM+BPpbhaWQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=feedback-id:list-unsubscribe-post:mime-version:from:subject:date:
+	list-unsubscribe:to:content-type:cc:content-type:date:feedback-id:from:subject:to;
+	s=smtpapi; t=1782447792;
+	bh=czgEv9AOTECaVdAPbKWSuUedrraaM+UXolG1FG2FdgQ=;
+	b=sxDZ/bW476BAW1ZogfZwh0uc/2+3htiDpAs+rAbhwNn2V2bndj/Vlzzc2UZ0GD5eL7Yo
+	COf8fOzQdRGoey72nT9wJRHKY/3HqlGkUewEhJsR56TL9ZBeuMYPMSfWcpHEGGuPVRdXaK
+	I3rlpDXSUNHdh9tIeg7dtyEFPKmQRzAAA=
+Received: by recvd-c486f6bd6-4jp78 with SMTP id recvd-c486f6bd6-4jp78-1-6A3D62A0-AE
+	2026-06-25 17:17:20.866639045 +0000 UTC m=+238623.583439387
+Received: from [169.254.18.233] (unknown)
+	by geopod-ismtpd-1 (SG) with ESMTP
+	id pAHZaAcyS_uaCkMH1yC9Mg
+	for <samzhongnz@gmail.com>;
+	Thu, 25 Jun 2026 17:17:20.496 +0000 (UTC)
+Feedback-ID: wru:noti-x:seeknz
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+MIME-Version: 1.0
+Message-ID:
+ <36175992-dailyemail-20260625-anz-2.wru.email@noti-x.seek.com.au>
+From: SEEK Recommendations <noreply@s.seek.co.nz>
+Subject: Software Developer + 11 new jobs
+Date: Fri, 26 Jun 2026 04:23:12 +0000 (UTC)
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Chttps=3A=2F=2Fnoti-platform-list-unsubscribe-api=2Ecloud=2Eseek=2Ecom=2Eau=2F?=
+ =?us-ascii?Q?list-unsubscribe=2Fcandidate-notification?=
+ =?us-ascii?Q?s=2FY2RhOTY2YzctZDdkOC00ZDBkLTkyNzYtYTA0Y?=
+ =?us-ascii?Q?zFkM2UwOTQwfFdSVXxlbWFpbA=3D=3D=3E?=
+X-SG-EID: 
+ =?us-ascii?Q?u001=2EIbCQt6i1i3kPSe0jg0sbSfy3yw5aoprFfX4vuVOzl29ym=2FR4WhINloonJ?=
+ =?us-ascii?Q?anm6hyK4cJ8PZ2sji=2Ffk8bfKWA1s=2Fteu0tXCxM5?=
+ =?us-ascii?Q?=2FQgF54GWWtp0CwFDlTwu=2FIFTCvP2k64miH9DeNS?=
+ =?us-ascii?Q?1ICKvb3OZ7KOGRvkRtZPDDDzMTJkpNKT83+uT6Z?=
+ =?us-ascii?Q?zYq65DEWmYg8lkxLcz9EMnNwaUE02t7yDi1rAsF?=
+ =?us-ascii?Q?nagmxX+0nWwsGmhmj5O0TSCLG6jaHysNDF2sz1X?= =?us-ascii?Q?Eqma?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BoULLfPmfou1tlLx2rPg4CmaVBf+Qz51gvq14?=
+ =?us-ascii?Q?90wIxUbkOj0WEK9KmZDNM73IiTHJh2rQThBBCOy?=
+ =?us-ascii?Q?PNpj+8VITvz0bOebIJPEquzdTK5ZTTPYWZgJcWP?=
+ =?us-ascii?Q?Vg4x7Xd0U0YBYxsS3DPwKAo0mbH2auQ6S6QFJeL?=
+ =?us-ascii?Q?EEgwFjzrqEfzPl7aAuKbEjzz2kNWy6RZq8=2FlIsa?=
+ =?us-ascii?Q?lqYCIg+vX2qbTxKvQerRafB9v84TnbC9QVVraO+?=
+ =?us-ascii?Q?PwXpU9Yzxs8OTYZ2+1ljIY0t2tc2uPZCYbmTAbl?=
+ =?us-ascii?Q?Q=2FpNgMmTRZeM8ZhdBpO0Pc0EKyb2z8T=2FSAe7IOp?=
+ =?us-ascii?Q?esYIdLob9TgbTYxJRXTRD4luPR3dmw0gR2uNvR8?=
+ =?us-ascii?Q?W2d2Da1IF3g8qrQlKi=2FVWHLMTSnrEAHnpA77Rh6?=
+ =?us-ascii?Q?x5HKEt6pilmUn9vrCtLoW8c5vpdsA4kppXI5hET?=
+ =?us-ascii?Q?NaZYBUB9NHWYZqzaE0zmSTWEY=2F5OPInK1myIYli?=
+ =?us-ascii?Q?Bk9YpkyuYGdNgb0k6u8r6y8OU0L9LReIpGR3o8G?=
+ =?us-ascii?Q?JtSrY6zsqjFvVvT6cjuXm+3Xpph=2FvL9WW6Vvp4O?=
+ =?us-ascii?Q?XLlJAmaIc=2FVC?=
+To: Sam Zhong <samzhongnz@gmail.com>
+X-Entity-ID: u001.U/Ug3sPnuxPi7zxvKLyptA==
+Content-Type: multipart/alternative;
+ boundary="--_NmP-7622d1d5454bdfc3-Part_1"
+
+----_NmP-7622d1d5454bdfc3-Part_1
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+View job recommendations just for you
+%%str_to_replace_open_tracking%%
+
+seek
+[https://email.s.seek.co.nz/ss/c/u001.QBcc3ixuGSq5N0vKOUcS0x-vfJhzOVkNUrbI_=
+gmcPlC9WtahURcgNgHtDKosqGQnBHj_yQ9bKKbIMjSXvrzw85_orj7QNbRAORMghcita1SjV8-H=
+yVupyi281LBk2boI/4rs/iPeXitCnQROHdCQblrInNA/t0/h001.0N_ztOsYH4tdFrrqAa10a-A=
+UlBmdnRm7TfZcA8wdGvA]https://email.s.seek.co.nz/ss/c/u001.l5tc4iXB2-Bk7UR8K=
+dEfXVQXmNvqRCnLmBCEyK0gL5DgEzh7LB9Cf-kEIhm2og7vViXjj9CIRb6xkagW963sUQ/4rs/i=
+PeXitCnQROHdCQblrInNA/t1/h001.wAYJE5ghvzkZ7LGOzXpVyO1AsfaLT_1VY4AyLGBB8Gw
+
+Hi Sam, we've got new job recommendations for you
+We want to help find the job that=E2=80=99s right for you =E2=80=93 and the=
+se roles could be a
+match.
+We recommend these jobs based on your profile, past viewed jobs and
+applications.
+
+logo
+[https://email.s.seek.co.nz/ss/c/u001.G15QKmGHO1ExpBrJ0yUhbW6Lw6KXRtUAXhXi3=
+dJ3n3PfH4C3zRYzjnE5IyAXXSG3PXZZTg3t1Ju2vgytgA0Aa7J_1tS5kIUR2ggAhABGMTlbQ3vS=
+qeSFpGRxjbzup1JZrM46Zp7eWjWsOkDp3Ewiqg/4rs/iPeXitCnQROHdCQblrInNA/t2/h001.O=
+oEGiAqUXJbnx_2FX9JBIngQai0eRZ71a9CUbw6fNps]
+
+Software Developer
+KPMG
+Auckland CBD, Auckland (Hybrid)
+ * Bring ideas to life through clean, reliable code
+ * Work alongside talented teams across product, design, and engineering
+ * Drive smart, efficient delivery & build products that users rely on ever=
+y day
+
+Recently posted
+
+[https://email.s.seek.co.nz/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59va=
+Nz9vv7rozZrc0ZWBG45Hq5UDGAL-gFwhFBJ1jnvdjqEzflTlhYsZ7kKuk5n5bdtiJO7ZXw_AhNe=
+nSwOSpui6kEtEEh69hO1y3iCJFkBJJUM_l_VPAPrLWSuXBGRrmGpFML4gJc/4rs/iPeXitCnQRO=
+HdCQblrInNA/t3/h001.TT-BuZ9artOOV8NSq2K3m8dlwiJX16xiBpmW2tr5V98]
+
+logo
+[https://email.s.seek.co.nz/ss/c/u001.G15QKmGHO1ExpBrJ0yUhbW6Lw6KXRtUAXhXi3=
+dJ3n3PfH4C3zRYzjnE5IyAXXSG32aJapGDltfFJSpF85P773iiGS6XRO1F9IXlaKaBB4Kkl3GVh=
+q_uWveh0OXKmx0-QovDY9ErFuMgVT0SpSMjywQ/4rs/iPeXitCnQROHdCQblrInNA/t4/h001.U=
+iKMMMqE4uLOmhcQkvggo8oBqSdStv_g2GDCYN9b1vU]
+
+Software Engineer
+Tower Limited
+Auckland CBD, Auckland
+Competitive Salary, Annual Review and Benefits
+Profile salary match
+ * Join an award winning proud Kiwi organization in the heart of Auckland
+ * Innovate, showcase skill and inspire digitially
+ * Discounts on Tower products
+
+Recently posted
+
+[https://email.s.seek.co.nz/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59va=
+Nz9vv5t3SWaDYJcOmfz64up-ert6dv9eYKmqjeeMxuCacKRUWlttb3Sy0RUdLrNyy5bKfrhk8-0=
+GnI6jXZ0zcj2QRajKEfYcGKR-rN5oqNP9tZ0RWs1aU4rl_AmsL51X0SYrX0/4rs/iPeXitCnQRO=
+HdCQblrInNA/t5/h001.cETKbMdRJzw3ljAgR9c1yiQqngThykEfyiE4-tr2fvs]
+
+logo
+[https://email.s.seek.co.nz/ss/c/u001.G15QKmGHO1ExpBrJ0yUhbW6Lw6KXRtUAXhXi3=
+dJ3n3PfH4C3zRYzjnE5IyAXXSG3f1yrBDBeaMEFTujVMF11fx4ubhcVTZr2BCKtsNnnOuWzXXhx=
+CXQX4yMppfagFV9MQL6BKouJE-l25KKXsy5VgQ/4rs/iPeXitCnQROHdCQblrInNA/t6/h001.t=
+fCcMXtinQFShkzymsr57J59o3VD48injkB8DYcbxMU]
+
+Data Platform and Automation Engineer
+ProCare
+Parnell, Auckland (Hybrid)
+ * Great benefits on offer
+ * Hybrid working model, competitive salary and benefits offering
+ * Established high-performing agile team
+
+[https://email.s.seek.co.nz/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59va=
+Nz9vv5AmIhhCF9CVqkVsXGGoD0_4EYsH4JKg67vJeMbY3YhHl6WrlWktCkacm-mITiUvBBk_lWp=
+BV2VVqXWufdyFRJqsOGXpV7pRcB-CrAgqByLPcxBgeARuShDio-FXpCdcFw/4rs/iPeXitCnQRO=
+HdCQblrInNA/t7/h001.LenKmVMHj0pDpKYyYthD3ptnFXFIg0GNAV0ywWi-OPw]
+
+logo
+[https://email.s.seek.co.nz/ss/c/u001.G15QKmGHO1ExpBrJ0yUhbW6Lw6KXRtUAXhXi3=
+dJ3n3PfH4C3zRYzjnE5IyAXXSG3dJDb7rfmG31Rt8qLF1sNM3ZeRn3RchPnjRxAlO9FCe2_gAjf=
+uPQ491-l3YXFVj9He8vchFqPyAo4Sud07niLIQ/4rs/iPeXitCnQROHdCQblrInNA/t8/h001.D=
+NvHVMzifk26tBmba0_oINVU3A3vCsXc-0wFNDTv4fw]
+
+AI Consultant/Developer
+Younity
+Auckland CBD, Auckland (Hybrid)
+ * Hybrid Working Environment
+ * Excellent Team Culture
+ * Great Location
+
+Recently posted
+
+[https://email.s.seek.co.nz/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59va=
+Nz9vv61rl4n_heFLATJF5lBhIx9UyKQAN3apUcXY2doBHFtk8IBuZ_duk9JIGWOU7KJjxx6AA1m=
+Vu5ZVgim47wKKxzK_AvkNCeXAjU5Gw6fFuP_h0wGZyC11R0QVVB87wAMVM0/4rs/iPeXitCnQRO=
+HdCQblrInNA/t9/h001.DEDuwZLmHGwIm4IyrjNkH7ZVoQD1cEW9fQeZNmO8es0]
+
+logo
+[https://email.s.seek.co.nz/ss/c/u001.G15QKmGHO1ExpBrJ0yUhbW6Lw6KXRtUAXhXi3=
+dJ3n3PfH4C3zRYzjnE5IyAXXSG3GJUFS2fNeCWAFQqgMHiJFw41Nq3MKUHZZPawgwf2zvdGiHqo=
+dpCDdft9NPDd3Q7gOsBNuXqfk0whA8Ba2lFfZg/4rs/iPeXitCnQROHdCQblrInNA/t10/h001.=
+tT8v31dA2DI9xEs5DZq6yBu7IxII0gFf0Rg_hw0_Wew]
+
+Junior Configuration Developer
+Foster Moore International Ltd
+Auckland CBD, Auckland (Hybrid)
+ * Hybrid working
+ * Excellent remuneration and benefit package
+ * Global organisation
+
+Recently posted
+
+[https://email.s.seek.co.nz/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59va=
+Nz9vv7a7KDMW8IT2Td74jiP8PjcVItvbkN_GajRrsAN7cQsQj3SL2wzZFUk42CKWuv5vcxwJXuJ=
+a8PpSteOxgJS8U3H2M97cs3n3OUzuJoi81Q7zEID8EOfuNyjalnREBwdb3o/4rs/iPeXitCnQRO=
+HdCQblrInNA/t11/h001.4AvLL0_U8npCwELD9n2WwcBTlKlOhOva4EiAPiKWL4M]
+Data Engineer
+HI Technology & Innovation
+Newmarket, Auckland (Remote)
+Recently posted
+
+[https://email.s.seek.co.nz/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59va=
+Nz9vv6btshhtEb75fQ4rlYfqcrh6hl2SxB4EXQtJD0OOcA4JC6RATkxKg360OpZnFuaBSGcQApT=
+MG7UBn4GdDffErF4H8ZwDHpSbnSf983VkJgxJVfvzFJLG2QY9hzQskUk19E/4rs/iPeXitCnQRO=
+HdCQblrInNA/t12/h001.QacwyrMnrystdYLkfojMEjblbl5EbPAw32aBAI5bpVs]
+
+logo
+[https://email.s.seek.co.nz/ss/c/u001.G15QKmGHO1ExpBrJ0yUhbW6Lw6KXRtUAXhXi3=
+dJ3n3PfH4C3zRYzjnE5IyAXXSG3vmKO20-FWFToi_fkF2-aWLUd63oMZj98ee1-2Q5u3z86VmmK=
+JAhUkfx84d6rZFuglMg00yIlvvTna04lg1Cr6g/4rs/iPeXitCnQROHdCQblrInNA/t13/h001.=
+AjyY5lzEZg4yBrwMYjOeQq9FklrdX2zzf8QKjoMRaTU]
+
+SOFTWARE ENGINEER SUMMER INTERNSHIP/GRADUATE
+TRV Trading
+New Lynn, Auckland (Hybrid)
+$62,500 + performance and profit share bonuses
+Profile salary match
+ * Work alongside our top engineers to decrease latency and increase profit=
+s
+ * Build nanosecond-level systems processing millions of market events/seco=
+nd
+ * Graduate role guaranteed for top performers
+
+[https://email.s.seek.co.nz/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59va=
+Nz9vv7bMlRblnts71af-AJylz1BC57gq7QYmSChq8wM34a1RYxWpo9SpiiZLNbXXYB_OANF4adC=
+LPqdPPMYpLQU4MUvzyKE-NCjIK679o4mL8w6ifYlev4Ed2J5vuUkRfH1_ow/4rs/iPeXitCnQRO=
+HdCQblrInNA/t14/h001.mtbKjuRwP_DsBrtuTJVaq7ETKZxBHSA_jiVLSgyCTmo]
+
+logo
+[https://email.s.seek.co.nz/ss/c/u001.G15QKmGHO1ExpBrJ0yUhbW6Lw6KXRtUAXhXi3=
+dJ3n3PfH4C3zRYzjnE5IyAXXSG3L4Hqm23Lz08Sp0sGmKzAbxTFVWyoPo0ujP5EnfloBCUa-cal=
+odlZkEzrFGM4iVN9VFUqKjWbvX6VsGvDpIulTw/4rs/iPeXitCnQROHdCQblrInNA/t15/h001.=
+wvzHVV7x_t2fw5HHqwm3Xj5HiP1hk4XhVmA7Zp1OvBs]
+
+Graduate Software Engineer - Integration
+Heartland Bank
+Auckland CBD, Auckland
+$65,000 =E2=80=93 $90,000 per year
+Profile salary match
+ * Grow your career!
+ * Supportive leadership
+ * Fast paced environment
+
+Recently posted
+
+[https://email.s.seek.co.nz/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59va=
+Nz9vv5nzZQf4UEKFUQ_a26h9CKg_kPTWD0hrrS83hZPnWpRq8QAUa_griC6qsUqQGVa8HfDvsvF=
+06Pimci71ili0shifX4f5-ZFH0xMgPpW-IQRTrV5wDzr29FlHqo_G52b42I/4rs/iPeXitCnQRO=
+HdCQblrInNA/t16/h001.NnxhensDvTRMMszM1sEQO0mXM1G3cwq6AAlXpn4Hp8c]
+
+logo
+[https://email.s.seek.co.nz/ss/c/u001.G15QKmGHO1ExpBrJ0yUhbW6Lw6KXRtUAXhXi3=
+dJ3n3PfH4C3zRYzjnE5IyAXXSG3YAfboFvsYJ58PBIxc0anKOy_VASw23zUPJlEPA-Uj-y_uGYT=
+v2Cf_FgzLfD7UJ7Pz1pft1F4YsbF_6t3lUOMKQ/4rs/iPeXitCnQROHdCQblrInNA/t17/h001.=
+yuiOftAM3tTmaxHAZtJoenrrUnvOocB9lqYtM6IYZSE]
+
+Data Scientist
+Randstad Digital
+Auckland CBD, Auckland (Hybrid)
+Hybrid work, Travel allowance, Autonomy
+ * Data Scientist - Permanent Opportunity
+ * Auckland CBD - Hybrid Working
+ * Competitive salary, Commute allowance, Training budgets
+
+Recently posted
+
+[https://email.s.seek.co.nz/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59va=
+Nz9vv5Cl-1DNp3QcWY4ItUUvgXtkJQ2yM7hUSmYm5bTHYhzRamqtGn-q2mtIBsPCsE0KncaAHDQ=
+DCAmVQSf-cRxbHABGNMSnd6GGluHWLWGyPMDCAcVXG6PxGog8GJ-5rZqsuo/4rs/iPeXitCnQRO=
+HdCQblrInNA/t18/h001.E3dFXPmqFcN5MwtOqpSrLEenLEQK2Q4Hd1EazwYLR0M]
+
+logo
+[https://email.s.seek.co.nz/ss/c/u001.G15QKmGHO1ExpBrJ0yUhbW6Lw6KXRtUAXhXi3=
+dJ3n3PfH4C3zRYzjnE5IyAXXSG390hlMG-_MvKwpd6eb5IfOtwA4IA6UUsRCVj3ct9r0fmGjneD=
+9bN0oxjYUfzVFaIwZMTw_d6gN5tDPrl161Tx2g/4rs/iPeXitCnQROHdCQblrInNA/t19/h001.=
+crYVlt4zhwMDWAAkWO6E6YSVY3DoLibq2bMFSEA-uLE]
+
+SQL Developer
+Paxus
+Auckland (Hybrid)
+ * Based in Auckland
+ * Immediate start
+ * Permanent opportunity
+
+Recently posted
+
+[https://email.s.seek.co.nz/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59va=
+Nz9vv6DzqfxD2fy2fbzcKveyHoE8eqaV1vAm2c9SVZDt_js062S_L_9WBnv2TYsiMpyB_8hH6en=
+cDGWc0y2tgAIzcY6xMI3oHdTwTsfoMiF2vBIjXWRK9ZLEqaUoSChlYzKifw/4rs/iPeXitCnQRO=
+HdCQblrInNA/t20/h001.j9Sl1eRc8LkHERFs5dcMxPHHV-IymTaRGUvZlgMj5Xk]
+Level 2 Full Stack Developer
+smartAR Services Limited
+Newmarket, Auckland (Hybrid)
+Recently posted
+
+[https://email.s.seek.co.nz/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59va=
+Nz9vv6EeHcvR4vvUc4tVwMIv_kkjG4eWXQZYM479UUrMlnMncN1YFw5aRKUoQ27GKrtfucAgAZM=
+JdWhMJBxO4jVHbWNJmTeTkjDIj_FiVzDuGp3KOOqimGhRMteSL1eeucqZzU/4rs/iPeXitCnQRO=
+HdCQblrInNA/t21/h001.7ejM9Vm76GLu2Q7hl2c0nHhg750wkpKD1Ldo0rDx26M]
+Embedded Software Engineer | AI-Driven Environmental Technology
+Enterprise Technology Recruitment Ltd
+Waitakere & West Auckland, Auckland (Remote)
+$120,000 =E2=80=93 $140,000 per year
+Recently posted
+
+[https://email.s.seek.co.nz/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59va=
+Nz9vv6sDYLX8LfpuZJ4cHjVfTOu9vJQ9SWMYEzovuc4Kwtoi6GWT134YBm-YhhXOpG7bU4H4gd-=
+ZQxEzusN5feWRf5ZocYTYFmmGohGD6dB9t91wv6e2j2MaeDcj4NGxCszr_A/4rs/iPeXitCnQRO=
+HdCQblrInNA/t22/h001.w-X6jsrdOtz_8uxQ9TkVmG8puA4CTL0Rh7VB8hBGkbM]
+
+View more jobs [https://email.s.seek.co.nz/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXV=
+QXmNvqRCnLmBCEyK0gL5DgEzh7LB9Cf-kEIhm2og7vrCm-P2o3qlBrbBQ2HnXlPnrigKj0e6tRx=
+eETAzZ3_6s/4rs/iPeXitCnQROHdCQblrInNA/t23/h001.BIzWlXmRf5XYP527IUhWIZCv6NDC=
+e9rqDn3KEgKPF1k]
+
+These recommendations are based on your past activity on SEEK. Find out mor=
+e
+about how recommendations work
+[https://email.s.seek.co.nz/ss/c/u001.bo4DZPfuJ7GsePGSE7RvQsTFNg5EGU-ZLW6D9=
+YA9lh03LOeE2vYZWHKULLQJ_6WJH_MK257aEHY9vKuLBC7AAN75JN2QVoGNBLRyWtgx_n1SMf0k=
+lFrTAGVbpzkJmyBGH5ZFdaANUXepxsTv3Axzxtm8j4SU5Xpt62WKZ2UYGyk/4rs/iPeXitCnQRO=
+HdCQblrInNA/t24/h001.ziSOOoj_BwSMRv7WQnBJx4q-ve4ysLk257g4dNG8sWg].
+
+Rate your recent employer
+[https://email.s.seek.co.nz/ss/c/u001.QBcc3ixuGSq5N0vKOUcS0x-vfJhzOVkNUrbI_=
+gmcPlC9WtahURcgNgHtDKosqGQnT1FiGnr3oAgZyFZWJGyqjC-imh_4TCpOyBAlbDxGsAg/4rs/=
+iPeXitCnQROHdCQblrInNA/t25/h001.2Ifni21avvyFGawCRoYlXhljyNaj_Z4afzkI8BmELbE=
+]
+
+Rate your recent employer
+
+Rate your recent employer
+[https://email.s.seek.co.nz/ss/c/u001.QBcc3ixuGSq5N0vKOUcS0x-vfJhzOVkNUrbI_=
+gmcPlC9WtahURcgNgHtDKosqGQn4UtVB8PcgxhSP276z9hJA_gpxwM2QWO6xDG85h5qOug/4rs/=
+iPeXitCnQROHdCQblrInNA/t26/h001.R_XOMx06EedlQCHW8M7m8AI_kwHHjp0aHOOsH8zkOOE=
+]
+
+[https://email.s.seek.co.nz/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXeDPlqnTSEZUC68Y2=
+33DlMRGBjvsDeQYW5HI3oVf0mFF8lB4aOer33XYWUjQ0A_49WBqVyNXwlqrR-wZFo_b3B3hHnbP=
+4li5iO6QGZqwkKjx/4rs/iPeXitCnQROHdCQblrInNA/t27/h001.W5OlXzAcn4Z4z2EilYOdxY=
+LqVab7J-zw93ThP4RC6Sc]
+
+Was this email useful?
+
+Yes
+[https://email.s.seek.co.nz/ss/c/u001.QBcc3ixuGSq5N0vKOUcS0x-vfJhzOVkNUrbI_=
+gmcPlC9WtahURcgNgHtDKosqGQns12WNVPQ4aHIdt_8AvKq07Y0TF73bvW-z3V6JdqOKk8/4rs/=
+iPeXitCnQROHdCQblrInNA/t28/h001.ubZSEB24PwHQj-CkJfjzjrM5NY8tJYebUCqXL8kXOZw=
+]https://email.s.seek.co.nz/ss/c/u001.QBcc3ixuGSq5N0vKOUcS07phHaUFfEtSRSjuH=
+l7FZhgcO0jkA1b8tYixXSSo8RdnBqqtVMgr0PQqZop3QctQPfFyJnGNXFeuq8qkZxEcGz5QX03d=
+JAEtuQIWI6EMFHza4HTLL4GgBff5v-i_l4kOfe6CiGn0cBfbxyeUWUCRcj2CjAB4N7H8R8gKK3q=
+3svdKoExutUNyz356ZKhjw8oQoQ/4rs/iPeXitCnQROHdCQblrInNA/t29/h001.7n3Vd7_w7Tq=
+L_ybbocSkjKJYpWRhUvNH4vNRBN2iguc
+
+Yes
+[https://email.s.seek.co.nz/ss/c/u001.QBcc3ixuGSq5N0vKOUcS07phHaUFfEtSRSjuH=
+l7FZhgcO0jkA1b8tYixXSSo8RdnBqqtVMgr0PQqZop3QctQPfFyJnGNXFeuq8qkZxEcGz5QX03d=
+JAEtuQIWI6EMFHza4HTLL4GgBff5v-i_l4kOfe6CiGn0cBfbxyeUWUCRcj2CjAB4N7H8R8gKK3q=
+3svdKoExutUNyz356ZKhjw8oQoQ/4rs/iPeXitCnQROHdCQblrInNA/t30/h001.r4zVZRiYWqr=
+GyRICZlNyDvYWVBult2E2rGL3IN_Vgbg]
+
+No
+[https://email.s.seek.co.nz/ss/c/u001.QBcc3ixuGSq5N0vKOUcS0x-vfJhzOVkNUrbI_=
+gmcPlC9WtahURcgNgHtDKosqGQns12WNVPQ4aHIdt_8AvKq09lFLVvXJltMhs4D1eVTCwU/4rs/=
+iPeXitCnQROHdCQblrInNA/t31/h001.cjb_zwqgFLCISXzDjVa8aT0pnE2-Bd9pyopy6YH6M2o=
+]https://email.s.seek.co.nz/ss/c/u001.QBcc3ixuGSq5N0vKOUcS07phHaUFfEtSRSjuH=
+l7FZhgcO0jkA1b8tYixXSSo8RdnBqqtVMgr0PQqZop3QctQPfFyJnGNXFeuq8qkZxEcGz5QX03d=
+JAEtuQIWI6EMFHza4HTLL4GgBff5v-i_l4kOfe6CiGn0cBfbxyeUWUCRcj2CjAB4N7H8R8gKK3q=
+3svdKK3C3TxLuHd8BPigmwOpiQQ/4rs/iPeXitCnQROHdCQblrInNA/t32/h001.Dwk9h7oq01x=
+uWmRkjlAeyALZ2A8gTnXzlrmV40PXnuE
+
+No
+[https://email.s.seek.co.nz/ss/c/u001.QBcc3ixuGSq5N0vKOUcS07phHaUFfEtSRSjuH=
+l7FZhgcO0jkA1b8tYixXSSo8RdnBqqtVMgr0PQqZop3QctQPfFyJnGNXFeuq8qkZxEcGz5QX03d=
+JAEtuQIWI6EMFHza4HTLL4GgBff5v-i_l4kOfe6CiGn0cBfbxyeUWUCRcj2CjAB4N7H8R8gKK3q=
+3svdKK3C3TxLuHd8BPigmwOpiQQ/4rs/iPeXitCnQROHdCQblrInNA/t33/h001.auT-LyWZz8p=
+_S2Glf06VJUhaCk3AtkwV80PvhtXsT24]
+
+
+
+Download SEEK App
+
+apple store
+[https://email.s.seek.co.nz/ss/c/u001.QBcc3ixuGSq5N0vKOUcS0x-vfJhzOVkNUrbI_=
+gmcPlC9WtahURcgNgHtDKosqGQnk34GncA-aARAu0z9NW0cKuE3edgzEEfbLmQLpVpVKGs/4rs/=
+iPeXitCnQROHdCQblrInNA/t34/h001.5OsS3iPPciaChkt6JG5jzcfX9WxzO2DWHD1lKqtrYLo=
+]https://email.s.seek.co.nz/ss/c/u001.riOgLc5bAZgLA6afJYzTudPUUpWnCB__mOT7e=
+oCzJ8IKBcCvXo7WGeb-ysT_yc-bsqvkV32og2xStyKX6B4wzg/4rs/iPeXitCnQROHdCQblrInN=
+A/t35/h001.rM26g7SoIHeuuHMGWaE2rXka3hG9tOWLY4ujj6QRZ9s
+
+
+
+google play
+[https://email.s.seek.co.nz/ss/c/u001.QBcc3ixuGSq5N0vKOUcS0x-vfJhzOVkNUrbI_=
+gmcPlC9WtahURcgNgHtDKosqGQnJN-QK9u9ToEGRTAKmqDuoGTKaaqSaTAN9OwSWNmmCJc/4rs/=
+iPeXitCnQROHdCQblrInNA/t36/h001.OxI2kpmRPNN5hod62zzq9Kw18Hr4uEaVGJ4RYMLu2bE=
+]https://email.s.seek.co.nz/ss/c/u001.3vwdN6USzeuUzY5LuGLERRsmP7wCYCYKZ6KBz=
+Bx4wxhNRlutmOAQfEZPmAMPq-eLDS4GDEUY_9oOhvqP35pPKlWY0dcn0DTSRq7i5kyotLc/4rs/=
+iPeXitCnQROHdCQblrInNA/t37/h001.7C-gGQAmwBn43QSfuMvzaIZ1PuX4BRsLCc7DOZC81qM
+
+Edit frequency
+[https://email.s.seek.co.nz/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXbPJ8PDd9T17jHXis=
+FfTG1PbBVPj7ISyZEUL4ywkM0rXdFPXHiiGPdWy7BjlaVR92bPoEwqGyZFG6d5zJsPJr4RxHHlh=
+8VJwnqZ5yrklVg7h/4rs/iPeXitCnQROHdCQblrInNA/t38/h001.M3hSqanSyv6Bm84BwkMRQ7=
+dv_igrWd53tWeu73CdyNI]
+Unsubscribe
+[https://email.s.seek.co.nz/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXbPJ8PDd9T17jHXis=
+FfTG1PbBVPj7ISyZEUL4ywkM0rXtOee0P2RhBNjgLBX69OQxb9uu-wBw8ceekYd6ydamgCgk4u9=
+ereZ-YJaodHh5u0lxiIFRO0W49cuJcIX1aqYeCTRc1TJC_-8ngk32MRJNG6Cix5BQoLETvKuRhg=
+EIv8of93coW9uV_KpOPi4SjXfzd6q2f0jDTHGbdNKigtLHmI/4rs/iPeXitCnQROHdCQblrInNA=
+/t39/h001.4CXStZ6DgPKF4iFqw_uzI8WAYOGbnfHs_xJ41Pc9mtY]
+Privacy [https://email.s.seek.co.nz/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXQb-CxGyZ=
+Xq7QDkYUy9K0uCYrIjZVbTpQROOv1laSVeG5N6RHe-g_oVjP9iSFKQr1MtwRPT9HohEKPjlhe0P=
+qZI/4rs/iPeXitCnQROHdCQblrInNA/t40/h001.fkdSwU7L_5h2JYrXlPRickc9eAtW84MHO9Q=
+3DaCldDI] Contact us
+[https://email.s.seek.co.nz/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXSVotqRpuyMFhrmoX=
+WvlMyNi0K5HC7ZXtWdd3_F2EaTNzBD7E8BAfDD2nnQMg3xeXOLRKIAOGuTboe6hrReU5qk/4rs/=
+iPeXitCnQROHdCQblrInNA/t41/h001.ZA13BIBtYxdW-sAgqowQ89p6KUQcE-blEDzp6mTKN5c=
+]
+
+This email was sent to you as a registered user of nz.seek.com
+[https://email.s.seek.co.nz/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVQXmNvqRCnLmBCEy=
+K0gL5DgEzh7LB9Cf-kEIhm2og7vYCF6mu9OXogfYf4oLIuMaA/4rs/iPeXitCnQROHdCQblrInN=
+A/t42/h001.AAML3R0FzM7hv5l4zzPbPytlTR4ZvU3HAt3v0H0XSKs]
+=C2=A9 SEEK Limited, 60 Cremorne St, Cremorne VIC 3121 Australia
+----_NmP-7622d1d5454bdfc3-Part_1
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html><html lang=3D"und" dir=3D"auto" xmlns=3D"http://www.w3.org/1=
+999/xhtml" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas=
+-microsoft-com:office:office"><head><title></title><!--[if !mso]><!--><meta=
+ http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"><!--<![endif]--><meta=
+ http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8"><meta n=
+ame=3D"viewport" content=3D"width=3Ddevice-width,initial-scale=3D1"><style =
+type=3D"text/css">#outlook a { padding:0; }
+      body { margin:0;padding:0;-webkit-text-size-adjust:100%;-ms-text-size=
+-adjust:100%; }
+      table, td { border-collapse:collapse;mso-table-lspace:0pt;mso-table-r=
+space:0pt; }
+      img { border:0;height:auto;line-height:100%; outline:none;text-decora=
+tion:none;-ms-interpolation-mode:bicubic; }
+      p { display:block;margin:13px 0; }</style><!--[if mso]>
+    <noscript>
+    <xml>
+    <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+    </xml>
+    </noscript>
+    <![endif]--><!--[if lte mso 11]>
+    <style type=3D"text/css">
+      .mj-outlook-group-fix { width:100% !important; }
+    </style>
+    <![endif]--><!--[if !mso]><!--><link href=3D"https://fonts.googleapis.c=
+om/css?family=3DUbuntu:300,400,500,700" rel=3D"stylesheet" type=3D"text/css=
+"><link href=3D"https://www.seek.com/static/shared-web/seeksans.css" rel=3D=
+"stylesheet" type=3D"text/css"><style type=3D"text/css">@import url(https:/=
+/fonts.googleapis.com/css?family=3DUbuntu:300,400,500,700);
+@import url(https://www.seek.com/static/shared-web/seeksans.css);</style><!=
+--<![endif]--><style type=3D"text/css">@media only screen and (min-width:48=
+0px) {
+        .mj-column-per-100 { width:100% !important; max-width: 100%; }
+.mj-column-per-25 { width:25% !important; max-width: 25%; }
+.mj-column-per-75 { width:75% !important; max-width: 75%; }
+.mj-column-px-210 { width:210px !important; max-width: 210px; }
+.mj-column-px-267 { width:267px !important; max-width: 267px; }
+.mj-column-px-120 { width:120px !important; max-width: 120px; }
+.mj-column-px-12 { width:12px !important; max-width: 12px; }
+.mj-column-px-135 { width:135px !important; max-width: 135px; }
+      }</style><style media=3D"screen and (min-width:480px)">.moz-text-html=
+ .mj-column-per-100 { width:100% !important; max-width: 100%; }
+.moz-text-html .mj-column-per-25 { width:25% !important; max-width: 25%; }
+.moz-text-html .mj-column-per-75 { width:75% !important; max-width: 75%; }
+.moz-text-html .mj-column-px-210 { width:210px !important; max-width: 210px=
+; }
+.moz-text-html .mj-column-px-267 { width:267px !important; max-width: 267px=
+; }
+.moz-text-html .mj-column-px-120 { width:120px !important; max-width: 120px=
+; }
+.moz-text-html .mj-column-px-12 { width:12px !important; max-width: 12px; }
+.moz-text-html .mj-column-px-135 { width:135px !important; max-width: 135px=
+; }</style><style type=3D"text/css">@media only screen and (max-width:479px=
+) {
+      table.mj-full-width-mobile { width: 100% !important; }
+      td.mj-full-width-mobile { width: auto !important; }
+    }
+ =20
+
+      noinput.mj-menu-checkbox { display:block!important; max-height:none!i=
+mportant; visibility:visible!important; }
+
+      @media only screen and (max-width:479px) {
+        .mj-menu-checkbox[type=3D"checkbox"] ~ .mj-inline-links { display:n=
+one!important; }
+        .mj-menu-checkbox[type=3D"checkbox"]:checked ~ .mj-inline-links,
+        .mj-menu-checkbox[type=3D"checkbox"] ~ .mj-menu-trigger { display:b=
+lock!important; max-width:none!important; max-height:none!important; font-s=
+ize:inherit!important; }
+        .mj-menu-checkbox[type=3D"checkbox"] ~ .mj-inline-links > a { displ=
+ay:block!important; }
+        .mj-menu-checkbox[type=3D"checkbox"]:checked ~ .mj-menu-trigger .mj=
+-menu-icon-close { display:block!important; }
+        .mj-menu-checkbox[type=3D"checkbox"]:checked ~ .mj-menu-trigger .mj=
+-menu-icon-open { display:none!important; }
+      }</style><style type=3D"text/css">html, body { background-color: #fff=
+ }
+.cmqym3 > table { border-collapse: separate }
+._1evar1p > table > tbody > tr > td { border-radius: 4px }
+._1h9jrie > table > tbody > tr > td { border-radius: 8px }
+.rhaa5w > table > tbody > tr > td { border-radius: 16px }
+.ac8k46 > table > tbody > tr > td { border-radius: 24px }
+@media only screen and (max-width: 479px) {
+  ._1ke8ek2 > table > tbody > tr > td { padding-left: 0 !important; padding=
+-right: 0 !important }
+}
+@media only screen and (min-width: 480px) {
+  ._2bzpa8 > table > tbody > tr > td { padding-bottom: 0 !important }
+}
+.column-per-15 {
+          text-align: left;
+          direction: ltr;
+        }
+
+        @media only screen and (min-width: 480px) {
+          .company-info {
+            display: inline-block!important;
+          }
+          .column-per-15 {
+            width: 15%!important;
+            max-width: 15%;
+            vertical-align: top;
+            text-align: right;
+            direction: rtl;
+          }
+          .column-per-85 {
+            width: 85%!important;
+            max-width: 85%;
+            vertical-align: top;
+          }
+        }
+
+        .title-with-logo {
+          mso-padding-alt: 0 0 4px 0;
+        }
+
+        @media only screen and (max-width: 479px) {
+          .title-with-logo {
+            padding-right: 0 !important;
+          }
+        }</style></head><body style=3D"word-spacing:normal;background-color=
+:#ffffff;"><div style=3D"display:none;font-size:1px;color:#ffffff;line-heig=
+ht:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">View job re=
+commendations just for you</div><div aria-roledescription=3D"email" style=
+=3D"background-color:#ffffff;" role=3D"article" lang=3D"und" dir=3D"auto"><=
+img src=3D"https://email.s.seek.co.nz/ss/o/u001.GabLMcUjWXP433zoeVfWnA/4rs/=
+iPeXitCnQROHdCQblrInNA/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"=
+0" style=3D"height:1px !important;width:1px !important;border-width:0 !impo=
+rtant;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !im=
+portant;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 =
+!important;padding-right:0 !important;padding-left:0 !important;"/><!--[if =
+mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px;" width=3D"60=
+0" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exa=
+ctly;"><![endif]--><div style=3D"margin:0px auto;max-width:600px;"><table a=
+lign=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pr=
+esentation" style=3D"width:100%;"><tbody><tr><td style=3D"direction:ltr;fon=
+t-size:0px;padding:0 0 32px 0;text-align:center;"><!--[if mso | IE]><table =
+role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr>=
+<td class=3D"" style=3D"vertical-align:top;width:600px;" ><![endif]--><div =
+class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0px;tex=
+t-align:left;direction:ltr;display:inline-block;vertical-align:top;width:10=
+0%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" width=3D"100%"><tbody><tr><td style=3D"border-top:4px solid #E60278=
+;vertical-align:top;padding:16px 16px 0 16px;"><table border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr=
+><td align=3D"left" class=3D"universal-mj-image" style=3D"font-size:0px;pad=
+ding:0;word-break:break-word;"><table border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;border-=
+spacing:0px;"><tbody><tr><td style=3D"width:89px;"><a href=3D"https://email=
+.s.seek.co.nz/uni/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVQXmNvqRCnLmBCEyK0gL5DgEzh=
+7LB9Cf-kEIhm2og7vViXjj9CIRb6xkagW963sUQ/4rs/iPeXitCnQROHdCQblrInNA/h43/h001=
+.RCxw2L5DDgAQXggSIE0_sTS6AZnwS9yggNm87U9xgn8" target=3D"_blank" universal=
+=3D"true"><img alt=3D"seek" src=3D"https://seekcdn.com/notifications/apac-m=
+ail/shared/seek-logo-white-bg.png" style=3D"border:0;display:block;outline:=
+none;text-decoration:none;height:auto;width:100%;font-size:13px;" width=3D"=
+89" height=3D"auto"></a></td></tr></tbody></table></td></tr></tbody></table=
+></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![end=
+if]--></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><=
+table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cla=
+ss=3D"" role=3D"presentation" style=3D"width:600px;" width=3D"600" ><tr><td=
+ style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![e=
+ndif]--><div style=3D"margin:0px auto;max-width:600px;"><table align=3D"cen=
+ter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation"=
+ style=3D"width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;=
+padding:0 0 32px 0;text-align:center;"><!--[if mso | IE]><table role=3D"pre=
+sentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=
+=3D"" style=3D"vertical-align:top;width:600px;" ><![endif]--><div class=3D"=
+mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0px;text-align:l=
+eft;direction:ltr;display:inline-block;vertical-align:top;width:100%;"><tab=
+le border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" w=
+idth=3D"100%"><tbody><tr><td style=3D"vertical-align:top;padding:0 16px 0 1=
+6px;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" width=3D"100%"><tbody><tr><td align=3D"left" style=3D"font-size:0p=
+x;padding:0 0 16px 0;word-break:break-word;"><div style=3D"font-family:Seek=
+Sans, Arial, Tahoma, sans-serif;font-size:18px;font-weight:400;line-height:=
+25px;text-align:left;color:#2E3849;">Hi Sam, we&#x27;ve got new job recomme=
+ndations for you</div></td></tr><tr><td align=3D"left" style=3D"font-size:0=
+px;padding:0 0 16px 0;word-break:break-word;"><div style=3D"font-family:See=
+kSans, Arial, Tahoma, sans-serif;font-size:16px;font-weight:400;line-height=
+:24px;text-align:left;color:#2E3849;">We want to help find the job that=E2=
+=80=99s right for you =E2=80=93 and these roles could be a match.</div></td=
+></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:0;word-break:br=
+eak-word;"><div style=3D"font-family:SeekSans, Arial, Tahoma, sans-serif;fo=
+nt-size:16px;font-weight:400;line-height:24px;text-align:left;color:#2E3849=
+;">We recommend these jobs based on your profile, past viewed jobs and appl=
+ications.</div></td></tr></tbody></table></td></tr></tbody></table></div><!=
+--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody></table></d=
+iv><!--[if mso | IE]></td></tr></table><table align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=
+=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size=
+:0px;mso-line-height-rule:exactly;"><![endif]--><div style=3D"margin:0px au=
+to;max-width:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" role=3D"presentation" style=3D"width:100%;"><tbody><tr><=
+td style=3D"direction:ltr;font-size:0px;padding:0 16px 24px 16px;text-align=
+:center;"><!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0"><tr><td class=3D"" width=3D"600px" ><![endif=
+]--> <a style=3D"display: block" href=3D"https://email.s.seek.co.nz/uni/ss/=
+c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59vaNz9vv7rozZrc0ZWBG45Hq5UDGAL-gFw=
+hFBJ1jnvdjqEzflTlhYsZ7kKuk5n5bdtiJO7ZXw_AhNenSwOSpui6kEtEEh69hO1y3iCJFkBJJU=
+M_l_VPAPrLWSuXBGRrmGpFML4gJc/4rs/iPeXitCnQROHdCQblrInNA/h44/h001.XaDXD3U9Ev=
+WGctCcw8G_PMzpnnlcZ86nRTUgIFmIZQo" universal=3D"true"><!--[if mso | IE]><ta=
+ble align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=
+=3D"" role=3D"presentation" style=3D"width:568px;" width=3D"568" ><tr><td s=
+tyle=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![end=
+if]--><div style=3D"margin:0px auto;max-width:568px;"><table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" s=
+tyle=3D"width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;pa=
+dding:0 0 12px 0;text-align:center;"><!--[if mso | IE]><table role=3D"prese=
+ntation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"=
+cmqym3-outlook rhaa5w-outlook" style=3D"vertical-align:top;width:568px;" ><=
+![endif]--><div class=3D"mj-column-per-100 mj-outlook-group-fix cmqym3 rhaa=
+5w" style=3D"font-size:0px;text-align:left;direction:ltr;display:inline-blo=
+ck;vertical-align:top;width:100%;"><table border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" role=3D"presentation" width=3D"100%" style=3D"border-collap=
+se:separate;"><tbody><tr><td style=3D"background-color:#ffffff;border:2px s=
+olid #EAECF1;border-radius:16px;vertical-align:top;border-collapse:separate=
+;padding:24px;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" width=3D"100%"><tbody><tr><td align=3D"left" style=3D"fo=
+nt-size:0px;padding:0 0 12px 0;word-break:break-word;"><table cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100" border=3D"0" style=3D"color:#000000;=
+font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height=
+:1;table-layout:auto;width:100px;border:none;"><tr><td><!--[if mso]><img sr=
+c=3D"https://bx-branding-gateway.cloud.seek.com.au/e37d0d88-d56f-4853-b137-=
+22ef7b6abcfb.1/serpLogo" alt=3D"logo" style=3D"border:0;display:block;outli=
+ne:none;text-decoration:none;height:auto;width:auto" width=3D"65" height=3D=
+"auto"><![endif]--> <!--[if !mso]><!--><img src=3D"https://bx-branding-gate=
+way.cloud.seek.com.au/e37d0d88-d56f-4853-b137-22ef7b6abcfb.1/serpLogo" alt=
+=3D"logo" style=3D"border:0;display:block;outline:none;text-decoration:none=
+;max-height:65px;max-width:100px;height:auto;width:auto" width=3D"100" heig=
+ht=3D"auto"><!--<![endif]--></td></tr></table></td></tr><tr><td align=3D"le=
+ft" style=3D"font-size:0px;padding:0 0 4px 0;word-break:break-word;"><div s=
+tyle=3D"font-family:SeekSans, Arial, Tahoma, sans-serif;font-size:16px;font=
+-weight:700;line-height:24px;text-align:left;color:#2E3849;"><div style=3D"=
+text-decoration:underline"><!--[if mso | IE]><a href=3D"https://email.s.see=
+k.co.nz/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59vaNz9vv7rozZrc0ZWBG45H=
+q5UDGAL-gFwhFBJ1jnvdjqEzflTlhYsZ7kKuk5n5bdtiJO7ZXw_AhNenSwOSpui6kEtEEh69hO1=
+y3iCJFkBJJUM_l_VPAPrLWSuXBGRrmGpFML4gJc/4rs/iPeXitCnQROHdCQblrInNA/h45/h001=
+.DXGJkovMBHal4NOfaMAeSkPax6xHpCuX05wgYyJY-p8"><![endif]-->Software Develope=
+r<!--[if mso | IE]></a><![endif]--></div></div></td></tr><tr><td align=3D"l=
+eft" style=3D"font-size:0px;padding:0 0 12px 0;word-break:break-word;"><div=
+ style=3D"font-family:SeekSans, Arial, Tahoma, sans-serif;font-size:14px;fo=
+nt-weight:400;line-height:21px;text-align:left;color:#5A6881;">KPMG</div></=
+td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:0 0 12px 0;wo=
+rd-break:break-word;"><div style=3D"font-family:SeekSans, Arial, Tahoma, sa=
+ns-serif;font-size:14px;font-weight:400;line-height:21px;text-align:left;co=
+lor:#2E3849;">Auckland CBD, Auckland (Hybrid)</div></td></tr><tr><td align=
+=3D"left" style=3D"font-size:0px;padding:0 0 16px 0;word-break:break-word;"=
+><div style=3D"font-family:SeekSans, Arial, Tahoma, sans-serif;font-size:14=
+px;font-weight:400;line-height:21px;text-align:left;color:#2E3849;"><ul sty=
+le=3D"margin:0;padding:0;padding-left:18px"><li style=3D"padding:0 0 4px 0"=
+>Bring ideas to life through clean, reliable code</li><li style=3D"padding:=
+0 0 4px 0">Work alongside talented teams across product, design, and engine=
+ering</li><li style=3D"padding:0">Drive smart, efficient delivery &amp; bui=
+ld products that users rely on every day</li></ul></div></td></tr><tr><td a=
+lign=3D"left" style=3D"font-size:0px;padding:0;word-break:break-word;"><div=
+ style=3D"font-family:SeekSans, Arial, Tahoma, sans-serif;font-size:14px;fo=
+nt-weight:400;line-height:21px;text-align:left;color:#5A6881;">Recently pos=
+ted</div></td></tr></tbody></table></td></tr></tbody></table></div><!--[if =
+mso | IE]></td></tr></table><![endif]--></td></tr></tbody></table></div><!-=
+-[if mso | IE]></td></tr></table><![endif]--> </a><!--[if mso | IE]></td></=
+tr><tr><td class=3D"" width=3D"600px" ><![endif]--> <a style=3D"display: bl=
+ock" href=3D"https://email.s.seek.co.nz/uni/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfX=
+VqCAR5PUSSiJ59vaNz9vv5t3SWaDYJcOmfz64up-ert6dv9eYKmqjeeMxuCacKRUWlttb3Sy0RU=
+dLrNyy5bKfrhk8-0GnI6jXZ0zcj2QRajKEfYcGKR-rN5oqNP9tZ0RWs1aU4rl_AmsL51X0SYrX0=
+/4rs/iPeXitCnQROHdCQblrInNA/h46/h001.bTMPc3_Nmt7T8DQyzXMGSikHvm2pdLK47ad3qW=
+QSmJQ" universal=3D"true"><!--[if mso | IE]><table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation"=
+ style=3D"width:568px;" width=3D"568" ><tr><td style=3D"line-height:0px;fon=
+t-size:0px;mso-line-height-rule:exactly;"><![endif]--><div style=3D"margin:=
+0px auto;max-width:568px;"><table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"width:100%;"><tbody=
+><tr><td style=3D"direction:ltr;font-size:0px;padding:0 0 12px 0;text-align=
+:center;"><!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0"><tr><td class=3D"cmqym3-outlook rhaa5w-outlo=
+ok" style=3D"vertical-align:top;width:568px;" ><![endif]--><div class=3D"mj=
+-column-per-100 mj-outlook-group-fix cmqym3 rhaa5w" style=3D"font-size:0px;=
+text-align:left;direction:ltr;display:inline-block;vertical-align:top;width=
+:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation" width=3D"100%" style=3D"border-collapse:separate;"><tbody><tr><t=
+d style=3D"background-color:#ffffff;border:2px solid #EAECF1;border-radius:=
+16px;vertical-align:top;border-collapse:separate;padding:24px;"><table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D=
+"100%"><tbody><tr><td align=3D"left" style=3D"font-size:0px;padding:0 0 12p=
+x 0;word-break:break-word;"><table cellpadding=3D"0" cellspacing=3D"0" widt=
+h=3D"100" border=3D"0" style=3D"color:#000000;font-family:Ubuntu, Helvetica=
+, Arial, sans-serif;font-size:13px;line-height:1;table-layout:auto;width:10=
+0px;border:none;"><tr><td><!--[if mso]><img src=3D"https://bx-branding-gate=
+way.cloud.seek.com.au/7dede6e8-6ded-4e39-b15e-fb04567765bb.1/serpLogo" alt=
+=3D"logo" style=3D"border:0;display:block;outline:none;text-decoration:none=
+;height:auto;width:auto" width=3D"65" height=3D"auto"><![endif]--> <!--[if =
+!mso]><!--><img src=3D"https://bx-branding-gateway.cloud.seek.com.au/7dede6=
+e8-6ded-4e39-b15e-fb04567765bb.1/serpLogo" alt=3D"logo" style=3D"border:0;d=
+isplay:block;outline:none;text-decoration:none;max-height:65px;max-width:10=
+0px;height:auto;width:auto" width=3D"100" height=3D"auto"><!--<![endif]--><=
+/td></tr></table></td></tr><tr><td align=3D"left" style=3D"font-size:0px;pa=
+dding:0 0 4px 0;word-break:break-word;"><div style=3D"font-family:SeekSans,=
+ Arial, Tahoma, sans-serif;font-size:16px;font-weight:700;line-height:24px;=
+text-align:left;color:#2E3849;"><div style=3D"text-decoration:underline"><!=
+--[if mso | IE]><a href=3D"https://email.s.seek.co.nz/ss/c/u001.l5tc4iXB2-B=
+k7UR8KdEfXVqCAR5PUSSiJ59vaNz9vv5t3SWaDYJcOmfz64up-ert6dv9eYKmqjeeMxuCacKRUW=
+lttb3Sy0RUdLrNyy5bKfrhk8-0GnI6jXZ0zcj2QRajKEfYcGKR-rN5oqNP9tZ0RWs1aU4rl_Ams=
+L51X0SYrX0/4rs/iPeXitCnQROHdCQblrInNA/h47/h001.tUJoAvOzGVqpD-CgBln8Yz6PL90E=
+xTjnVYYT1dj-_7M"><![endif]-->Software Engineer<!--[if mso | IE]></a><![endi=
+f]--></div></div></td></tr><tr><td align=3D"left" style=3D"font-size:0px;pa=
+dding:0 0 12px 0;word-break:break-word;"><div style=3D"font-family:SeekSans=
+, Arial, Tahoma, sans-serif;font-size:14px;font-weight:400;line-height:21px=
+;text-align:left;color:#5A6881;">Tower Limited</div></td></tr><tr><td align=
+=3D"left" style=3D"font-size:0px;padding:0 0 4px 0;word-break:break-word;">=
+<div style=3D"font-family:SeekSans, Arial, Tahoma, sans-serif;font-size:14p=
+x;font-weight:400;line-height:21px;text-align:left;color:#2E3849;">Auckland=
+ CBD, Auckland</div></td></tr><tr><td align=3D"left" style=3D"font-size:0px=
+;padding:0 0 4px 0;word-break:break-word;"><div style=3D"font-family:SeekSa=
+ns, Arial, Tahoma, sans-serif;font-size:14px;font-weight:400;line-height:21=
+px;text-align:left;color:#2E3849;">Competitive Salary, Annual Review and Be=
+nefits</div></td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding=
+:0 0 12px 0;word-break:break-word;"><div style=3D"font-family:SeekSans, Ari=
+al, Tahoma, sans-serif;font-size:14px;font-weight:400;line-height:21px;text=
+-align:left;color:#12784F;">Profile salary match</div></td></tr><tr><td ali=
+gn=3D"left" style=3D"font-size:0px;padding:0 0 16px 0;word-break:break-word=
+;"><div style=3D"font-family:SeekSans, Arial, Tahoma, sans-serif;font-size:=
+14px;font-weight:400;line-height:21px;text-align:left;color:#2E3849;"><ul s=
+tyle=3D"margin:0;padding:0;padding-left:18px"><li style=3D"padding:0 0 4px =
+0">Join an award winning proud Kiwi organization in the heart of Auckland</=
+li><li style=3D"padding:0 0 4px 0">Innovate, showcase skill and inspire dig=
+itially</li><li style=3D"padding:0">Discounts on Tower products</li></ul></=
+div></td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:0;word-=
+break:break-word;"><div style=3D"font-family:SeekSans, Arial, Tahoma, sans-=
+serif;font-size:14px;font-weight:400;line-height:21px;text-align:left;color=
+:#5A6881;">Recently posted</div></td></tr></tbody></table></td></tr></tbody=
+></table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></=
+tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--> </a><!=
+--[if mso | IE]></td></tr><tr><td class=3D"" width=3D"600px" ><![endif]--> =
+<a style=3D"display: block" href=3D"https://email.s.seek.co.nz/uni/ss/c/u00=
+1.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59vaNz9vv5AmIhhCF9CVqkVsXGGoD0_4EYsH4JKg=
+67vJeMbY3YhHl6WrlWktCkacm-mITiUvBBk_lWpBV2VVqXWufdyFRJqsOGXpV7pRcB-CrAgqByL=
+PcxBgeARuShDio-FXpCdcFw/4rs/iPeXitCnQROHdCQblrInNA/h48/h001.hxyYoajt10ubL0N=
+zM4xtkAQzcTD9DJEvnVT61h48l_E" universal=3D"true"><!--[if mso | IE]><table a=
+lign=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D""=
+ role=3D"presentation" style=3D"width:568px;" width=3D"568" ><tr><td style=
+=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-=
+-><div style=3D"margin:0px auto;max-width:568px;"><table align=3D"center" b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;paddin=
+g:0 0 12px 0;text-align:center;"><!--[if mso | IE]><table role=3D"presentat=
+ion" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"cmqy=
+m3-outlook rhaa5w-outlook" style=3D"vertical-align:top;width:568px;" ><![en=
+dif]--><div class=3D"mj-column-per-100 mj-outlook-group-fix cmqym3 rhaa5w" =
+style=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;v=
+ertical-align:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0" role=3D"presentation" width=3D"100%" style=3D"border-collapse:s=
+eparate;"><tbody><tr><td style=3D"background-color:#ffffff;border:2px solid=
+ #EAECF1;border-radius:16px;vertical-align:top;border-collapse:separate;pad=
+ding:24px;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D=
+"presentation" width=3D"100%"><tbody><tr><td align=3D"left" style=3D"font-s=
+ize:0px;padding:0 0 12px 0;word-break:break-word;"><table cellpadding=3D"0"=
+ cellspacing=3D"0" width=3D"100" border=3D"0" style=3D"color:#000000;font-f=
+amily:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;tab=
+le-layout:auto;width:100px;border:none;"><tr><td><!--[if mso]><img src=3D"h=
+ttps://bx-branding-gateway.cloud.seek.com.au/588c6b9f-c32f-2038-7896-157fe1=
+f1f1c1.1/serpLogo" alt=3D"logo" style=3D"border:0;display:block;outline:non=
+e;text-decoration:none;height:auto;width:auto" width=3D"65" height=3D"auto"=
+><![endif]--> <!--[if !mso]><!--><img src=3D"https://bx-branding-gateway.cl=
+oud.seek.com.au/588c6b9f-c32f-2038-7896-157fe1f1f1c1.1/serpLogo" alt=3D"log=
+o" style=3D"border:0;display:block;outline:none;text-decoration:none;max-he=
+ight:65px;max-width:100px;height:auto;width:auto" width=3D"100" height=3D"a=
+uto"><!--<![endif]--></td></tr></table></td></tr><tr><td align=3D"left" sty=
+le=3D"font-size:0px;padding:0 0 4px 0;word-break:break-word;"><div style=3D=
+"font-family:SeekSans, Arial, Tahoma, sans-serif;font-size:16px;font-weight=
+:700;line-height:24px;text-align:left;color:#2E3849;"><div style=3D"text-de=
+coration:underline"><!--[if mso | IE]><a href=3D"https://email.s.seek.co.nz=
+/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59vaNz9vv5AmIhhCF9CVqkVsXGGoD0_=
+4EYsH4JKg67vJeMbY3YhHl6WrlWktCkacm-mITiUvBBk_lWpBV2VVqXWufdyFRJqsOGXpV7pRcB=
+-CrAgqByLPcxBgeARuShDio-FXpCdcFw/4rs/iPeXitCnQROHdCQblrInNA/h49/h001.wcHnEv=
+nz1DTHBrKE7ggz6rYVRPRIWH9tYQCLtD5dWxU"><![endif]-->Data Platform and Automa=
+tion Engineer<!--[if mso | IE]></a><![endif]--></div></div></td></tr><tr><t=
+d align=3D"left" style=3D"font-size:0px;padding:0 0 12px 0;word-break:break=
+-word;"><div style=3D"font-family:SeekSans, Arial, Tahoma, sans-serif;font-=
+size:14px;font-weight:400;line-height:21px;text-align:left;color:#5A6881;">=
+ProCare</div></td></tr><tr><td align=3D"left" style=3D"font-size:0px;paddin=
+g:0 0 12px 0;word-break:break-word;"><div style=3D"font-family:SeekSans, Ar=
+ial, Tahoma, sans-serif;font-size:14px;font-weight:400;line-height:21px;tex=
+t-align:left;color:#2E3849;">Parnell, Auckland (Hybrid)</div></td></tr><tr>=
+<td align=3D"left" style=3D"font-size:0px;padding:0;word-break:break-word;"=
+><div style=3D"font-family:SeekSans, Arial, Tahoma, sans-serif;font-size:14=
+px;font-weight:400;line-height:21px;text-align:left;color:#2E3849;"><ul sty=
+le=3D"margin:0;padding:0;padding-left:18px"><li style=3D"padding:0 0 4px 0"=
+>Great benefits on offer</li><li style=3D"padding:0 0 4px 0">Hybrid working=
+ model, competitive salary and benefits offering</li><li style=3D"padding:0=
+">Established high-performing agile team</li></ul></div></td></tr></tbody><=
+/table></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table>=
+<![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></t=
+able><![endif]--> </a><!--[if mso | IE]></td></tr><tr><td class=3D"" width=
+=3D"600px" ><![endif]--> <a style=3D"display: block" href=3D"https://email.=
+s.seek.co.nz/uni/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59vaNz9vv61rl4n=
+_heFLATJF5lBhIx9UyKQAN3apUcXY2doBHFtk8IBuZ_duk9JIGWOU7KJjxx6AA1mVu5ZVgim47w=
+KKxzK_AvkNCeXAjU5Gw6fFuP_h0wGZyC11R0QVVB87wAMVM0/4rs/iPeXitCnQROHdCQblrInNA=
+/h50/h001.FS6-qS2hJ32oAUdhTzaLYVN4R67-D8ATWIgZB7nH4J0" universal=3D"true"><=
+!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:568px;" widt=
+h=3D"568" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-r=
+ule:exactly;"><![endif]--><div style=3D"margin:0px auto;max-width:568px;"><=
+table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" style=3D"width:100%;"><tbody><tr><td style=3D"direction:=
+ltr;font-size:0px;padding:0 0 12px 0;text-align:center;"><!--[if mso | IE]>=
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td class=3D"cmqym3-outlook rhaa5w-outlook" style=3D"vertical-align:=
+top;width:568px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-g=
+roup-fix cmqym3 rhaa5w" style=3D"font-size:0px;text-align:left;direction:lt=
+r;display:inline-block;vertical-align:top;width:100%;"><table border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%" st=
+yle=3D"border-collapse:separate;"><tbody><tr><td style=3D"background-color:=
+#ffffff;border:2px solid #EAECF1;border-radius:16px;vertical-align:top;bord=
+er-collapse:separate;padding:24px;"><table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td align=
+=3D"left" style=3D"font-size:0px;padding:0 0 12px 0;word-break:break-word;"=
+><table cellpadding=3D"0" cellspacing=3D"0" width=3D"100" border=3D"0" styl=
+e=3D"color:#000000;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-si=
+ze:13px;line-height:1;table-layout:auto;width:100px;border:none;"><tr><td><=
+!--[if mso]><img src=3D"https://bx-branding-gateway.cloud.seek.com.au/7b162=
+ae9-fed2-bca3-ba01-52b8dd2ca4eb.1/serpLogo" alt=3D"logo" style=3D"border:0;=
+display:block;outline:none;text-decoration:none;height:auto;width:auto" wid=
+th=3D"65" height=3D"auto"><![endif]--> <!--[if !mso]><!--><img src=3D"https=
+://bx-branding-gateway.cloud.seek.com.au/7b162ae9-fed2-bca3-ba01-52b8dd2ca4=
+eb.1/serpLogo" alt=3D"logo" style=3D"border:0;display:block;outline:none;te=
+xt-decoration:none;max-height:65px;max-width:100px;height:auto;width:auto" =
+width=3D"100" height=3D"auto"><!--<![endif]--></td></tr></table></td></tr><=
+tr><td align=3D"left" style=3D"font-size:0px;padding:0 0 4px 0;word-break:b=
+reak-word;"><div style=3D"font-family:SeekSans, Arial, Tahoma, sans-serif;f=
+ont-size:16px;font-weight:700;line-height:24px;text-align:left;color:#2E384=
+9;"><div style=3D"text-decoration:underline"><!--[if mso | IE]><a href=3D"h=
+ttps://email.s.seek.co.nz/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59vaNz=
+9vv61rl4n_heFLATJF5lBhIx9UyKQAN3apUcXY2doBHFtk8IBuZ_duk9JIGWOU7KJjxx6AA1mVu=
+5ZVgim47wKKxzK_AvkNCeXAjU5Gw6fFuP_h0wGZyC11R0QVVB87wAMVM0/4rs/iPeXitCnQROHd=
+CQblrInNA/h51/h001.9xRrwkMWIts23rYrcKyEscUNGn_PSlJmZk9WbHmA0zE"><![endif]--=
+>AI Consultant/Developer<!--[if mso | IE]></a><![endif]--></div></div></td>=
+</tr><tr><td align=3D"left" style=3D"font-size:0px;padding:0 0 12px 0;word-=
+break:break-word;"><div style=3D"font-family:SeekSans, Arial, Tahoma, sans-=
+serif;font-size:14px;font-weight:400;line-height:21px;text-align:left;color=
+:#5A6881;">Younity</div></td></tr><tr><td align=3D"left" style=3D"font-size=
+:0px;padding:0 0 12px 0;word-break:break-word;"><div style=3D"font-family:S=
+eekSans, Arial, Tahoma, sans-serif;font-size:14px;font-weight:400;line-heig=
+ht:21px;text-align:left;color:#2E3849;">Auckland CBD, Auckland (Hybrid)</di=
+v></td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:0 0 16px =
+0;word-break:break-word;"><div style=3D"font-family:SeekSans, Arial, Tahoma=
+, sans-serif;font-size:14px;font-weight:400;line-height:21px;text-align:lef=
+t;color:#2E3849;"><ul style=3D"margin:0;padding:0;padding-left:18px"><li st=
+yle=3D"padding:0 0 4px 0">Hybrid Working Environment</li><li style=3D"paddi=
+ng:0 0 4px 0">Excellent Team Culture</li><li style=3D"padding:0">Great Loca=
+tion</li></ul></div></td></tr><tr><td align=3D"left" style=3D"font-size:0px=
+;padding:0;word-break:break-word;"><div style=3D"font-family:SeekSans, Aria=
+l, Tahoma, sans-serif;font-size:14px;font-weight:400;line-height:21px;text-=
+align:left;color:#5A6881;">Recently posted</div></td></tr></tbody></table><=
+/td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif=
+]--></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![=
+endif]--> </a><!--[if mso | IE]></td></tr><tr><td class=3D"" width=3D"600px=
+" ><![endif]--> <a style=3D"display: block" href=3D"https://email.s.seek.co=
+.nz/uni/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59vaNz9vv7a7KDMW8IT2Td74=
+jiP8PjcVItvbkN_GajRrsAN7cQsQj3SL2wzZFUk42CKWuv5vcxwJXuJa8PpSteOxgJS8U3H2M97=
+cs3n3OUzuJoi81Q7zEID8EOfuNyjalnREBwdb3o/4rs/iPeXitCnQROHdCQblrInNA/h52/h001=
+.2oEufD5X0B4P-6aI4zZSgB8l1I15hXOMFul3SwToMpM" universal=3D"true"><!--[if ms=
+o | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" class=3D"" role=3D"presentation" style=3D"width:568px;" width=3D"568=
+" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exac=
+tly;"><![endif]--><div style=3D"margin:0px auto;max-width:568px;"><table al=
+ign=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation" style=3D"width:100%;"><tbody><tr><td style=3D"direction:ltr;font=
+-size:0px;padding:0 0 12px 0;text-align:center;"><!--[if mso | IE]><table r=
+ole=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><=
+td class=3D"cmqym3-outlook rhaa5w-outlook" style=3D"vertical-align:top;widt=
+h:568px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-group-fix=
+ cmqym3 rhaa5w" style=3D"font-size:0px;text-align:left;direction:ltr;displa=
+y:inline-block;vertical-align:top;width:100%;"><table border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%" style=3D"b=
+order-collapse:separate;"><tbody><tr><td style=3D"background-color:#ffffff;=
+border:2px solid #EAECF1;border-radius:16px;vertical-align:top;border-colla=
+pse:separate;padding:24px;"><table border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td align=3D"left"=
+ style=3D"font-size:0px;padding:0 0 12px 0;word-break:break-word;"><table c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100" border=3D"0" style=3D"colo=
+r:#000000;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;l=
+ine-height:1;table-layout:auto;width:100px;border:none;"><tr><td><!--[if ms=
+o]><img src=3D"https://bx-branding-gateway.cloud.seek.com.au/792b063d-83d1-=
+dc24-25e0-1693f58e13c9.1/serpLogo" alt=3D"logo" style=3D"border:0;display:b=
+lock;outline:none;text-decoration:none;height:auto;width:auto" width=3D"65"=
+ height=3D"auto"><![endif]--> <!--[if !mso]><!--><img src=3D"https://bx-bra=
+nding-gateway.cloud.seek.com.au/792b063d-83d1-dc24-25e0-1693f58e13c9.1/serp=
+Logo" alt=3D"logo" style=3D"border:0;display:block;outline:none;text-decora=
+tion:none;max-height:65px;max-width:100px;height:auto;width:auto" width=3D"=
+100" height=3D"auto"><!--<![endif]--></td></tr></table></td></tr><tr><td al=
+ign=3D"left" style=3D"font-size:0px;padding:0 0 4px 0;word-break:break-word=
+;"><div style=3D"font-family:SeekSans, Arial, Tahoma, sans-serif;font-size:=
+16px;font-weight:700;line-height:24px;text-align:left;color:#2E3849;"><div =
+style=3D"text-decoration:underline"><!--[if mso | IE]><a href=3D"https://em=
+ail.s.seek.co.nz/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59vaNz9vv7a7KDM=
+W8IT2Td74jiP8PjcVItvbkN_GajRrsAN7cQsQj3SL2wzZFUk42CKWuv5vcxwJXuJa8PpSteOxgJ=
+S8U3H2M97cs3n3OUzuJoi81Q7zEID8EOfuNyjalnREBwdb3o/4rs/iPeXitCnQROHdCQblrInNA=
+/h53/h001.UgisS9gLuILfaHTp-aJxFZNIc4JVTXHpkegToApg5xo"><![endif]-->Junior C=
+onfiguration Developer<!--[if mso | IE]></a><![endif]--></div></div></td></=
+tr><tr><td align=3D"left" style=3D"font-size:0px;padding:0 0 12px 0;word-br=
+eak:break-word;"><div style=3D"font-family:SeekSans, Arial, Tahoma, sans-se=
+rif;font-size:14px;font-weight:400;line-height:21px;text-align:left;color:#=
+5A6881;">Foster Moore International Ltd</div></td></tr><tr><td align=3D"lef=
+t" style=3D"font-size:0px;padding:0 0 12px 0;word-break:break-word;"><div s=
+tyle=3D"font-family:SeekSans, Arial, Tahoma, sans-serif;font-size:14px;font=
+-weight:400;line-height:21px;text-align:left;color:#2E3849;">Auckland CBD, =
+Auckland (Hybrid)</div></td></tr><tr><td align=3D"left" style=3D"font-size:=
+0px;padding:0 0 16px 0;word-break:break-word;"><div style=3D"font-family:Se=
+ekSans, Arial, Tahoma, sans-serif;font-size:14px;font-weight:400;line-heigh=
+t:21px;text-align:left;color:#2E3849;"><ul style=3D"margin:0;padding:0;padd=
+ing-left:18px"><li style=3D"padding:0 0 4px 0">Hybrid working</li><li style=
+=3D"padding:0 0 4px 0">Excellent remuneration and benefit package</li><li s=
+tyle=3D"padding:0">Global organisation</li></ul></div></td></tr><tr><td ali=
+gn=3D"left" style=3D"font-size:0px;padding:0;word-break:break-word;"><div s=
+tyle=3D"font-family:SeekSans, Arial, Tahoma, sans-serif;font-size:14px;font=
+-weight:400;line-height:21px;text-align:left;color:#5A6881;">Recently poste=
+d</div></td></tr></tbody></table></td></tr></tbody></table></div><!--[if ms=
+o | IE]></td></tr></table><![endif]--></td></tr></tbody></table></div><!--[=
+if mso | IE]></td></tr></table><![endif]--> </a><!--[if mso | IE]></td></tr=
+><tr><td class=3D"" width=3D"600px" ><![endif]--> <a style=3D"display: bloc=
+k" href=3D"https://email.s.seek.co.nz/uni/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVq=
+CAR5PUSSiJ59vaNz9vv6btshhtEb75fQ4rlYfqcrh6hl2SxB4EXQtJD0OOcA4JC6RATkxKg360O=
+pZnFuaBSGcQApTMG7UBn4GdDffErF4H8ZwDHpSbnSf983VkJgxJVfvzFJLG2QY9hzQskUk19E/4=
+rs/iPeXitCnQROHdCQblrInNA/h54/h001.cAYmtpgMpuP_7Z-3-jyBRLYf5dZt_tzXlnaAd1lN=
+U9s" universal=3D"true"><!--[if mso | IE]><table align=3D"center" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" st=
+yle=3D"width:568px;" width=3D"568" ><tr><td style=3D"line-height:0px;font-s=
+ize:0px;mso-line-height-rule:exactly;"><![endif]--><div style=3D"margin:0px=
+ auto;max-width:568px;"><table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" role=3D"presentation" style=3D"width:100%;"><tbody><t=
+r><td style=3D"direction:ltr;font-size:0px;padding:0 0 12px 0;text-align:ce=
+nter;"><!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0"><tr><td class=3D"cmqym3-outlook rhaa5w-outlook"=
+ style=3D"vertical-align:top;width:568px;" ><![endif]--><div class=3D"mj-co=
+lumn-per-100 mj-outlook-group-fix cmqym3 rhaa5w" style=3D"font-size:0px;tex=
+t-align:left;direction:ltr;display:inline-block;vertical-align:top;width:10=
+0%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" width=3D"100%" style=3D"border-collapse:separate;"><tbody><tr><td s=
+tyle=3D"background-color:#ffffff;border:2px solid #EAECF1;border-radius:16p=
+x;vertical-align:top;border-collapse:separate;padding:24px;"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"1=
+00%"><tbody><tr><td align=3D"left" style=3D"font-size:0px;padding:0 0 4px 0=
+;word-break:break-word;"><div style=3D"font-family:SeekSans, Arial, Tahoma,=
+ sans-serif;font-size:16px;font-weight:700;line-height:24px;text-align:left=
+;color:#2E3849;"><div style=3D"text-decoration:underline"><!--[if mso | IE]=
+><a href=3D"https://email.s.seek.co.nz/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR=
+5PUSSiJ59vaNz9vv6btshhtEb75fQ4rlYfqcrh6hl2SxB4EXQtJD0OOcA4JC6RATkxKg360OpZn=
+FuaBSGcQApTMG7UBn4GdDffErF4H8ZwDHpSbnSf983VkJgxJVfvzFJLG2QY9hzQskUk19E/4rs/=
+iPeXitCnQROHdCQblrInNA/h55/h001.BH0r6QFCv7Xkc02Hhvdavx3TdbRvDxmL1NaO8wQ6nKQ=
+"><![endif]-->Data Engineer<!--[if mso | IE]></a><![endif]--></div></div></=
+td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:0 0 12px 0;wo=
+rd-break:break-word;"><div style=3D"font-family:SeekSans, Arial, Tahoma, sa=
+ns-serif;font-size:14px;font-weight:400;line-height:21px;text-align:left;co=
+lor:#5A6881;">HI Technology &amp; Innovation</div></td></tr><tr><td align=
+=3D"left" style=3D"font-size:0px;padding:0 0 16px 0;word-break:break-word;"=
+><div style=3D"font-family:SeekSans, Arial, Tahoma, sans-serif;font-size:14=
+px;font-weight:400;line-height:21px;text-align:left;color:#2E3849;">Newmark=
+et, Auckland (Remote)</div></td></tr><tr><td align=3D"left" style=3D"font-s=
+ize:0px;padding:0;word-break:break-word;"><div style=3D"font-family:SeekSan=
+s, Arial, Tahoma, sans-serif;font-size:14px;font-weight:400;line-height:21p=
+x;text-align:left;color:#5A6881;">Recently posted</div></td></tr></tbody></=
+table></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><=
+![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></ta=
+ble><![endif]--> </a><!--[if mso | IE]></td></tr><tr><td class=3D"" width=
+=3D"600px" ><![endif]--> <a style=3D"display: block" href=3D"https://email.=
+s.seek.co.nz/uni/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59vaNz9vv7bMlRb=
+lnts71af-AJylz1BC57gq7QYmSChq8wM34a1RYxWpo9SpiiZLNbXXYB_OANF4adCLPqdPPMYpLQ=
+U4MUvzyKE-NCjIK679o4mL8w6ifYlev4Ed2J5vuUkRfH1_ow/4rs/iPeXitCnQROHdCQblrInNA=
+/h56/h001.1yzlPG1QzO1DioVmEl2XtLkpuu6QIeETaUWnW4VQMJ0" universal=3D"true"><=
+!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:568px;" widt=
+h=3D"568" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-r=
+ule:exactly;"><![endif]--><div style=3D"margin:0px auto;max-width:568px;"><=
+table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" style=3D"width:100%;"><tbody><tr><td style=3D"direction:=
+ltr;font-size:0px;padding:0 0 12px 0;text-align:center;"><!--[if mso | IE]>=
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td class=3D"cmqym3-outlook rhaa5w-outlook" style=3D"vertical-align:=
+top;width:568px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-g=
+roup-fix cmqym3 rhaa5w" style=3D"font-size:0px;text-align:left;direction:lt=
+r;display:inline-block;vertical-align:top;width:100%;"><table border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%" st=
+yle=3D"border-collapse:separate;"><tbody><tr><td style=3D"background-color:=
+#ffffff;border:2px solid #EAECF1;border-radius:16px;vertical-align:top;bord=
+er-collapse:separate;padding:24px;"><table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td align=
+=3D"left" style=3D"font-size:0px;padding:0 0 12px 0;word-break:break-word;"=
+><table cellpadding=3D"0" cellspacing=3D"0" width=3D"100" border=3D"0" styl=
+e=3D"color:#000000;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-si=
+ze:13px;line-height:1;table-layout:auto;width:100px;border:none;"><tr><td><=
+!--[if mso]><img src=3D"https://bx-branding-gateway.cloud.seek.com.au/8f8e2=
+7d3-e22a-46f3-a5c3-8943319db697.1/serpLogo" alt=3D"logo" style=3D"border:0;=
+display:block;outline:none;text-decoration:none;height:auto;width:auto" wid=
+th=3D"65" height=3D"auto"><![endif]--> <!--[if !mso]><!--><img src=3D"https=
+://bx-branding-gateway.cloud.seek.com.au/8f8e27d3-e22a-46f3-a5c3-8943319db6=
+97.1/serpLogo" alt=3D"logo" style=3D"border:0;display:block;outline:none;te=
+xt-decoration:none;max-height:65px;max-width:100px;height:auto;width:auto" =
+width=3D"100" height=3D"auto"><!--<![endif]--></td></tr></table></td></tr><=
+tr><td align=3D"left" style=3D"font-size:0px;padding:0 0 4px 0;word-break:b=
+reak-word;"><div style=3D"font-family:SeekSans, Arial, Tahoma, sans-serif;f=
+ont-size:16px;font-weight:700;line-height:24px;text-align:left;color:#2E384=
+9;"><div style=3D"text-decoration:underline"><!--[if mso | IE]><a href=3D"h=
+ttps://email.s.seek.co.nz/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59vaNz=
+9vv7bMlRblnts71af-AJylz1BC57gq7QYmSChq8wM34a1RYxWpo9SpiiZLNbXXYB_OANF4adCLP=
+qdPPMYpLQU4MUvzyKE-NCjIK679o4mL8w6ifYlev4Ed2J5vuUkRfH1_ow/4rs/iPeXitCnQROHd=
+CQblrInNA/h57/h001.y9ODbWOphK47t8tm_7g3K2jUONGjlCePrOqYo0OPMt8"><![endif]--=
+>SOFTWARE ENGINEER SUMMER INTERNSHIP/GRADUATE<!--[if mso | IE]></a><![endif=
+]--></div></div></td></tr><tr><td align=3D"left" style=3D"font-size:0px;pad=
+ding:0 0 12px 0;word-break:break-word;"><div style=3D"font-family:SeekSans,=
+ Arial, Tahoma, sans-serif;font-size:14px;font-weight:400;line-height:21px;=
+text-align:left;color:#5A6881;">TRV Trading</div></td></tr><tr><td align=3D=
+"left" style=3D"font-size:0px;padding:0 0 4px 0;word-break:break-word;"><di=
+v style=3D"font-family:SeekSans, Arial, Tahoma, sans-serif;font-size:14px;f=
+ont-weight:400;line-height:21px;text-align:left;color:#2E3849;">New Lynn, A=
+uckland (Hybrid)</div></td></tr><tr><td align=3D"left" style=3D"font-size:0=
+px;padding:0 0 4px 0;word-break:break-word;"><div style=3D"font-family:Seek=
+Sans, Arial, Tahoma, sans-serif;font-size:14px;font-weight:400;line-height:=
+21px;text-align:left;color:#2E3849;">$62,500 + performance and profit share=
+ bonuses</div></td></tr><tr><td align=3D"left" style=3D"font-size:0px;paddi=
+ng:0 0 12px 0;word-break:break-word;"><div style=3D"font-family:SeekSans, A=
+rial, Tahoma, sans-serif;font-size:14px;font-weight:400;line-height:21px;te=
+xt-align:left;color:#12784F;">Profile salary match</div></td></tr><tr><td a=
+lign=3D"left" style=3D"font-size:0px;padding:0;word-break:break-word;"><div=
+ style=3D"font-family:SeekSans, Arial, Tahoma, sans-serif;font-size:14px;fo=
+nt-weight:400;line-height:21px;text-align:left;color:#2E3849;"><ul style=3D=
+"margin:0;padding:0;padding-left:18px"><li style=3D"padding:0 0 4px 0">Work=
+ alongside our top engineers to decrease latency and increase profits</li><=
+li style=3D"padding:0 0 4px 0">Build nanosecond-level systems processing mi=
+llions of market events/second</li><li style=3D"padding:0">Graduate role gu=
+aranteed for top performers</li></ul></div></td></tr></tbody></table></td><=
+/tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--><=
+/td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif=
+]--> </a><!--[if mso | IE]></td></tr><tr><td class=3D"" width=3D"600px" ><!=
+[endif]--> <a style=3D"display: block" href=3D"https://email.s.seek.co.nz/u=
+ni/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59vaNz9vv5nzZQf4UEKFUQ_a26h9C=
+Kg_kPTWD0hrrS83hZPnWpRq8QAUa_griC6qsUqQGVa8HfDvsvF06Pimci71ili0shifX4f5-ZFH=
+0xMgPpW-IQRTrV5wDzr29FlHqo_G52b42I/4rs/iPeXitCnQROHdCQblrInNA/h58/h001._uFh=
+rfc6MZlPLWE4VC0WqZhp3XaQzfUTVTSG2f5NhZA" universal=3D"true"><!--[if mso | I=
+E]><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ class=3D"" role=3D"presentation" style=3D"width:568px;" width=3D"568" ><tr=
+><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;">=
+<![endif]--><div style=3D"margin:0px auto;max-width:568px;"><table align=3D=
+"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentat=
+ion" style=3D"width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:=
+0px;padding:0 0 12px 0;text-align:center;"><!--[if mso | IE]><table role=3D=
+"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td cla=
+ss=3D"cmqym3-outlook rhaa5w-outlook" style=3D"vertical-align:top;width:568p=
+x;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-group-fix cmqym=
+3 rhaa5w" style=3D"font-size:0px;text-align:left;direction:ltr;display:inli=
+ne-block;vertical-align:top;width:100%;"><table border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%" style=3D"border-=
+collapse:separate;"><tbody><tr><td style=3D"background-color:#ffffff;border=
+:2px solid #EAECF1;border-radius:16px;vertical-align:top;border-collapse:se=
+parate;padding:24px;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" role=3D"presentation" width=3D"100%"><tbody><tr><td align=3D"left" style=
+=3D"font-size:0px;padding:0 0 12px 0;word-break:break-word;"><table cellpad=
+ding=3D"0" cellspacing=3D"0" width=3D"100" border=3D"0" style=3D"color:#000=
+000;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-he=
+ight:1;table-layout:auto;width:100px;border:none;"><tr><td><!--[if mso]><im=
+g src=3D"https://bx-branding-gateway.cloud.seek.com.au/36aaeed5-38d0-4b39-a=
+b5c-8b8dc61a12c7.1/serpLogo" alt=3D"logo" style=3D"border:0;display:block;o=
+utline:none;text-decoration:none;height:auto;width:auto" width=3D"65" heigh=
+t=3D"auto"><![endif]--> <!--[if !mso]><!--><img src=3D"https://bx-branding-=
+gateway.cloud.seek.com.au/36aaeed5-38d0-4b39-ab5c-8b8dc61a12c7.1/serpLogo" =
+alt=3D"logo" style=3D"border:0;display:block;outline:none;text-decoration:n=
+one;max-height:65px;max-width:100px;height:auto;width:auto" width=3D"100" h=
+eight=3D"auto"><!--<![endif]--></td></tr></table></td></tr><tr><td align=3D=
+"left" style=3D"font-size:0px;padding:0 0 4px 0;word-break:break-word;"><di=
+v style=3D"font-family:SeekSans, Arial, Tahoma, sans-serif;font-size:16px;f=
+ont-weight:700;line-height:24px;text-align:left;color:#2E3849;"><div style=
+=3D"text-decoration:underline"><!--[if mso | IE]><a href=3D"https://email.s=
+.seek.co.nz/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59vaNz9vv5nzZQf4UEKF=
+UQ_a26h9CKg_kPTWD0hrrS83hZPnWpRq8QAUa_griC6qsUqQGVa8HfDvsvF06Pimci71ili0shi=
+fX4f5-ZFH0xMgPpW-IQRTrV5wDzr29FlHqo_G52b42I/4rs/iPeXitCnQROHdCQblrInNA/h59/=
+h001.KPZzkmvIBfouzdfDdZAGWgbn0ZopMQ-vFOR1Ci0EPu0"><![endif]-->Graduate Soft=
+ware Engineer - Integration<!--[if mso | IE]></a><![endif]--></div></div></=
+td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:0 0 12px 0;wo=
+rd-break:break-word;"><div style=3D"font-family:SeekSans, Arial, Tahoma, sa=
+ns-serif;font-size:14px;font-weight:400;line-height:21px;text-align:left;co=
+lor:#5A6881;">Heartland Bank</div></td></tr><tr><td align=3D"left" style=3D=
+"font-size:0px;padding:0 0 4px 0;word-break:break-word;"><div style=3D"font=
+-family:SeekSans, Arial, Tahoma, sans-serif;font-size:14px;font-weight:400;=
+line-height:21px;text-align:left;color:#2E3849;">Auckland CBD, Auckland</di=
+v></td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:0 0 4px 0=
+;word-break:break-word;"><div style=3D"font-family:SeekSans, Arial, Tahoma,=
+ sans-serif;font-size:14px;font-weight:400;line-height:21px;text-align:left=
+;color:#2E3849;">$65,000 =E2=80=93 $90,000 per year</div></td></tr><tr><td =
+align=3D"left" style=3D"font-size:0px;padding:0 0 12px 0;word-break:break-w=
+ord;"><div style=3D"font-family:SeekSans, Arial, Tahoma, sans-serif;font-si=
+ze:14px;font-weight:400;line-height:21px;text-align:left;color:#12784F;">Pr=
+ofile salary match</div></td></tr><tr><td align=3D"left" style=3D"font-size=
+:0px;padding:0 0 16px 0;word-break:break-word;"><div style=3D"font-family:S=
+eekSans, Arial, Tahoma, sans-serif;font-size:14px;font-weight:400;line-heig=
+ht:21px;text-align:left;color:#2E3849;"><ul style=3D"margin:0;padding:0;pad=
+ding-left:18px"><li style=3D"padding:0 0 4px 0">Grow your career!</li><li s=
+tyle=3D"padding:0 0 4px 0">Supportive leadership</li><li style=3D"padding:0=
+">Fast paced environment</li></ul></div></td></tr><tr><td align=3D"left" st=
+yle=3D"font-size:0px;padding:0;word-break:break-word;"><div style=3D"font-f=
+amily:SeekSans, Arial, Tahoma, sans-serif;font-size:14px;font-weight:400;li=
+ne-height:21px;text-align:left;color:#5A6881;">Recently posted</div></td></=
+tr></tbody></table></td></tr></tbody></table></div><!--[if mso | IE]></td><=
+/tr></table><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]><=
+/td></tr></table><![endif]--> </a><!--[if mso | IE]></td></tr><tr><td class=
+=3D"" width=3D"600px" ><![endif]--> <a style=3D"display: block" href=3D"htt=
+ps://email.s.seek.co.nz/uni/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59va=
+Nz9vv5Cl-1DNp3QcWY4ItUUvgXtkJQ2yM7hUSmYm5bTHYhzRamqtGn-q2mtIBsPCsE0KncaAHDQ=
+DCAmVQSf-cRxbHABGNMSnd6GGluHWLWGyPMDCAcVXG6PxGog8GJ-5rZqsuo/4rs/iPeXitCnQRO=
+HdCQblrInNA/h60/h001.B9D5TP30nIREfOfl7jP4dO2LyhXkVVEWECKxq6pr0gE" universal=
+=3D"true"><!--[if mso | IE]><table align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:5=
+68px;" width=3D"568" ><tr><td style=3D"line-height:0px;font-size:0px;mso-li=
+ne-height-rule:exactly;"><![endif]--><div style=3D"margin:0px auto;max-widt=
+h:568px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"width:100%;"><tbody><tr><td style=3D=
+"direction:ltr;font-size:0px;padding:0 0 12px 0;text-align:center;"><!--[if=
+ mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0"><tr><td class=3D"cmqym3-outlook rhaa5w-outlook" style=3D"vert=
+ical-align:top;width:568px;" ><![endif]--><div class=3D"mj-column-per-100 m=
+j-outlook-group-fix cmqym3 rhaa5w" style=3D"font-size:0px;text-align:left;d=
+irection:ltr;display:inline-block;vertical-align:top;width:100%;"><table bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=
+=3D"100%" style=3D"border-collapse:separate;"><tbody><tr><td style=3D"backg=
+round-color:#ffffff;border:2px solid #EAECF1;border-radius:16px;vertical-al=
+ign:top;border-collapse:separate;padding:24px;"><table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><t=
+r><td align=3D"left" style=3D"font-size:0px;padding:0 0 12px 0;word-break:b=
+reak-word;"><table cellpadding=3D"0" cellspacing=3D"0" width=3D"100" border=
+=3D"0" style=3D"color:#000000;font-family:Ubuntu, Helvetica, Arial, sans-se=
+rif;font-size:13px;line-height:1;table-layout:auto;width:100px;border:none;=
+"><tr><td><!--[if mso]><img src=3D"https://bx-branding-gateway.cloud.seek.c=
+om.au/51ab8682-c42e-441b-8fc1-69481ee7238c.1/serpLogo" alt=3D"logo" style=
+=3D"border:0;display:block;outline:none;text-decoration:none;height:auto;wi=
+dth:auto" width=3D"65" height=3D"auto"><![endif]--> <!--[if !mso]><!--><img=
+ src=3D"https://bx-branding-gateway.cloud.seek.com.au/51ab8682-c42e-441b-8f=
+c1-69481ee7238c.1/serpLogo" alt=3D"logo" style=3D"border:0;display:block;ou=
+tline:none;text-decoration:none;max-height:65px;max-width:100px;height:auto=
+;width:auto" width=3D"100" height=3D"auto"><!--<![endif]--></td></tr></tabl=
+e></td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:0 0 4px 0=
+;word-break:break-word;"><div style=3D"font-family:SeekSans, Arial, Tahoma,=
+ sans-serif;font-size:16px;font-weight:700;line-height:24px;text-align:left=
+;color:#2E3849;"><div style=3D"text-decoration:underline"><!--[if mso | IE]=
+><a href=3D"https://email.s.seek.co.nz/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR=
+5PUSSiJ59vaNz9vv5Cl-1DNp3QcWY4ItUUvgXtkJQ2yM7hUSmYm5bTHYhzRamqtGn-q2mtIBsPC=
+sE0KncaAHDQDCAmVQSf-cRxbHABGNMSnd6GGluHWLWGyPMDCAcVXG6PxGog8GJ-5rZqsuo/4rs/=
+iPeXitCnQROHdCQblrInNA/h61/h001.HK2r5bbBNHLqCOeG9XOedsq1ITIhZfZfPRG-gyRXJUQ=
+"><![endif]-->Data Scientist<!--[if mso | IE]></a><![endif]--></div></div><=
+/td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:0 0 12px 0;w=
+ord-break:break-word;"><div style=3D"font-family:SeekSans, Arial, Tahoma, s=
+ans-serif;font-size:14px;font-weight:400;line-height:21px;text-align:left;c=
+olor:#5A6881;">Randstad Digital</div></td></tr><tr><td align=3D"left" style=
+=3D"font-size:0px;padding:0 0 4px 0;word-break:break-word;"><div style=3D"f=
+ont-family:SeekSans, Arial, Tahoma, sans-serif;font-size:14px;font-weight:4=
+00;line-height:21px;text-align:left;color:#2E3849;">Auckland CBD, Auckland =
+(Hybrid)</div></td></tr><tr><td align=3D"left" style=3D"font-size:0px;paddi=
+ng:0 0 12px 0;word-break:break-word;"><div style=3D"font-family:SeekSans, A=
+rial, Tahoma, sans-serif;font-size:14px;font-weight:400;line-height:21px;te=
+xt-align:left;color:#2E3849;">Hybrid work, Travel allowance, Autonomy</div>=
+</td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:0 0 16px 0;=
+word-break:break-word;"><div style=3D"font-family:SeekSans, Arial, Tahoma, =
+sans-serif;font-size:14px;font-weight:400;line-height:21px;text-align:left;=
+color:#2E3849;"><ul style=3D"margin:0;padding:0;padding-left:18px"><li styl=
+e=3D"padding:0 0 4px 0">Data Scientist - Permanent Opportunity</li><li styl=
+e=3D"padding:0 0 4px 0">Auckland CBD - Hybrid Working</li><li style=3D"padd=
+ing:0">Competitive salary, Commute allowance, Training budgets</li></ul></d=
+iv></td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:0;word-b=
+reak:break-word;"><div style=3D"font-family:SeekSans, Arial, Tahoma, sans-s=
+erif;font-size:14px;font-weight:400;line-height:21px;text-align:left;color:=
+#5A6881;">Recently posted</div></td></tr></tbody></table></td></tr></tbody>=
+</table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></t=
+body></table></div><!--[if mso | IE]></td></tr></table><![endif]--> </a><!-=
+-[if mso | IE]></td></tr><tr><td class=3D"" width=3D"600px" ><![endif]--> <=
+a style=3D"display: block" href=3D"https://email.s.seek.co.nz/uni/ss/c/u001=
+.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59vaNz9vv6DzqfxD2fy2fbzcKveyHoE8eqaV1vAm2=
+c9SVZDt_js062S_L_9WBnv2TYsiMpyB_8hH6encDGWc0y2tgAIzcY6xMI3oHdTwTsfoMiF2vBIj=
+XWRK9ZLEqaUoSChlYzKifw/4rs/iPeXitCnQROHdCQblrInNA/h62/h001.-TvB7UPbIByxhQQW=
+k7YvJe6pMLEoKIGNtI89kjDfDqo" universal=3D"true"><!--[if mso | IE]><table al=
+ign=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" =
+role=3D"presentation" style=3D"width:568px;" width=3D"568" ><tr><td style=
+=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-=
+-><div style=3D"margin:0px auto;max-width:568px;"><table align=3D"center" b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;paddin=
+g:0 0 12px 0;text-align:center;"><!--[if mso | IE]><table role=3D"presentat=
+ion" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"cmqy=
+m3-outlook rhaa5w-outlook" style=3D"vertical-align:top;width:568px;" ><![en=
+dif]--><div class=3D"mj-column-per-100 mj-outlook-group-fix cmqym3 rhaa5w" =
+style=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;v=
+ertical-align:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0" role=3D"presentation" width=3D"100%" style=3D"border-collapse:s=
+eparate;"><tbody><tr><td style=3D"background-color:#ffffff;border:2px solid=
+ #EAECF1;border-radius:16px;vertical-align:top;border-collapse:separate;pad=
+ding:24px;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D=
+"presentation" width=3D"100%"><tbody><tr><td align=3D"left" style=3D"font-s=
+ize:0px;padding:0 0 12px 0;word-break:break-word;"><table cellpadding=3D"0"=
+ cellspacing=3D"0" width=3D"100" border=3D"0" style=3D"color:#000000;font-f=
+amily:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;tab=
+le-layout:auto;width:100px;border:none;"><tr><td><!--[if mso]><img src=3D"h=
+ttps://bx-branding-gateway.cloud.seek.com.au/4f48a0e8-f669-a41a-08e4-7eb553=
+b883f8.1/serpLogo" alt=3D"logo" style=3D"border:0;display:block;outline:non=
+e;text-decoration:none;height:auto;width:auto" width=3D"65" height=3D"auto"=
+><![endif]--> <!--[if !mso]><!--><img src=3D"https://bx-branding-gateway.cl=
+oud.seek.com.au/4f48a0e8-f669-a41a-08e4-7eb553b883f8.1/serpLogo" alt=3D"log=
+o" style=3D"border:0;display:block;outline:none;text-decoration:none;max-he=
+ight:65px;max-width:100px;height:auto;width:auto" width=3D"100" height=3D"a=
+uto"><!--<![endif]--></td></tr></table></td></tr><tr><td align=3D"left" sty=
+le=3D"font-size:0px;padding:0 0 4px 0;word-break:break-word;"><div style=3D=
+"font-family:SeekSans, Arial, Tahoma, sans-serif;font-size:16px;font-weight=
+:700;line-height:24px;text-align:left;color:#2E3849;"><div style=3D"text-de=
+coration:underline"><!--[if mso | IE]><a href=3D"https://email.s.seek.co.nz=
+/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59vaNz9vv6DzqfxD2fy2fbzcKveyHoE=
+8eqaV1vAm2c9SVZDt_js062S_L_9WBnv2TYsiMpyB_8hH6encDGWc0y2tgAIzcY6xMI3oHdTwTs=
+foMiF2vBIjXWRK9ZLEqaUoSChlYzKifw/4rs/iPeXitCnQROHdCQblrInNA/h63/h001.l-BGJW=
+sfzzVcgAGFhFfG6T6orx8AvQsv9GX-OVizD0k"><![endif]-->SQL Developer<!--[if mso=
+ | IE]></a><![endif]--></div></div></td></tr><tr><td align=3D"left" style=
+=3D"font-size:0px;padding:0 0 12px 0;word-break:break-word;"><div style=3D"=
+font-family:SeekSans, Arial, Tahoma, sans-serif;font-size:14px;font-weight:=
+400;line-height:21px;text-align:left;color:#5A6881;">Paxus</div></td></tr><=
+tr><td align=3D"left" style=3D"font-size:0px;padding:0 0 12px 0;word-break:=
+break-word;"><div style=3D"font-family:SeekSans, Arial, Tahoma, sans-serif;=
+font-size:14px;font-weight:400;line-height:21px;text-align:left;color:#2E38=
+49;">Auckland (Hybrid)</div></td></tr><tr><td align=3D"left" style=3D"font-=
+size:0px;padding:0 0 16px 0;word-break:break-word;"><div style=3D"font-fami=
+ly:SeekSans, Arial, Tahoma, sans-serif;font-size:14px;font-weight:400;line-=
+height:21px;text-align:left;color:#2E3849;"><ul style=3D"margin:0;padding:0=
+;padding-left:18px"><li style=3D"padding:0 0 4px 0">Based in Auckland</li><=
+li style=3D"padding:0 0 4px 0">Immediate start</li><li style=3D"padding:0">=
+Permanent opportunity</li></ul></div></td></tr><tr><td align=3D"left" style=
+=3D"font-size:0px;padding:0;word-break:break-word;"><div style=3D"font-fami=
+ly:SeekSans, Arial, Tahoma, sans-serif;font-size:14px;font-weight:400;line-=
+height:21px;text-align:left;color:#5A6881;">Recently posted</div></td></tr>=
+</tbody></table></td></tr></tbody></table></div><!--[if mso | IE]></td></tr=
+></table><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></td=
+></tr></table><![endif]--> </a><!--[if mso | IE]></td></tr><tr><td class=3D=
+"" width=3D"600px" ><![endif]--> <a style=3D"display: block" href=3D"https:=
+//email.s.seek.co.nz/uni/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59vaNz9=
+vv6EeHcvR4vvUc4tVwMIv_kkjG4eWXQZYM479UUrMlnMncN1YFw5aRKUoQ27GKrtfucAgAZMJdW=
+hMJBxO4jVHbWNJmTeTkjDIj_FiVzDuGp3KOOqimGhRMteSL1eeucqZzU/4rs/iPeXitCnQROHdC=
+QblrInNA/h64/h001.uSf-taahpEvI3utclCvyIw8SkLdFhR_Lk1C8OdvuWTs" universal=3D=
+"true"><!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:56=
+8px;" width=3D"568" ><tr><td style=3D"line-height:0px;font-size:0px;mso-lin=
+e-height-rule:exactly;"><![endif]--><div style=3D"margin:0px auto;max-width=
+:568px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"width:100%;"><tbody><tr><td style=3D"=
+direction:ltr;font-size:0px;padding:0 0 12px 0;text-align:center;"><!--[if =
+mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0"><tr><td class=3D"cmqym3-outlook rhaa5w-outlook" style=3D"verti=
+cal-align:top;width:568px;" ><![endif]--><div class=3D"mj-column-per-100 mj=
+-outlook-group-fix cmqym3 rhaa5w" style=3D"font-size:0px;text-align:left;di=
+rection:ltr;display:inline-block;vertical-align:top;width:100%;"><table bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=
+=3D"100%" style=3D"border-collapse:separate;"><tbody><tr><td style=3D"backg=
+round-color:#ffffff;border:2px solid #EAECF1;border-radius:16px;vertical-al=
+ign:top;border-collapse:separate;padding:24px;"><table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><t=
+r><td align=3D"left" style=3D"font-size:0px;padding:0 0 4px 0;word-break:br=
+eak-word;"><div style=3D"font-family:SeekSans, Arial, Tahoma, sans-serif;fo=
+nt-size:16px;font-weight:700;line-height:24px;text-align:left;color:#2E3849=
+;"><div style=3D"text-decoration:underline"><!--[if mso | IE]><a href=3D"ht=
+tps://email.s.seek.co.nz/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59vaNz9=
+vv6EeHcvR4vvUc4tVwMIv_kkjG4eWXQZYM479UUrMlnMncN1YFw5aRKUoQ27GKrtfucAgAZMJdW=
+hMJBxO4jVHbWNJmTeTkjDIj_FiVzDuGp3KOOqimGhRMteSL1eeucqZzU/4rs/iPeXitCnQROHdC=
+QblrInNA/h65/h001.hWpKntD7yjNc4cNIAOTj3-u1ByH9LRAu2YMSSGKKAy0"><![endif]-->=
+Level 2 Full Stack Developer<!--[if mso | IE]></a><![endif]--></div></div><=
+/td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:0 0 12px 0;w=
+ord-break:break-word;"><div style=3D"font-family:SeekSans, Arial, Tahoma, s=
+ans-serif;font-size:14px;font-weight:400;line-height:21px;text-align:left;c=
+olor:#5A6881;">smartAR Services Limited</div></td></tr><tr><td align=3D"lef=
+t" style=3D"font-size:0px;padding:0 0 16px 0;word-break:break-word;"><div s=
+tyle=3D"font-family:SeekSans, Arial, Tahoma, sans-serif;font-size:14px;font=
+-weight:400;line-height:21px;text-align:left;color:#2E3849;">Newmarket, Auc=
+kland (Hybrid)</div></td></tr><tr><td align=3D"left" style=3D"font-size:0px=
+;padding:0;word-break:break-word;"><div style=3D"font-family:SeekSans, Aria=
+l, Tahoma, sans-serif;font-size:14px;font-weight:400;line-height:21px;text-=
+align:left;color:#5A6881;">Recently posted</div></td></tr></tbody></table><=
+/td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif=
+]--></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![=
+endif]--> </a><!--[if mso | IE]></td></tr><tr><td class=3D"" width=3D"600px=
+" ><![endif]--> <a style=3D"display: block" href=3D"https://email.s.seek.co=
+.nz/uni/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59vaNz9vv6sDYLX8LfpuZJ4c=
+HjVfTOu9vJQ9SWMYEzovuc4Kwtoi6GWT134YBm-YhhXOpG7bU4H4gd-ZQxEzusN5feWRf5ZocYT=
+YFmmGohGD6dB9t91wv6e2j2MaeDcj4NGxCszr_A/4rs/iPeXitCnQROHdCQblrInNA/h66/h001=
+._1CgrIrwgqeQChCJTakHAGdEcpF-tUwOr6OFO45no-w" universal=3D"true"><!--[if ms=
+o | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" class=3D"" role=3D"presentation" style=3D"width:568px;" width=3D"568=
+" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exac=
+tly;"><![endif]--><div style=3D"margin:0px auto;max-width:568px;"><table al=
+ign=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation" style=3D"width:100%;"><tbody><tr><td style=3D"direction:ltr;font=
+-size:0px;padding:0;text-align:center;"><!--[if mso | IE]><table role=3D"pr=
+esentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=
+=3D"cmqym3-outlook rhaa5w-outlook" style=3D"vertical-align:top;width:568px;=
+" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-group-fix cmqym3 =
+rhaa5w" style=3D"font-size:0px;text-align:left;direction:ltr;display:inline=
+-block;vertical-align:top;width:100%;"><table border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" role=3D"presentation" width=3D"100%" style=3D"border-co=
+llapse:separate;"><tbody><tr><td style=3D"background-color:#ffffff;border:2=
+px solid #EAECF1;border-radius:16px;vertical-align:top;border-collapse:sepa=
+rate;padding:24px;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ role=3D"presentation" width=3D"100%"><tbody><tr><td align=3D"left" style=
+=3D"font-size:0px;padding:0 0 4px 0;word-break:break-word;"><div style=3D"f=
+ont-family:SeekSans, Arial, Tahoma, sans-serif;font-size:16px;font-weight:7=
+00;line-height:24px;text-align:left;color:#2E3849;"><div style=3D"text-deco=
+ration:underline"><!--[if mso | IE]><a href=3D"https://email.s.seek.co.nz/s=
+s/c/u001.l5tc4iXB2-Bk7UR8KdEfXVqCAR5PUSSiJ59vaNz9vv6sDYLX8LfpuZJ4cHjVfTOu9v=
+JQ9SWMYEzovuc4Kwtoi6GWT134YBm-YhhXOpG7bU4H4gd-ZQxEzusN5feWRf5ZocYTYFmmGohGD=
+6dB9t91wv6e2j2MaeDcj4NGxCszr_A/4rs/iPeXitCnQROHdCQblrInNA/h67/h001.DfIOPGgw=
+riUIo-SSpPPvlRZTUHjBLka6zQjw-V4hLXc"><![endif]-->Embedded Software Engineer=
+ | AI-Driven Environmental Technology<!--[if mso | IE]></a><![endif]--></di=
+v></div></td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:0 0=
+ 12px 0;word-break:break-word;"><div style=3D"font-family:SeekSans, Arial, =
+Tahoma, sans-serif;font-size:14px;font-weight:400;line-height:21px;text-ali=
+gn:left;color:#5A6881;">Enterprise Technology Recruitment Ltd</div></td></t=
+r><tr><td align=3D"left" style=3D"font-size:0px;padding:0 0 4px 0;word-brea=
+k:break-word;"><div style=3D"font-family:SeekSans, Arial, Tahoma, sans-seri=
+f;font-size:14px;font-weight:400;line-height:21px;text-align:left;color:#2E=
+3849;">Waitakere &amp; West Auckland, Auckland (Remote)</div></td></tr><tr>=
+<td align=3D"left" style=3D"font-size:0px;padding:0 0 16px 0;word-break:bre=
+ak-word;"><div style=3D"font-family:SeekSans, Arial, Tahoma, sans-serif;fon=
+t-size:14px;font-weight:400;line-height:21px;text-align:left;color:#2E3849;=
+">$120,000 =E2=80=93 $140,000 per year</div></td></tr><tr><td align=3D"left=
+" style=3D"font-size:0px;padding:0;word-break:break-word;"><div style=3D"fo=
+nt-family:SeekSans, Arial, Tahoma, sans-serif;font-size:14px;font-weight:40=
+0;line-height:21px;text-align:left;color:#5A6881;">Recently posted</div></t=
+d></tr></tbody></table></td></tr></tbody></table></div><!--[if mso | IE]></=
+td></tr></table><![endif]--></td></tr></tbody></table></div><!--[if mso | I=
+E]></td></tr></table><![endif]--> </a><!--[if mso | IE]></td></tr></table><=
+![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></ta=
+ble><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" class=3D"" role=3D"presentation" style=3D"width:600px;" width=3D"600" ><t=
+r><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"=
+><![endif]--><div style=3D"margin:0px auto;max-width:600px;"><table align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" style=3D"width:100%;"><tbody><tr><td style=3D"direction:ltr;font-si=
+ze:0px;padding:0 0 32px 0;text-align:center;"><!--[if mso | IE]><table role=
+=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td =
+class=3D"" style=3D"vertical-align:top;width:600px;" ><![endif]--><div clas=
+s=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0px;text-al=
+ign:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"=
+><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentati=
+on" width=3D"100%"><tbody><tr><td style=3D"vertical-align:top;padding:0 16p=
+x 0 16px;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"=
+presentation" width=3D"100%"><tbody><tr><td align=3D"left" class=3D"univers=
+al-mj-button" style=3D"font-size:0px;padding:0 0 16px 0;word-break:break-wo=
+rd;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" style=3D"border-collapse:separate;line-height:100%;"><tbody><tr><td=
+ align=3D"center" bgcolor=3D"#E60278" role=3D"presentation" style=3D"border=
+:none;border-radius:8px;cursor:auto;mso-padding-alt:12px 24px;background:#E=
+60278;" valign=3D"middle"><a href=3D"https://email.s.seek.co.nz/uni/ss/c/u0=
+01.l5tc4iXB2-Bk7UR8KdEfXVQXmNvqRCnLmBCEyK0gL5DgEzh7LB9Cf-kEIhm2og7vrCm-P2o3=
+qlBrbBQ2HnXlPnrigKj0e6tRxeETAzZ3_6s/4rs/iPeXitCnQROHdCQblrInNA/h68/h001.khC=
+956CQ1omMWamz4eUgZHqnB3onQbgK9hStZnSSNaw" style=3D"display:inline-block;bac=
+kground:#E60278;color:#ffffff;font-family:SeekSans, Arial, Tahoma, sans-ser=
+if;font-size:16px;font-weight:700;line-height:24px;margin:0;text-decoration=
+:none;text-transform:none;padding:12px 24px;mso-padding-alt:0px;border-radi=
+us:8px;" target=3D"_blank" universal=3D"true">View more jobs</a></td></tr><=
+/tbody></table></td></tr><tr><td align=3D"left" style=3D"font-size:0px;padd=
+ing:0;word-break:break-word;"><div style=3D"font-family:SeekSans, Arial, Ta=
+homa, sans-serif;font-size:16px;font-weight:400;line-height:24px;text-align=
+:left;color:#2E3849;">These recommendations are based on your past activity=
+ on SEEK. Find out more about <a href=3D"https://email.s.seek.co.nz/uni/ss/=
+c/u001.bo4DZPfuJ7GsePGSE7RvQsTFNg5EGU-ZLW6D9YA9lh03LOeE2vYZWHKULLQJ_6WJH_MK=
+257aEHY9vKuLBC7AAN75JN2QVoGNBLRyWtgx_n1SMf0klFrTAGVbpzkJmyBGH5ZFdaANUXepxsT=
+v3Axzxtm8j4SU5Xpt62WKZ2UYGyk/4rs/iPeXitCnQROHdCQblrInNA/h69/h001.TiY5K3qCZW=
+oYiUGtUtZB7JdKOOJhaZxfXx6SO2nNm94" style=3D"color:#2E3849;font-weight:700;t=
+ext-decoration:underline" universal=3D"true">how recommendations work</a>.<=
+/div></td></tr></tbody></table></td></tr></tbody></table></div><!--[if mso =
+| IE]></td></tr></table><![endif]--></td></tr></tbody></table></div><!--[if=
+ mso | IE]></td></tr></table><table align=3D"center" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:=
+600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-l=
+ine-height-rule:exactly;"><![endif]--><div style=3D"margin:0px auto;max-wid=
+th:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" role=3D"presentation" style=3D"width:100%;"><tbody><tr><td style=
+=3D"direction:ltr;font-size:0px;padding:0 16px 32px 16px;text-align:center;=
+"><!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0"><tr><td class=3D"" width=3D"600px" ><![endif]--> <=
+a style=3D"display: block" href=3D"https://email.s.seek.co.nz/ss/c/u001.l5t=
+c4iXB2-Bk7UR8KdEfXeDPlqnTSEZUC68Y233DlMRGBjvsDeQYW5HI3oVf0mFF8lB4aOer33XYWU=
+jQ0A_49WBqVyNXwlqrR-wZFo_b3B3hHnbP4li5iO6QGZqwkKjx/4rs/iPeXitCnQROHdCQblrIn=
+NA/h70/h001.Us7sKHx21iyRZFFN7rCBHR74aBOgqYjIqsLrZe9JJ6M"><!--[if mso | IE]>=
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"" role=3D"presentation" style=3D"width:568px;" width=3D"568" bgcolor=
+=3D"#F0F7FE" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-heigh=
+t-rule:exactly;"><![endif]--><div style=3D"background:#F0F7FE;background-co=
+lor:#F0F7FE;margin:0px auto;max-width:568px;border-radius:16px;overflow:hid=
+den;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" style=3D"background:#F0F7FE;background-color:#F0F=
+7FE;width:100%;border-collapse:separate;"><tbody><tr><td style=3D"border-ra=
+dius:16px;direction:rtl;font-size:0px;padding:24px 0 0 0;text-align:center;=
+"><!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-align:top;wid=
+th:142px;" ><![endif]--><div class=3D"mj-column-per-25 mj-outlook-group-fix=
+" style=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block=
+;vertical-align:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td style=3D"=
+vertical-align:top;padding:0 24px 0 24px;"><table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><t=
+d align=3D"left" style=3D"font-size:0px;padding:0;word-break:break-word;"><=
+table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation=
+" style=3D"border-collapse:collapse;border-spacing:0px;"><tbody><tr><td sty=
+le=3D"width:94px;"><img alt=3D"Rate your recent employer" src=3D"https://se=
+ekcdn.com/notifications/apac-mail/shared/review-multiple.png" style=3D"bord=
+er:0;display:block;outline:none;text-decoration:none;height:auto;width:100%=
+;font-size:13px;" width=3D"94" height=3D"auto"></td></tr></tbody></table></=
+td></tr></tbody></table></td></tr></tbody></table></div><!--[if mso | IE]><=
+/td><td class=3D"" style=3D"vertical-align:top;width:426px;" ><![endif]--><=
+div class=3D"mj-column-per-75 mj-outlook-group-fix" style=3D"font-size:0px;=
+text-align:left;direction:ltr;display:inline-block;vertical-align:top;width=
+:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation" width=3D"100%"><tbody><tr><td style=3D"vertical-align:top;paddin=
+g:0 24px 24px 24px;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" width=3D"100%"><tbody><tr><td align=3D"left" style=
+=3D"font-size:0px;padding:0 0 16px 0;word-break:break-word;"><div style=3D"=
+font-family:SeekSans, Arial, Tahoma, sans-serif;font-size:18px;font-weight:=
+700;line-height:25px;text-align:left;color:#2E3849;">Rate your recent emplo=
+yer</div></td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:0 =
+0 24px 0;word-break:break-word;"><table border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;borde=
+r-spacing:0px;"><tbody><tr><td style=3D"width:192px;"><img alt=3D"Rate your=
+ recent employer" src=3D"https://seekcdn.com/notifications/apac-mail/shared=
+/star-rating.png" style=3D"border:0;display:block;outline:none;text-decorat=
+ion:none;height:auto;width:100%;font-size:13px;" width=3D"192" height=3D"au=
+to"></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody><=
+/table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tb=
+ody></table></div><!--[if mso | IE]></td></tr></table><![endif]--> </a><!--=
+[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody></table></div=
+><!--[if mso | IE]></td></tr></table><table align=3D"center" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=
+=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size=
+:0px;mso-line-height-rule:exactly;"><![endif]--><div style=3D"margin:0px au=
+to;max-width:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" role=3D"presentation" style=3D"width:100%;"><tbody><tr><=
+td style=3D"direction:ltr;font-size:0px;padding:0 0 24px 0;text-align:cente=
+r;"><!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-align:top;wid=
+th:600px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-group-fi=
+x" style=3D"font-size:0px;text-align:left;direction:ltr;display:inline-bloc=
+k;vertical-align:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td style=3D=
+"vertical-align:top;padding:0 16px 0 16px;"><table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><t=
+d align=3D"center" style=3D"font-size:0px;padding:0 0 32px 0;word-break:bre=
+ak-word;"><p style=3D"border-top:solid 2px #EAECF1;font-size:1px;margin:0px=
+ auto;width:100%;"></p><!--[if mso | IE]><table align=3D"center" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-top:solid 2px #EAECF=
+1;font-size:1px;margin:0px auto;width:568px;" role=3D"presentation" width=
+=3D"568px" ><tr><td style=3D"height:0;line-height:0;"> &nbsp;
+</td></tr></table><![endif]--></td></tr><tr><td align=3D"center" style=3D"f=
+ont-size:0px;padding:0;word-break:break-word;"><div style=3D"font-family:Se=
+ekSans, Arial, Tahoma, sans-serif;font-size:16px;font-weight:400;line-heigh=
+t:24px;text-align:center;color:#2E3849;">Was this email useful?</div></td><=
+/tr></tbody></table></td></tr></tbody></table></div><!--[if mso | IE]></td>=
+</tr></table><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]>=
+</td></tr></table><table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px;" wid=
+th=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-=
+rule:exactly;"><![endif]--><div style=3D"margin:0px auto;max-width:600px;">=
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"width:100%;"><tbody><tr><td style=3D"direction=
+:ltr;font-size:0px;padding:0 16px 32px 16px;text-align:center;"><!--[if mso=
+ | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0"><tr><td class=3D"fixed-210-width-outlook" style=3D"width:210px;" =
+><![endif]--><div class=3D"mj-column-px-210 mj-outlook-group-fix fixed-210-=
+width" style=3D"max-width: 210px; font-size: 0; line-height: 0; text-align:=
+ left; display: inline-block; width: 100%; direction: ltr;"><!--[if mso | I=
+E]><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presenta=
+tion" ><tr><td style=3D"vertical-align:middle;width:52px;" ><![endif]--><di=
+v class=3D"mj-column-per-25 mj-outlook-group-fix" style=3D"font-size:0px;te=
+xt-align:left;direction:ltr;display:inline-block;vertical-align:middle;widt=
+h:25%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation" style=3D"vertical-align:middle;" width=3D"100%"><tbody><tr><td a=
+lign=3D"right" style=3D"font-size:0px;padding:0;word-break:break-word;"><ta=
+ble border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" =
+style=3D"border-collapse:collapse;border-spacing:0px;"><tbody><tr><td style=
+=3D"width:40px;"><a href=3D"https://email.s.seek.co.nz/ss/c/u001.QBcc3ixuGS=
+q5N0vKOUcS07phHaUFfEtSRSjuHl7FZhgcO0jkA1b8tYixXSSo8RdnBqqtVMgr0PQqZop3QctQP=
+fFyJnGNXFeuq8qkZxEcGz5QX03dJAEtuQIWI6EMFHza4HTLL4GgBff5v-i_l4kOfe6CiGn0cBfb=
+xyeUWUCRcj2CjAB4N7H8R8gKK3q3svdKoExutUNyz356ZKhjw8oQoQ/4rs/iPeXitCnQROHdCQb=
+lrInNA/h71/h001.tmRoFd9tM9OOQur4adK-EsgNCtVNR-u90Na2zgyL48U" target=3D"_bla=
+nk"><img alt=3D"Yes" src=3D"https://seekcdn.com/notifications/apac-mail/sha=
+red/sentiment-yes.png" style=3D"border:0;display:block;outline:none;text-de=
+coration:none;height:40px;width:100%;font-size:13px;" width=3D"40" height=
+=3D"40"></a></td></tr></tbody></table></td></tr></tbody></table></div><!--[=
+if mso | IE]></td><td style=3D"vertical-align:middle;width:52px;" ><![endif=
+]--><div class=3D"mj-column-per-25 mj-outlook-group-fix" style=3D"font-size=
+:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:midd=
+le;width:25%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" width=3D"100%"><tbody><tr><td style=3D"vertical-align:mid=
+dle;padding:0 0 0 8px;"><table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td align=3D"left" s=
+tyle=3D"font-size:0px;padding:0;word-break:break-word;"><div style=3D"font-=
+family:SeekSans, Arial, Tahoma, sans-serif;font-size:16px;font-weight:400;l=
+ine-height:24px;text-align:left;color:#2E3849;"><a href=3D"https://email.s.=
+seek.co.nz/ss/c/u001.QBcc3ixuGSq5N0vKOUcS07phHaUFfEtSRSjuHl7FZhgcO0jkA1b8tY=
+ixXSSo8RdnBqqtVMgr0PQqZop3QctQPfFyJnGNXFeuq8qkZxEcGz5QX03dJAEtuQIWI6EMFHza4=
+HTLL4GgBff5v-i_l4kOfe6CiGn0cBfbxyeUWUCRcj2CjAB4N7H8R8gKK3q3svdKoExutUNyz356=
+ZKhjw8oQoQ/4rs/iPeXitCnQROHdCQblrInNA/h72/h001.hK8QfewXPqwfK4J4izO2bcJGX1Aa=
+zdpBiWuO7sYaPU4" style=3D"color:#2E3849;font-weight:700;text-decoration:und=
+erline">Yes</a></div></td></tr></tbody></table></td></tr></tbody></table></=
+div><!--[if mso | IE]></td><td style=3D"vertical-align:middle;width:52px;" =
+><![endif]--><div class=3D"mj-column-per-25 mj-outlook-group-fix" style=3D"=
+font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-a=
+lign:middle;width:25%;"><table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"vertical-align:middle;" width=3D"100%=
+"><tbody><tr><td align=3D"right" style=3D"font-size:0px;padding:0;word-brea=
+k:break-word;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"border-collapse:collapse;border-spacing:0px;"><t=
+body><tr><td style=3D"width:40px;"><a href=3D"https://email.s.seek.co.nz/ss=
+/c/u001.QBcc3ixuGSq5N0vKOUcS07phHaUFfEtSRSjuHl7FZhgcO0jkA1b8tYixXSSo8RdnBqq=
+tVMgr0PQqZop3QctQPfFyJnGNXFeuq8qkZxEcGz5QX03dJAEtuQIWI6EMFHza4HTLL4GgBff5v-=
+i_l4kOfe6CiGn0cBfbxyeUWUCRcj2CjAB4N7H8R8gKK3q3svdKK3C3TxLuHd8BPigmwOpiQQ/4r=
+s/iPeXitCnQROHdCQblrInNA/h73/h001.8u3iusRIYSOb3bkQ84PvRJAPqK8BWAD7gyjIVYR6F=
+qk" target=3D"_blank"><img alt=3D"No" src=3D"https://seekcdn.com/notificati=
+ons/apac-mail/shared/sentiment-no.png" style=3D"border:0;display:block;outl=
+ine:none;text-decoration:none;height:40px;width:100%;font-size:13px;" width=
+=3D"40" height=3D"40"></a></td></tr></tbody></table></td></tr></tbody></tab=
+le></div><!--[if mso | IE]></td><td style=3D"vertical-align:middle;width:52=
+px;" ><![endif]--><div class=3D"mj-column-per-25 mj-outlook-group-fix" styl=
+e=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;verti=
+cal-align:middle;width:25%;"><table border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td style=3D"vert=
+ical-align:middle;padding:0 0 0 8px;"><table border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td alig=
+n=3D"left" style=3D"font-size:0px;padding:0;word-break:break-word;"><div st=
+yle=3D"font-family:SeekSans, Arial, Tahoma, sans-serif;font-size:16px;font-=
+weight:400;line-height:24px;text-align:left;color:#2E3849;"><a href=3D"http=
+s://email.s.seek.co.nz/ss/c/u001.QBcc3ixuGSq5N0vKOUcS07phHaUFfEtSRSjuHl7FZh=
+gcO0jkA1b8tYixXSSo8RdnBqqtVMgr0PQqZop3QctQPfFyJnGNXFeuq8qkZxEcGz5QX03dJAEtu=
+QIWI6EMFHza4HTLL4GgBff5v-i_l4kOfe6CiGn0cBfbxyeUWUCRcj2CjAB4N7H8R8gKK3q3svdK=
+K3C3TxLuHd8BPigmwOpiQQ/4rs/iPeXitCnQROHdCQblrInNA/h74/h001.wt3Mw4KPSUw_OqoI=
+1PCpnXosG8ft_QLr9wjeDx4yEuU" style=3D"color:#2E3849;font-weight:700;text-de=
+coration:underline">No</a></div></td></tr></tbody></table></td></tr></tbody=
+></table></div><!--[if mso | IE]></td></tr></table><![endif]--></div><!--[i=
+f mso | IE]></td></tr></table><![endif]--></td></tr></tbody></table></div><=
+!--[if mso | IE]></td></tr></table><table align=3D"center" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"=
+width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px=
+;mso-line-height-rule:exactly;"><![endif]--><div style=3D"margin:0px auto;m=
+ax-width:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" style=3D"width:100%;"><tbody><tr><td s=
+tyle=3D"direction:ltr;font-size:0px;padding:0 0 24px 0;text-align:center;">=
+<!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-align:top;width:6=
+00px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-group-fix" s=
+tyle=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;ve=
+rtical-align:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td style=3D"ver=
+tical-align:top;padding:0 16px 0 16px;"><table border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td al=
+ign=3D"center" style=3D"font-size:0px;padding:0;word-break:break-word;"><p =
+style=3D"border-top:solid 2px #EAECF1;font-size:1px;margin:0px auto;width:1=
+00%;"></p><!--[if mso | IE]><table align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" style=3D"border-top:solid 2px #EAECF1;font-size:1=
+px;margin:0px auto;width:568px;" role=3D"presentation" width=3D"568px" ><tr=
+><td style=3D"height:0;line-height:0;"> &nbsp;
+</td></tr></table><![endif]--></td></tr></tbody></table></td></tr></tbody><=
+/table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tb=
+ody></table></div><!--[if mso | IE]></td></tr></table><table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"pres=
+entation" style=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-heigh=
+t:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><div style=
+=3D"margin:0px auto;max-width:600px;"><table align=3D"center" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"width:10=
+0%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:0 0 12px 0=
+;text-align:center;"><!--[if mso | IE]><table role=3D"presentation" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vert=
+ical-align:top;width:600px;" ><![endif]--><div class=3D"mj-column-per-100 m=
+j-outlook-group-fix" style=3D"font-size:0px;text-align:left;direction:ltr;d=
+isplay:inline-block;vertical-align:top;width:100%;"><table border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbod=
+y><tr><td style=3D"vertical-align:top;padding:0 16px 0 16px;"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"1=
+00%"><tbody><tr><td align=3D"left" style=3D"font-size:0px;padding:0;word-br=
+eak:break-word;"><div style=3D"font-family:SeekSans, Arial, Tahoma, sans-se=
+rif;font-size:12px;font-weight:700;line-height:18px;text-align:left;color:#=
+5A6881;">Download SEEK App</div></td></tr></tbody></table></td></tr></tbody=
+></table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></=
+tbody></table></div><!--[if mso | IE]></td></tr></table><table align=3D"cen=
+ter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"pr=
+esentation" style=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-hei=
+ght:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><div style=
+=3D"margin:0px auto;max-width:600px;"><table align=3D"center" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"width:10=
+0%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:0 64px 24p=
+x 16px;text-align:left;"><!--[if mso | IE]><table role=3D"presentation" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"w=
+idth:267px;" ><![endif]--><div class=3D"mj-column-px-267 mj-outlook-group-f=
+ix" style=3D"font-size:0;line-height:0;text-align:left;display:inline-block=
+;width:100%;direction:ltr;"><!--[if mso | IE]><table border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" ><tr><td style=3D"vertical=
+-align:top;width:120px;" ><![endif]--><div class=3D"mj-column-px-120 mj-out=
+look-group-fix" style=3D"font-size:0px;text-align:left;direction:ltr;displa=
+y:inline-block;vertical-align:top;width:44.9438202247191%;"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"1=
+00%"><tbody><tr><td style=3D"vertical-align:top;padding:0;"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"1=
+00%"><tbody><tr><td align=3D"left" style=3D"font-size:0px;padding:0;word-br=
+eak:break-word;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"border-collapse:collapse;border-spacing:0px;" =
+class=3D"mj-full-width-mobile"><tbody><tr><td style=3D"width:120px;" class=
+=3D"mj-full-width-mobile"><a href=3D"https://email.s.seek.co.nz/ss/c/u001.r=
+iOgLc5bAZgLA6afJYzTudPUUpWnCB__mOT7eoCzJ8IKBcCvXo7WGeb-ysT_yc-bsqvkV32og2xS=
+tyKX6B4wzg/4rs/iPeXitCnQROHdCQblrInNA/h75/h001.upAoqY23NWC2niKy7nTLeOAiwqWC=
+nS-6SEl2bcwGyiU" target=3D"_blank"><img alt=3D"apple store" src=3D"https://=
+seekcdn.com/notifications/apac-mail/shared/apple-store-en.png" style=3D"bor=
+der:0;display:block;outline:none;text-decoration:none;height:auto;width:100=
+%;font-size:13px;" width=3D"120" height=3D"auto"></a></td></tr></tbody></ta=
+ble></td></tr></tbody></table></td></tr></tbody></table></div><!--[if mso |=
+ IE]></td><td style=3D"vertical-align:top;width:12px;" ><![endif]--><div cl=
+ass=3D"mj-column-px-12 mj-outlook-group-fix" style=3D"font-size:0px;text-al=
+ign:left;direction:ltr;display:inline-block;vertical-align:top;width:4.4943=
+8202247191%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"vertical-align:top;" width=3D"100%"><tbody></tbo=
+dy></table></div><!--[if mso | IE]></td><td style=3D"vertical-align:top;wid=
+th:135px;" ><![endif]--><div class=3D"mj-column-px-135 mj-outlook-group-fix=
+" style=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block=
+;vertical-align:top;width:50.56179775280899%;"><table border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr=
+><td style=3D"vertical-align:top;padding:0;"><table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><=
+td align=3D"left" style=3D"font-size:0px;padding:0;word-break:break-word;">=
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-collapse:collapse;border-spacing:0px;" class=3D"mj-full-=
+width-mobile"><tbody><tr><td style=3D"width:135px;" class=3D"mj-full-width-=
+mobile"><a href=3D"https://email.s.seek.co.nz/ss/c/u001.3vwdN6USzeuUzY5LuGL=
+ERRsmP7wCYCYKZ6KBzBx4wxhNRlutmOAQfEZPmAMPq-eLDS4GDEUY_9oOhvqP35pPKlWY0dcn0D=
+TSRq7i5kyotLc/4rs/iPeXitCnQROHdCQblrInNA/h76/h001.TwHc6jkRXch9DSMLUUoRl0iKN=
+bjJjE30XOX15gJMKF4" target=3D"_blank"><img alt=3D"google play" src=3D"https=
+://seekcdn.com/notifications/apac-mail/shared/google-play-en.png" style=3D"=
+border:0;display:block;outline:none;text-decoration:none;height:auto;width:=
+100%;font-size:13px;" width=3D"135" height=3D"auto"></a></td></tr></tbody><=
+/table></td></tr></tbody></table></td></tr></tbody></table></div><!--[if ms=
+o | IE]></td></tr></table><![endif]--></div><!--[if mso | IE]></td></tr></t=
+able><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></td></t=
+r></table><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px;" width=3D"60=
+0" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exa=
+ctly;"><![endif]--><div style=3D"margin:0px auto;max-width:600px;"><table a=
+lign=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pr=
+esentation" style=3D"width:100%;"><tbody><tr><td style=3D"direction:ltr;fon=
+t-size:0px;padding:0 0 24px 0;text-align:center;"><!--[if mso | IE]><table =
+role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr>=
+<td class=3D"" style=3D"vertical-align:top;width:600px;" ><![endif]--><div =
+class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0px;tex=
+t-align:left;direction:ltr;display:inline-block;vertical-align:top;width:10=
+0%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" width=3D"100%"><tbody><tr><td style=3D"vertical-align:top;padding:0=
+ 16px 0 16px;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" width=3D"100%"><tbody><tr><td align=3D"left" style=3D"fon=
+t-size:0px;word-break:break-word;"><div class=3D"mj-inline-links"><!--[if m=
+so | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0" align=3D"left"><tr><td style=3D"padding:0 24px 0 0;" class=3D"u=
+niversal-mj-link-outlook" ><![endif]--> <a class=3D"mj-link universal-mj-li=
+nk" href=3D"https://email.s.seek.co.nz/uni/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXb=
+PJ8PDd9T17jHXisFfTG1PbBVPj7ISyZEUL4ywkM0rXdFPXHiiGPdWy7BjlaVR92bPoEwqGyZFG6=
+d5zJsPJr4RxHHlh8VJwnqZ5yrklVg7h/4rs/iPeXitCnQROHdCQblrInNA/h77/h001.zfHSr58=
+2QNQ-q0CY9h2jvyTjOB9-OmEQADTNPW8-1L8" target=3D"_blank" style=3D"display:in=
+line-block;color:#5A6881;font-family:SeekSans, Arial, Tahoma, sans-serif;fo=
+nt-size:12px;font-weight:normal;line-height:18px;text-decoration:none;text-=
+transform:none;padding:0 24px 0 0;" universal=3D"true">Edit frequency </a><=
+!--[if mso | IE]></td><td style=3D"padding:0 24px 0 0;" class=3D"" ><![endi=
+f]--> <a class=3D"mj-link" href=3D"https://email.s.seek.co.nz/ss/c/u001.l5t=
+c4iXB2-Bk7UR8KdEfXbPJ8PDd9T17jHXisFfTG1PbBVPj7ISyZEUL4ywkM0rXtOee0P2RhBNjgL=
+BX69OQxb9uu-wBw8ceekYd6ydamgCgk4u9ereZ-YJaodHh5u0lxiIFRO0W49cuJcIX1aqYeCTRc=
+1TJC_-8ngk32MRJNG6Cix5BQoLETvKuRhgEIv8of93coW9uV_KpOPi4SjXfzd6q2f0jDTHGbdNK=
+igtLHmI/4rs/iPeXitCnQROHdCQblrInNA/h78/h001.KwdnWwaAB26KI95NY0oRhEF-mbz9fTg=
+FBERq9ahGZAo" target=3D"_blank" style=3D"display:inline-block;color:#5A6881=
+;font-family:SeekSans, Arial, Tahoma, sans-serif;font-size:12px;font-weight=
+:normal;line-height:18px;text-decoration:none;text-transform:none;padding:0=
+ 24px 0 0;">Unsubscribe </a><!--[if mso | IE]></td><td style=3D"padding:0 2=
+4px 0 0;" class=3D"" ><![endif]--> <a class=3D"mj-link" href=3D"https://ema=
+il.s.seek.co.nz/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXQb-CxGyZXq7QDkYUy9K0uCYrIjZV=
+bTpQROOv1laSVeG5N6RHe-g_oVjP9iSFKQr1MtwRPT9HohEKPjlhe0PqZI/4rs/iPeXitCnQROH=
+dCQblrInNA/h79/h001.YBoKTnh8uAA9O0ChqKIqIjbiCCZ1k29SKOFsQy96BOY" target=3D"=
+_blank" style=3D"display:inline-block;color:#5A6881;font-family:SeekSans, A=
+rial, Tahoma, sans-serif;font-size:12px;font-weight:normal;line-height:18px=
+;text-decoration:none;text-transform:none;padding:0 24px 0 0;">Privacy </a>=
+<!--[if mso | IE]></td><td style=3D"padding:0;" class=3D"" ><![endif]--> <a=
+ class=3D"mj-link" href=3D"https://email.s.seek.co.nz/ss/c/u001.l5tc4iXB2-B=
+k7UR8KdEfXSVotqRpuyMFhrmoXWvlMyNi0K5HC7ZXtWdd3_F2EaTNzBD7E8BAfDD2nnQMg3xeXO=
+LRKIAOGuTboe6hrReU5qk/4rs/iPeXitCnQROHdCQblrInNA/h80/h001.UfaSvpRvQO9ElyqEm=
+eH8x3uB31WCBI2rak1NAlSlb2c" target=3D"_blank" style=3D"display:inline-block=
+;color:#5A6881;font-family:SeekSans, Arial, Tahoma, sans-serif;font-size:12=
+px;font-weight:normal;line-height:18px;text-decoration:none;text-transform:=
+none;padding:0;">Contact us </a><!--[if mso | IE]></td></tr></table><![endi=
+f]--></div></td></tr></tbody></table></td></tr></tbody></table></div><!--[i=
+f mso | IE]></td></tr></table><![endif]--></td></tr></tbody></table></div><=
+!--[if mso | IE]></td></tr></table><table align=3D"center" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"=
+width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px=
+;mso-line-height-rule:exactly;"><![endif]--><div style=3D"margin:0px auto;m=
+ax-width:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" style=3D"width:100%;"><tbody><tr><td s=
+tyle=3D"direction:ltr;font-size:0px;padding:0 0 24px 0;text-align:center;">=
+<!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-align:top;width:6=
+00px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-group-fix" s=
+tyle=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;ve=
+rtical-align:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td style=3D"ver=
+tical-align:top;padding:0 16px 0 16px;"><table border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td al=
+ign=3D"left" style=3D"font-size:0px;padding:0;word-break:break-word;"><div =
+style=3D"font-family:SeekSans, Arial, Tahoma, sans-serif;font-size:12px;fon=
+t-weight:400;line-height:18px;text-align:left;color:#5A6881;">This email wa=
+s sent to you as a registered user of <a href=3D"https://email.s.seek.co.nz=
+/uni/ss/c/u001.l5tc4iXB2-Bk7UR8KdEfXVQXmNvqRCnLmBCEyK0gL5DgEzh7LB9Cf-kEIhm2=
+og7vYCF6mu9OXogfYf4oLIuMaA/4rs/iPeXitCnQROHdCQblrInNA/h81/h001.Vurx-ipS0AdL=
+j4-84gq_PR7ffhrqTuYF0i3RwheeJ3o" style=3D"color:#5A6881;text-decoration:und=
+erline" universal=3D"true">nz.seek.com</a></div></td></tr><tr><td align=3D"=
+left" style=3D"font-size:0px;padding:0;word-break:break-word;"><div style=
+=3D"font-family:SeekSans, Arial, Tahoma, sans-serif;font-size:12px;font-wei=
+ght:400;line-height:18px;text-align:left;color:#5A6881;">=C2=A9 SEEK Limite=
+d, 60 Cremorne St, Cremorne VIC 3121 Australia</div></td></tr></tbody></tab=
+le></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![e=
+ndif]--></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table=
+><![endif]--></div></body></html>
+----_NmP-7622d1d5454bdfc3-Part_1--
