@@ -149,7 +149,9 @@ python -m app.cli daily-digest --minimum-score 55 --limit 10
 
 After running, open the dashboard in your browser:
 
-- [data/generated/dashboard.html](file:///E:/vscode_proj/Codex_projs/nz_it_job_application_automation/data/generated/dashboard.html)
+```
+file:///E:/vscode_proj/Codex_projs/nz_it_job_application_automation/data/generated/dashboard.html
+```
 
 Run the daily scan workflow manually:
 
